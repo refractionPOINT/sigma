@@ -1,0 +1,22 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: or
+    rules:
+    - {case sensitive: false, op: is, path: Event/System/EventID, value: '529'}
+    - {case sensitive: false, op: is, path: Event/System/EventID, value: '4625'}
+  - {case sensitive: false, op: ends with, path: Event/EventData/UserName, value: ''}
+  - {case sensitive: false, op: ends with, path: Event/EventData/WorkstationName,
+    value: ''}
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects suspicious failed logins with different user accounts from
+      a single source system
+    level: medium
+    tags: [attack.persistence, attack.privilege_escalation, attack.t1078]
+  name: Multiple Failed Logins with Different Accounts from Single Source System
+

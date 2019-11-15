@@ -1,0 +1,18 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - {case sensitive: false, op: is, path: Event/System/EventID, value: '16'}
+  - {case sensitive: false, op: matches, path: Event/EventData/Message, re: .*\\AppData\\Local\\Temp\\SAM\-.*\.dmp\
+      .*}
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects suspicious SAM dump activity as cause by QuarksPwDump and
+      other password dumpers
+    level: high
+    tags: [attack.credential_access, attack.t1003]
+  name: SAM Dump to AppData
+

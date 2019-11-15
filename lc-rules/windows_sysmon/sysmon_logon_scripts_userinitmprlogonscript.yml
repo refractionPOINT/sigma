@@ -1,0 +1,64 @@
+detect:
+  events: [NEW_PROCESS, EXISTING_PROCESS]
+  op: and
+  rules:
+  - {op: is windows}
+  - op: and
+    rules:
+    - op: and
+      rules:
+      - {case sensitive: false, op: ends with, path: event/PARENT/FILE_PATH, value: \userinit.exe}
+      - {case sensitive: false, not: true, op: ends with, path: event/FILE_PATH, value: \explorer.exe}
+    - {case sensitive: false, not: true, op: ends with, path: event/COMMAND_LINE,
+      value: \netlogon.bat}
+respond:
+- action: report
+  metadata:
+    author: Tom Ueltschi (@c_APT_ure)
+    description: Detects creation or execution of UserInitMprLogonScript persistence
+      method
+    level: high
+    references: ['https://attack.mitre.org/techniques/T1037/']
+    tags: [attack.t1037, attack.persistence, attack.lateral_movement]
+  name: Logon Scripts (UserInitMprLogonScript)
+
+detect:
+  events: [NEW_PROCESS, EXISTING_PROCESS]
+  op: and
+  rules:
+  - {op: is windows}
+  - {case sensitive: false, op: contains, path: event/COMMAND_LINE, value: UserInitMprLogonScript}
+respond:
+- action: report
+  metadata:
+    author: Tom Ueltschi (@c_APT_ure)
+    description: Detects creation or execution of UserInitMprLogonScript persistence
+      method
+    level: high
+    references: ['https://attack.mitre.org/techniques/T1037/']
+    tags: [attack.t1037, attack.persistence, attack.lateral_movement]
+  name: Logon Scripts (UserInitMprLogonScript)
+
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: or
+    rules:
+    - {case sensitive: false, op: is, path: Event/System/EventID, value: '11'}
+    - {case sensitive: false, op: is, path: Event/System/EventID, value: '12'}
+    - {case sensitive: false, op: is, path: Event/System/EventID, value: '13'}
+    - {case sensitive: false, op: is, path: Event/System/EventID, value: '14'}
+  - {case sensitive: false, op: contains, path: Event/EventData/TargetObject, value: UserInitMprLogonScript}
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Tom Ueltschi (@c_APT_ure)
+    description: Detects creation or execution of UserInitMprLogonScript persistence
+      method
+    level: high
+    references: ['https://attack.mitre.org/techniques/T1037/']
+    tags: [attack.t1037, attack.persistence, attack.lateral_movement]
+  name: Logon Scripts (UserInitMprLogonScript)
+

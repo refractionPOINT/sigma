@@ -1,0 +1,38 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: or
+    rules:
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: HTool}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Hacktool}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ASP/Backdoor}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: JSP/Backdoor}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: PHP/Backdoor}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Backdoor.ASP}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Backdoor.JSP}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Backdoor.PHP}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Webshell}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Portscan}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Mimikatz}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: WinCred}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: PlugX}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Korplug}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Pwdump}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Chopper}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: WmiExec}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Xscan}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Clearlog}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ASPXSpy}
+  - not: true
+    op: or
+    rules:
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Keygen}
+    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: Crack}
+  target: log
+respond:
+- action: report
+  metadata: {author: Florian Roth, description: This detection method points out highly
+      relevant Antivirus events, level: high}
+  name: Relevant Anti-Virus Event
+

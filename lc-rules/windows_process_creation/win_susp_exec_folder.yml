@@ -1,0 +1,34 @@
+detect:
+  events: [NEW_PROCESS, EXISTING_PROCESS]
+  op: and
+  rules:
+  - {op: is windows}
+  - op: or
+    rules:
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\PerfLogs\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\\$Recycle\.bin\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Intel\\Logs\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Users\\Default\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Users\\Public\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Users\\NetworkService\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\Fonts\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\Debug\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\Media\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\Help\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\addins\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\repair\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\security\\'}
+    - {case sensitive: false, op: contains, path: event/FILE_PATH, value: \RSA\MachineKeys\}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\system32\\config\\systemprofile\\'}
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects process starts of binaries from a suspicious folder
+    level: high
+    references: ['https://github.com/mbevilacqua/appcompatprocessor/blob/master/AppCompatSearch.txt',
+      'https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses',
+      'https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/']
+    tags: [attack.defense_evasion, attack.t1036]
+  name: Executables Started in Suspicious Folder
+
