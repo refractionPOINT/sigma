@@ -1,0 +1,22 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - {case sensitive: false, op: is, path: Event/EventData/OriginalFileName, value: procdump}
+  - not: true
+    op: or
+    rules:
+    - {case sensitive: false, op: ends with, path: Event/EventData/Image, value: \procdump.exe}
+    - {case sensitive: false, op: ends with, path: Event/EventData/Image, value: \procdump64.exe}
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects the execution of a renamed ProcDump executable often used
+      by attackers or malware
+    level: critical
+    references: ['https://docs.microsoft.com/en-us/sysinternals/downloads/procdump']
+    tags: [attack.defense_evasion, attack.t1036]
+  name: Renamed ProcDump
+
