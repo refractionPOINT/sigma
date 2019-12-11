@@ -20,6 +20,8 @@ detect:
     - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\security\\'}
     - {case sensitive: false, op: contains, path: event/FILE_PATH, value: \RSA\MachineKeys\}
     - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\system32\\config\\systemprofile\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\Tasks\\'}
+    - {case sensitive: false, op: matches, path: event/FILE_PATH, re: '^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\System32\\Tasks\\'}
 respond:
 - action: report
   metadata:
@@ -28,7 +30,8 @@ respond:
     level: high
     references: ['https://github.com/mbevilacqua/appcompatprocessor/blob/master/AppCompatSearch.txt',
       'https://www.secureworks.com/research/bronze-butler-targets-japanese-businesses',
-      'https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/']
+      'https://www.crowdstrike.com/resources/reports/2019-crowdstrike-global-threat-report/',
+      'https://github.com/ThreatHuntingProject/ThreatHunting/blob/master/hunts/suspicious_process_creation_via_windows_event_logs.md']
     tags: [attack.defense_evasion, attack.t1036]
   name: Executables Started in Suspicious Folder
 

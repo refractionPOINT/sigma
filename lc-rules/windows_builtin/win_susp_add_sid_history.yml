@@ -21,7 +21,7 @@ respond:
     author: Thomas Patzke, @atc_project (improvements)
     description: An attacker can use the SID history attribute to gain additional
       privileges.
-    level: low
+    level: medium
     references: ['https://adsecurity.org/?p=1772']
     tags: [attack.persistence, attack.privilege_escalation, attack.t1178]
   name: Addition of SID History to Active Directory Object

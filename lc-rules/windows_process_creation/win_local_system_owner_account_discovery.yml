@@ -57,5 +57,5 @@ respond:
     level: low
     references: ['https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1033/T1033.yaml']
     tags: [attack.discovery, attack.t1033, attack.t1087]
-  name: Local accounts discovery
+  name: Local Accounts Discovery
 

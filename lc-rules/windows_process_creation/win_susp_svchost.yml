@@ -15,6 +15,7 @@ detect:
         - {case sensitive: false, op: ends with, path: event/PARENT/FILE_PATH, value: \MsMpEng.exe}
         - {case sensitive: false, op: ends with, path: event/PARENT/FILE_PATH, value: \Mrt.exe}
         - {case sensitive: false, op: ends with, path: event/PARENT/FILE_PATH, value: \rpcnet.exe}
+        - {case sensitive: false, op: ends with, path: event/PARENT/FILE_PATH, value: \svchost.exe}
     - {not: false, op: exists, path: event/PARENT/FILE_PATH}
 respond:
 - action: report
