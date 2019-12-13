@@ -1,17 +1,27 @@
 detect:
-  events: [NEW_PROCESS, EXISTING_PROCESS]
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
   op: and
   rules:
-  - {op: is windows}
-  - {case sensitive: false, op: starts with, path: event/COMMAND_LINE, value: 'netsh
-      interface portproxy add v4tov4 '}
+  - op: is windows
+  - case sensitive: false
+    op: starts with
+    path: event/COMMAND_LINE
+    value: 'netsh interface portproxy add v4tov4 '
 respond:
 - action: report
   metadata:
     author: Florian Roth
     description: Detects netsh commands that configure a port forwarding
+    falsepositives:
+    - Legitimate administration
     level: medium
-    references: ['https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html']
-    tags: [attack.lateral_movement, attack.command_and_control, attack.t1090]
+    references:
+    - https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html
+    tags:
+    - attack.lateral_movement
+    - attack.command_and_control
+    - attack.t1090
   name: Netsh Port Forwarding
 

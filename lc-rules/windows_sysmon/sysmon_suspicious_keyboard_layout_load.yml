@@ -2,18 +2,34 @@ detect:
   log type: wel
   op: and
   rules:
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '13'}
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '13'
   - op: or
     rules:
-    - {case sensitive: false, op: matches, path: Event/EventData/TargetObject, re: .*\\Keyboard\
-        Layout\\Preload\*}
-    - {case sensitive: false, op: matches, path: Event/EventData/TargetObject, re: .*\\Keyboard\
-        Layout\\Substitutes\*}
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: .*\\Keyboard\ Layout\\Preload\*
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: .*\\Keyboard\ Layout\\Substitutes\*
   - op: or
     rules:
-    - {case sensitive: false, op: is, path: Event/EventData/Details, value: 00000429}
-    - {case sensitive: false, op: is, path: Event/EventData/Details, value: 00050429}
-    - {case sensitive: false, op: is, path: Event/EventData/Details, value: 0000042a}
+    - case sensitive: false
+      op: is
+      path: Event/EventData/Details
+      value: 00000429
+    - case sensitive: false
+      op: is
+      path: Event/EventData/Details
+      value: 00050429
+    - case sensitive: false
+      op: is
+      path: Event/EventData/Details
+      value: 0000042a
   target: log
 respond:
 - action: report
@@ -22,8 +38,12 @@ respond:
     description: Detects the keyboard preload installation with a suspicious keyboard
       layout, e.g. Chinese, Iranian or Vietnamese layout load in user session on systems
       maintained by US staff only
+    falsepositives:
+    - Administrators or users that actually use the selected keyboard layouts (heavily
+      depends on the organisation's user base)
     level: medium
-    references: ['https://renenyffenegger.ch/notes/Windows/registry/tree/HKEY_CURRENT_USER/Keyboard-Layout/Preload/index',
-      'https://github.com/SwiftOnSecurity/sysmon-config/pull/92/files']
+    references:
+    - https://renenyffenegger.ch/notes/Windows/registry/tree/HKEY_CURRENT_USER/Keyboard-Layout/Preload/index
+    - https://github.com/SwiftOnSecurity/sysmon-config/pull/92/files
   name: Suspicious Keyboard Layout Load
 

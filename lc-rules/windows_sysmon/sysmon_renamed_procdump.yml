@@ -2,12 +2,21 @@ detect:
   log type: wel
   op: and
   rules:
-  - {case sensitive: false, op: is, path: Event/EventData/OriginalFileName, value: procdump}
+  - case sensitive: false
+    op: is
+    path: Event/EventData/OriginalFileName
+    value: procdump
   - not: true
     op: or
     rules:
-    - {case sensitive: false, op: ends with, path: Event/EventData/Image, value: \procdump.exe}
-    - {case sensitive: false, op: ends with, path: Event/EventData/Image, value: \procdump64.exe}
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \procdump.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \procdump64.exe
   target: log
 respond:
 - action: report
@@ -15,8 +24,14 @@ respond:
     author: Florian Roth
     description: Detects the execution of a renamed ProcDump executable often used
       by attackers or malware
+    falsepositives:
+    - Procdump illegaly bundled with legitimate software
+    - Weird admins who renamed binaries
     level: critical
-    references: ['https://docs.microsoft.com/en-us/sysinternals/downloads/procdump']
-    tags: [attack.defense_evasion, attack.t1036]
+    references:
+    - https://docs.microsoft.com/en-us/sysinternals/downloads/procdump
+    tags:
+    - attack.defense_evasion
+    - attack.t1036
   name: Renamed ProcDump
 

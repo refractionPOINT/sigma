@@ -1,0 +1,34 @@
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '6416'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/DeviceClassName
+      value: DiskDrive
+  - case sensitive: false
+    op: is
+    path: Event/EventData/DeviceDescription
+    value: USB Mass Storage Device
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Keith Wright
+    description: Detects external diskdrives or plugged in USB devices
+    falsepositives:
+    - Legitimate administrative activity
+    level: low
+    tags:
+    - attack.t1091
+    - attack.t1200
+    - attack.lateral_movement
+    - attack.initial_access
+  name: External Disk Drive or USB Storage Device
+

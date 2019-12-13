@@ -1,13 +1,24 @@
 detect:
-  events: [NEW_PROCESS, EXISTING_PROCESS]
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
   op: and
   rules:
-  - {op: is windows}
+  - op: is windows
   - op: and
     rules:
-    - {case sensitive: false, op: contains, path: event/COMMAND_LINE, value: cmd}
-    - {case sensitive: false, op: contains, path: event/COMMAND_LINE, value: /c}
-    - {case sensitive: false, op: contains, path: event/COMMAND_LINE, value: assoc}
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: cmd
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: /c
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: assoc
 respond:
 - action: report
   metadata:
@@ -19,8 +30,13 @@ respond:
       assoc utility. Applications can modify the file association for a given file
       extension to call an arbitrary program when a file with the given extension
       is opened.
+    falsepositives:
+    - Admin activity
     level: low
-    references: ['https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1042/T1042.yaml']
-    tags: [attack.persistence, attack.t1042]
+    references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1042/T1042.yaml
+    tags:
+    - attack.persistence
+    - attack.t1042
   name: Change Default File Association
 

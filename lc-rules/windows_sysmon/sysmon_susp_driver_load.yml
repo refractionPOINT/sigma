@@ -2,15 +2,26 @@ detect:
   log type: wel
   op: and
   rules:
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '6'}
-  - {case sensitive: false, op: contains, path: Event/EventData/ImageLoaded, value: \Temp\}
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '6'
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/ImageLoaded
+    value: \Temp\
   target: log
 respond:
 - action: report
   metadata:
     author: Florian Roth
     description: Detects a driver load from a temporary directory
+    falsepositives:
+    - there is a relevant set of false positives depending on applications in the
+      environment
     level: medium
-    tags: [attack.persistence, attack.t1050]
+    tags:
+    - attack.persistence
+    - attack.t1050
   name: Suspicious Driver Load from Temp
 

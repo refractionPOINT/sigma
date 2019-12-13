@@ -2,8 +2,14 @@ detect:
   log type: wel
   op: and
   rules:
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '4719'}
-  - {case sensitive: false, op: is, path: Event/EventData/AuditPolicyChanges, value: removed}
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '4719'
+  - case sensitive: false
+    op: is
+    path: Event/EventData/AuditPolicyChanges
+    value: removed
   target: log
 respond:
 - action: report
@@ -18,8 +24,13 @@ respond:
       "Local Group Policy Object Processing" may cause an issue in scenarios of one
       off specific GPO modifications -- however it is recommended to perform these
       modifications in Active Directory anyways.'
+    falsepositives:
+    - Unknown
     level: high
-    references: ['https://bit.ly/WinLogsZero2Hero']
-    tags: [attack.defense_evasion, attack.t1054]
+    references:
+    - https://bit.ly/WinLogsZero2Hero
+    tags:
+    - attack.defense_evasion
+    - attack.t1054
   name: Disabling Windows Event Auditing
 

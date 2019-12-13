@@ -4,16 +4,37 @@ detect:
   rules:
   - op: and
     rules:
-    - {case sensitive: false, op: is, path: Event/EventData/LogonType, value: '3'}
-    - {case sensitive: false, op: is, path: Event/EventData/LogonProcessName, value: NtLmSsp}
-    - {case sensitive: false, op: is, path: Event/EventData/WorkstationName, value: '%Workstations%'}
-    - {case sensitive: false, op: is, path: Event/EventData/ComputerName, value: '%Workstations%'}
+    - case sensitive: false
+      op: is
+      path: Event/EventData/LogonType
+      value: '3'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/LogonProcessName
+      value: NtLmSsp
+    - case sensitive: false
+      op: is
+      path: Event/EventData/WorkstationName
+      value: '%Workstations%'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/ComputerName
+      value: '%Workstations%'
     - op: or
       rules:
-      - {case sensitive: false, op: is, path: Event/System/EventID, value: '4624'}
-      - {case sensitive: false, op: is, path: Event/System/EventID, value: '4625'}
-  - {case sensitive: false, not: true, op: is, path: Event/EventData/AccountName,
-    value: ANONYMOUS LOGON}
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '4624'
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '4625'
+  - case sensitive: false
+    not: true
+    op: is
+    path: Event/EventData/AccountName
+    value: ANONYMOUS LOGON
   target: log
 respond:
 - action: report
@@ -22,8 +43,15 @@ respond:
       (method)
     description: Detects the attack technique pass the hash which is used to move
       laterally inside the network
+    falsepositives:
+    - Administrator activity
+    - Penetration tests
     level: medium
-    references: ['https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Events']
-    tags: [attack.lateral_movement, attack.t1075, car.2016-04-004]
+    references:
+    - https://github.com/iadgov/Event-Forwarding-Guidance/tree/master/Events
+    tags:
+    - attack.lateral_movement
+    - attack.t1075
+    - car.2016-04-004
   name: Pass the Hash Activity
 

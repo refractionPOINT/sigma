@@ -2,53 +2,86 @@ detect:
   log type: wel
   op: and
   rules:
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '11'}
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '11'
   - op: or
     rules:
     - op: and
       rules:
-      - {case sensitive: false, op: matches, path: Event/EventData/TargetFilename,
-        re: .*\\inetpub\\wwwroot\*}
+      - case sensitive: false
+        op: matches
+        path: Event/EventData/TargetFilename
+        re: .*\\inetpub\\wwwroot\*
       - op: or
         rules:
-        - {case sensitive: false, op: contains, path: Event/EventData/TargetFilename,
-          value: .asp}
-        - {case sensitive: false, op: contains, path: Event/EventData/TargetFilename,
-          value: .ashx}
-        - {case sensitive: false, op: contains, path: Event/EventData/TargetFilename,
-          value: .ph}
+        - case sensitive: false
+          op: contains
+          path: Event/EventData/TargetFilename
+          value: .asp
+        - case sensitive: false
+          op: contains
+          path: Event/EventData/TargetFilename
+          value: .ashx
+        - case sensitive: false
+          op: contains
+          path: Event/EventData/TargetFilename
+          value: .ph
     - op: and
       rules:
       - op: or
         rules:
-        - {case sensitive: false, op: matches, path: Event/EventData/TargetFilename,
-          re: .*\\www\*}
-        - {case sensitive: false, op: matches, path: Event/EventData/TargetFilename,
-          re: .*\\htdocs\*}
-        - {case sensitive: false, op: matches, path: Event/EventData/TargetFilename,
-          re: .*\\html\*}
-      - {case sensitive: false, op: contains, path: Event/EventData/TargetFilename,
-        value: .ph}
+        - case sensitive: false
+          op: matches
+          path: Event/EventData/TargetFilename
+          re: .*\\www\*
+        - case sensitive: false
+          op: matches
+          path: Event/EventData/TargetFilename
+          re: .*\\htdocs\*
+        - case sensitive: false
+          op: matches
+          path: Event/EventData/TargetFilename
+          re: .*\\html\*
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/TargetFilename
+        value: .ph
     - op: and
       rules:
-      - {case sensitive: false, op: matches, path: Event/EventData/TargetFilename,
-        re: .*\*}
-      - {case sensitive: false, op: contains, path: Event/EventData/TargetFilename,
-        value: .jsp}
+      - case sensitive: false
+        op: matches
+        path: Event/EventData/TargetFilename
+        re: .*\*
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/TargetFilename
+        value: .jsp
     - op: and
       rules:
-      - {case sensitive: false, op: matches, path: Event/EventData/TargetFilename,
-        re: .*\\cgi\-bin\*}
-      - {case sensitive: false, op: contains, path: Event/EventData/TargetFilename,
-        value: .pl}
+      - case sensitive: false
+        op: matches
+        path: Event/EventData/TargetFilename
+        re: .*\\cgi\-bin\*
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/TargetFilename
+        value: .pl
   target: log
 respond:
 - action: report
   metadata:
     author: Beyu Denis, oscd.community
     description: Posible webshell file creation on a static web site
+    falsepositives:
+    - Legitimate administrator or developer creating legitimate executable files in
+      a web application folder
     level: critical
-    references: [PT ESC rule and personal experience]
-    tags: [attack.persistence, attack.t1100]
+    references:
+    - PT ESC rule and personal experience
+    tags:
+    - attack.persistence
+    - attack.t1100
   name: Windows webshell creation
 

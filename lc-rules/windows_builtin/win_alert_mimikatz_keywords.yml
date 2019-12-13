@@ -2,17 +2,46 @@ detect:
   log type: wel
   op: or
   rules:
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' mimikatz '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' mimilib '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' <3
-      eo.oe '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' eo.oe.kiwi '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' privilege::debug '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' sekurlsa::logonpasswords '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' lsadump::sam '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' mimidrv.sys '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' p::d '}
-  - {case sensitive: false, op: contains, path: Event/EventData/Message, value: ' s::l '}
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' mimikatz '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' mimilib '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' <3 eo.oe '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' eo.oe.kiwi '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' privilege::debug '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' sekurlsa::logonpasswords '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' lsadump::sam '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' mimidrv.sys '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' p::d '
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Message
+    value: ' s::l '
   target: log
 respond:
 - action: report
@@ -21,8 +50,16 @@ respond:
     description: This method detects mimikatz keywords in different Eventlogs (some
       of them only appear in older Mimikatz version that are however still used by
       different threat groups)
+    falsepositives:
+    - Naughty administrators
+    - Penetration test
     level: critical
-    tags: [attack.s0002, attack.t1003, attack.lateral_movement, attack.credential_access,
-      car.2013-07-001, car.2019-04-004]
+    tags:
+    - attack.s0002
+    - attack.t1003
+    - attack.lateral_movement
+    - attack.credential_access
+    - car.2013-07-001
+    - car.2019-04-004
   name: Mimikatz Use
 

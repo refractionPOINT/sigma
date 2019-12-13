@@ -2,18 +2,35 @@ detect:
   log type: wel
   op: and
   rules:
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '12'}
-  - {case sensitive: false, op: matches, path: Event/EventData/TargetObject, re: HKU\*}
-  - {case sensitive: false, op: matches, path: Event/EventData/TargetObject, re: .*_Classes\\CLSID\*}
-  - {case sensitive: false, op: ends with, path: Event/EventData/TargetObject, value: \TreatAs}
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '12'
+  - case sensitive: false
+    op: matches
+    path: Event/EventData/TargetObject
+    re: HKU\*
+  - case sensitive: false
+    op: matches
+    path: Event/EventData/TargetObject
+    re: .*_Classes\\CLSID\*
+  - case sensitive: false
+    op: ends with
+    path: Event/EventData/TargetObject
+    value: \TreatAs
   target: log
 respond:
 - action: report
   metadata:
     author: Kutepov Anton, oscd.community
     description: Detects COM object hijacking via TreatAs subkey
+    falsepositives:
+    - Maybe some system utilities in rare cases use linking keys for backward compability
     level: medium
-    references: ['https://bohops.com/2018/08/18/abusing-the-com-registry-structure-part-2-loading-techniques-for-evasion-and-persistence/']
-    tags: [attack.persistence, attack.t1122]
+    references:
+    - https://bohops.com/2018/08/18/abusing-the-com-registry-structure-part-2-loading-techniques-for-evasion-and-persistence/
+    tags:
+    - attack.persistence
+    - attack.t1122
   name: Windows Registry Persistence - COM key linking
 

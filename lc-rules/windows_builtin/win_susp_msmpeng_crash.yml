@@ -6,18 +6,34 @@ detect:
     rules:
     - op: and
       rules:
-      - {case sensitive: false, op: is, path: Event/EventData/Source, value: Application
-          Error}
-      - {case sensitive: false, op: is, path: Event/System/EventID, value: '1000'}
+      - case sensitive: false
+        op: is
+        path: Event/EventData/Source
+        value: Application Error
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '1000'
     - op: and
       rules:
-      - {case sensitive: false, op: is, path: Event/EventData/Source, value: Windows
-          Error Reporting}
-      - {case sensitive: false, op: is, path: Event/System/EventID, value: '1001'}
+      - case sensitive: false
+        op: is
+        path: Event/EventData/Source
+        value: Windows Error Reporting
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '1001'
   - op: or
     rules:
-    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: MsMpEng.exe}
-    - {case sensitive: false, op: contains, path: Event/EventData/Message, value: mpengine.dll}
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Message
+      value: MsMpEng.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Message
+      value: mpengine.dll
   target: log
 respond:
 - action: report
@@ -25,9 +41,15 @@ respond:
     author: Florian Roth
     description: This rule detects a suspicious crash of the Microsoft Malware Protection
       Engine
+    falsepositives:
+    - MsMpEng.exe can crash when C:\ is full
     level: high
-    references: ['https://bugs.chromium.org/p/project-zero/issues/detail?id=1252&desc=5',
-      'https://technet.microsoft.com/en-us/library/security/4022344']
-    tags: [attack.defense_evasion, attack.t1089, attack.t1211]
+    references:
+    - https://bugs.chromium.org/p/project-zero/issues/detail?id=1252&desc=5
+    - https://technet.microsoft.com/en-us/library/security/4022344
+    tags:
+    - attack.defense_evasion
+    - attack.t1089
+    - attack.t1211
   name: Microsoft Malware Protection Engine Crash
 

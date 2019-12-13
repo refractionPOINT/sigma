@@ -2,17 +2,31 @@ detect:
   log type: wel
   op: or
   rules:
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '19'}
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '20'}
-  - {case sensitive: false, op: is, path: Event/System/EventID, value: '21'}
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '19'
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '20'
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '21'
   target: log
 respond:
 - action: report
   metadata:
     author: Tom Ueltschi (@c_APT_ure)
     description: Detects creation of WMI event subscription persistence method
+    falsepositives:
+    - exclude legitimate (vetted) use of WMI event subscription in your network
     level: high
-    references: ['https://attack.mitre.org/techniques/T1084/']
-    tags: [attack.t1084, attack.persistence]
+    references:
+    - https://attack.mitre.org/techniques/T1084/
+    tags:
+    - attack.t1084
+    - attack.persistence
   name: WMI Event Subscription
 
