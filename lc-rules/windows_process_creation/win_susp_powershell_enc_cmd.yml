@@ -36,15 +36,19 @@ detect:
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
+        value: ' -en JAB'
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
         value: ' -enc JAB'
       - case sensitive: false
-        op: contains
+        op: matches
         path: event/COMMAND_LINE
-        value: ' -enco JAB'
+        re: .*\ \-enc.*\ JAB.*
       - case sensitive: false
-        op: contains
+        op: matches
         path: event/COMMAND_LINE
-        value: ' -encodedcommand JAB'
+        re: .*\ \-w\ hidden\ \-e.*\ JAB.*
       - case sensitive: false
         op: ends with
         path: event/COMMAND_LINE
