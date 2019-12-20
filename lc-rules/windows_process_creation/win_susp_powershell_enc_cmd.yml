@@ -95,7 +95,7 @@ respond:
   metadata:
     author: Florian Roth, Markus Neis
     description: Detects suspicious powershell process starts with base64 encoded
-      commands
+      commands (e.g. Emotet)
     level: high
     references:
     - https://app.any.run/tasks/6217d77d-3189-4db2-a957-8ab239f3e01e
