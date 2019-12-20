@@ -5,18 +5,50 @@ detect:
   op: and
   rules:
   - op: is windows
-  - case sensitive: false
-    op: contains
-    path: event/COMMAND_LINE
-    value: ' -CollectionMethod All '
+  - op: or
+    rules:
+    - op: or
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/FILE_PATH
+        value: \Bloodhound.exe
+      - case sensitive: false
+        op: contains
+        path: event/FILE_PATH
+        value: \SharpHound.exe
+    - op: or
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: ' -CollectionMethod All '
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: Invoke-Bloodhound
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: Get-BloodHoundData
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: ' -JsonFolder '
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: ' -ZipFileName '
 respond:
 - action: report
   metadata:
     author: Florian Roth
     description: Detects command line parameters used by Bloodhound hack tool
     falsepositives:
-    - unlikely
-    level: critical
+    - Other programs that use these command line option and accepts an 'All' parameter
+    level: high
     references:
     - https://github.com/BloodHoundAD/BloodHound
     tags:
