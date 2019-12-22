@@ -45,18 +45,30 @@ detect:
         op: contains
         path: event/COMMAND_LINE
         value: ' -ZipFileName '
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: ' DCOnly '
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: ' --NoSaveCache '
 respond:
 - action: report
   metadata:
     author: Florian Roth
-    description: Detects command line parameters used by Bloodhound hack tool
+    description: Detects command line parameters used by Bloodhound and Sharphound
+      hack tools
     falsepositives:
     - Other programs that use these command line option and accepts an 'All' parameter
     level: high
     references:
     - https://github.com/BloodHoundAD/BloodHound
+    - https://github.com/BloodHoundAD/SharpHound
     tags:
     - attack.discovery
     - attack.t1087
-  name: Bloodhound Hack Tool
+  name: Bloodhound and Sharphound Hack Tool
 
