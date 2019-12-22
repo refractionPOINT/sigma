@@ -1,0 +1,33 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: event/FILE_PATH
+      value: \whoami.exe
+    - case sensitive: false
+      op: is
+      path: event/USER_NAME
+      value: NT AUTHORITY\SYSTEM
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects the execution of whoami as LOCAL_SYSTEM, often used after
+      privilege escalation by attackers who want to evaluate the new user context
+    falsepositives:
+    - Admin activity
+    - Scripts and administrative tools used in the monitored environment
+    level: critical
+    tags:
+    - attack.discovery
+    - attack.t1033
+    - car.2016-03-001
+  name: Whoami as LOCAL_SYSTEM
+
