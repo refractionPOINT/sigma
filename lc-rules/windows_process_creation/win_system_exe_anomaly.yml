@@ -88,6 +88,10 @@ detect:
         op: matches
         path: event/FILE_PATH
         re: ^(?:(?:.:)|(?:\\Device\\HarddiskVolume.))\\Windows\\winsxs\\
+      - case sensitive: false
+        op: starts with
+        path: event/FILE_PATH
+        value: \SystemRoot\System32\
 respond:
 - action: report
   metadata:
