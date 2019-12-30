@@ -31,6 +31,10 @@ detect:
       op: contains
       path: event/COMMAND_LINE
       value: \CurrentVersion\Image File Execution Options\displayswitch.exe
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: \CurrentVersion\Image File Execution Options\atbroker.exe
 respond:
 - action: report
   metadata:
