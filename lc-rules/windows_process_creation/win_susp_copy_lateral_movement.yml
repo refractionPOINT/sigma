@@ -1,0 +1,33 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: or
+    rules:
+    - case sensitive: false
+      op: matches
+      path: event/COMMAND_LINE
+      re: .*copy\ .*\\c\$.*
+    - case sensitive: false
+      op: matches
+      path: event/COMMAND_LINE
+      re: .*copy\ .*\\ADMIN\$.*
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects a suspicious copy command from a remote C$ or ADMIN$ share
+    falsepositives:
+    - Administrative scripts
+    level: high
+    references:
+    - https://twitter.com/SBousseaden/status/1211636381086339073
+    tags:
+    - attack.lateral_movement
+    - attack.t1077
+    - attack.t1105
+  name: Copy from Admin Share
+
