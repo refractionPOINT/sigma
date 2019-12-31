@@ -13,16 +13,16 @@ detect:
         rules:
         - case sensitive: false
           op: matches
-          path: event/FILE_PATH
-          re: .*7z.*\.exe
+          path: event/ORIGINAL_FILE_NAME
+          re: 7z.*\.exe
+        - case sensitive: false
+          op: ends with
+          path: event/ORIGINAL_FILE_NAME
+          value: rar.exe
         - case sensitive: false
           op: matches
-          path: event/FILE_PATH
-          re: .*.*rar\.exe
-        - case sensitive: false
-          op: matches
-          path: event/FILE_PATH
-          re: .*.*Command.*Line.*RAR.*
+          path: event/ORIGINAL_FILE_NAME
+          re: .*Command.*Line.*RAR.*
       - op: or
         rules:
         - case sensitive: false

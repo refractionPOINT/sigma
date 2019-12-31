@@ -10,68 +10,68 @@ detect:
     - op: or
       rules:
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: cmd.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: powershell.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: powershell_ise.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: psexec.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: psexec.c
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: cscript.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: wscript.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: mshta.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: regsvr32.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: wmic.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: certutil.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: rundll32.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: cmstp.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: msiexec.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: 7z.exe
       - case sensitive: false
-        op: ends with
-        path: event/FILE_PATH
+        op: is
+        path: event/ORIGINAL_FILE_NAME
         value: winrar.exe
     - not: true
       op: or
