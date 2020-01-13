@@ -65,6 +65,34 @@ detect:
         op: is
         path: Event/EventData/RelativeTargetName
         value: netdfs
+      - case sensitive: false
+        op: is
+        path: Event/EventData/RelativeTargetName
+        value: svcctl
+      - case sensitive: false
+        op: is
+        path: Event/EventData/RelativeTargetName
+        value: spoolss
+      - case sensitive: false
+        op: is
+        path: Event/EventData/RelativeTargetName
+        value: ntsvcs
+      - case sensitive: false
+        op: is
+        path: Event/EventData/RelativeTargetName
+        value: LSM_API_service
+      - case sensitive: false
+        op: is
+        path: Event/EventData/RelativeTargetName
+        value: HydraLsPipe
+      - case sensitive: false
+        op: is
+        path: Event/EventData/RelativeTargetName
+        value: TermSrv_API_service
+      - case sensitive: false
+        op: is
+        path: Event/EventData/RelativeTargetName
+        value: MsFteWds
   target: log
 respond:
 - action: report
