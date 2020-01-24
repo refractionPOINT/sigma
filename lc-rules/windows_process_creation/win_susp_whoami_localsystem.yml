@@ -7,14 +7,21 @@ detect:
   - op: is windows
   - op: and
     rules:
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/FILE_PATH
+        value: \whoami.exe
+      - case sensitive: false
+        op: is
+        path: event/USER_NAME
+        value: NT AUTHORITY\SYSTEM
     - case sensitive: false
-      op: contains
-      path: event/FILE_PATH
-      value: \whoami.exe
-    - case sensitive: false
-      op: is
-      path: event/USER_NAME
-      value: NT AUTHORITY\SYSTEM
+      not: true
+      op: ends with
+      path: event/PARENT/FILE_PATH
+      value: \monitoringhost.exe
 respond:
 - action: report
   metadata:
