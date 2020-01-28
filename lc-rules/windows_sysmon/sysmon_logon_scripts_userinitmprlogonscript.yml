@@ -18,11 +18,17 @@ detect:
         op: ends with
         path: event/FILE_PATH
         value: \explorer.exe
-    - case sensitive: false
-      not: true
-      op: ends with
-      path: event/COMMAND_LINE
-      value: \netlogon.bat
+    - not: true
+      op: or
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: event/COMMAND_LINE
+        value: \netlogon.bat
+      - case sensitive: false
+        op: ends with
+        path: event/COMMAND_LINE
+        value: \UsrLogon.cmd
 respond:
 - action: report
   metadata:
