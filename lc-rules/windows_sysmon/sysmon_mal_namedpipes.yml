@@ -70,6 +70,10 @@ detect:
       op: starts with
       path: Event/EventData/PipeName
       value: \msagent_
+    - case sensitive: false
+      op: is
+      path: Event/EventData/PipeName
+      value: \gruntsvc
   target: log
 respond:
 - action: report
