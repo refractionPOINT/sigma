@@ -5,58 +5,46 @@ detect:
   op: and
   rules:
   - op: is windows
-  - op: or
+  - op: and
     rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \mshta.exe
     - op: or
       rules:
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
-        value: mshta vbscript:CreateObject("Wscript.Shell")
+        value: vbscript
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
-        value: mshta vbscript:Execute("Execute
+        value: .jpg
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
-        value: mshta vbscript:CreateObject("Wscript.Shell").Run("mshta.exe
-    - op: and
-      rules:
+        value: .png
       - case sensitive: false
-        op: is
-        path: event/FILE_PATH
-        value: C:\Windows\system32\mshta.exe
-      - op: or
-        rules:
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: .jpg
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: .png
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: .lnk
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: .xls
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: .doc
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: .zip
+        op: contains
+        path: event/COMMAND_LINE
+        value: .lnk
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: .xls
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: .doc
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: .zip
 respond:
 - action: report
   metadata:
-    author: Diego Perez (@darkquassar)
+    author: Diego Perez (@darkquassar), Markus Neis, Swisscom (Improve Rule)
     description: Detection for mshta.exe suspicious execution patterns sometimes involving
       file polyglotism
     falsepositives:

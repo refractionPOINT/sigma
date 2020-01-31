@@ -15,9 +15,10 @@ detect:
         - not: true
           op: or
           rules:
-          - not: true
-            op: exists
+          - case sensitive: false
+            op: is
             path: Event/EventData/AllowedToDelegateTo
+            value: None
           - case sensitive: false
             op: is
             path: Event/EventData/AllowedToDelegateTo
