@@ -35,6 +35,14 @@ detect:
       op: matches
       path: event/COMMAND_LINE
       re: esentutl\.exe\ \/y\ \/vss\ .*\\ntds\.dit.*
+    - case sensitive: false
+      op: matches
+      path: event/COMMAND_LINE
+      re: esentutl\.exe\ \/y\ \/vss\ .*\\SAM
+    - case sensitive: false
+      op: matches
+      path: event/COMMAND_LINE
+      re: esentutl\.exe\ \/y\ \/vss\ .*\\SYSTEM
 respond:
 - action: report
   metadata:
