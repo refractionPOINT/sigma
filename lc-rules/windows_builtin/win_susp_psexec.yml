@@ -57,5 +57,5 @@ respond:
     tags:
     - attack.lateral_movement
     - attack.t1077
-  name: Suspicious PsExec execution
+  name: Suspicious PsExec Execution
 

@@ -25,6 +25,7 @@ detect:
 respond:
 - action: report
   metadata:
+    author: Florian Roth
     description: Detects service ticket requests using RC4 encryption type
     falsepositives:
     - Service accounts used on legacy systems (e.g. NetApp)

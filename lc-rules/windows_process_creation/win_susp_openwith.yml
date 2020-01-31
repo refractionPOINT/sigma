@@ -30,5 +30,5 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1218
-  name: OpenWith.exe executes specified binary
+  name: OpenWith.exe Executes Specified Binary
 

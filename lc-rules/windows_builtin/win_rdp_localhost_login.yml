@@ -35,5 +35,5 @@ respond:
     - attack.lateral_movement
     - attack.t1076
     - car.2013-07-002
-  name: RDP Login from localhost
+  name: RDP Login from Localhost
 

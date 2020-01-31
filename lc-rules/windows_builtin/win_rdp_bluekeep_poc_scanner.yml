@@ -27,5 +27,5 @@ respond:
     - attack.lateral_movement
     - attack.t1210
     - car.2013-07-002
-  name: Scanner PoC for CVE-2019-0708 RDP RCE vuln
+  name: Scanner PoC for CVE-2019-0708 RDP RCE Vuln
 

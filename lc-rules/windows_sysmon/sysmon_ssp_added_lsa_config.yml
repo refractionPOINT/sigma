@@ -45,5 +45,5 @@ respond:
     tags:
     - attack.persistence
     - attack.t1011
-  name: Security Support Provider (SSP) added to LSA configuration
+  name: Security Support Provider (SSP) Added to LSA Configuration
 

@@ -52,5 +52,5 @@ respond:
     - attack.defense_evasion
     - attack.persistence
     - attack.t1158
-  name: Hiding files with attrib.exe
+  name: Hiding Files with Attrib.exe
 

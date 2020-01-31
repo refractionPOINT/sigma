@@ -38,5 +38,5 @@ respond:
     - attack.t1070
     - attack.persistence
     - attack.t1067
-  name: Possible Ransomware or unauthorized MBR modifications
+  name: Possible Ransomware or Unauthorized MBR Modifications
 

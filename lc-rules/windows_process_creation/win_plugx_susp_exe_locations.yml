@@ -247,5 +247,5 @@ respond:
     - attack.s0013
     - attack.defense_evasion
     - attack.t1073
-  name: Executable used by PlugX in Uncommon Location - Sysmon Version
+  name: Executable Used by PlugX in Uncommon Location
 

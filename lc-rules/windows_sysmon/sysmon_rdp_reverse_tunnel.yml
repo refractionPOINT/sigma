@@ -45,5 +45,5 @@ respond:
     - attack.command_and_control
     - attack.t1076
     - car.2013-07-002
-  name: RDP over Reverse SSH Tunnel
+  name: RDP Over Reverse SSH Tunnel
 

@@ -40,5 +40,5 @@ respond:
     tags:
     - attack.command_and_control
     - attack.t1105
-  name: Malicious payload download via Office binaries
+  name: Malicious Payload Download via Office Binaries
 

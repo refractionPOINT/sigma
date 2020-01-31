@@ -35,5 +35,5 @@ respond:
     - attack.defense_evasion
     - attack.t1073
     - attack.t1112
-  name: DHCP Callout DLL installation
+  name: DHCP Callout DLL Installation
 

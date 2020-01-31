@@ -40,5 +40,5 @@ respond:
     level: high
     references:
     - https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/fsutil-usn
-  name: Fsutil suspicious invocation
+  name: Fsutil Suspicious Invocation
 

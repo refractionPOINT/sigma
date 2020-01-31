@@ -33,5 +33,5 @@ respond:
     tags:
     - attack.lateral_movement
     - attack.persistence
-  name: Remote Service Activity Detected via SVCCTL named pipe
+  name: Remote Service Activity via SVCCTL Named Pipe
 

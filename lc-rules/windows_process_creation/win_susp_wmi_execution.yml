@@ -47,5 +47,5 @@ respond:
     - attack.execution
     - attack.t1047
     - car.2016-03-002
-  name: Suspicious WMI execution
+  name: Suspicious WMI Execution
 

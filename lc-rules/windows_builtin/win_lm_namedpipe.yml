@@ -110,5 +110,5 @@ respond:
     tags:
     - attack.lateral_movement
     - attack.t1077
-  name: First time seen remote named pipe
+  name: First Time Seen Remote Named Pipe
 

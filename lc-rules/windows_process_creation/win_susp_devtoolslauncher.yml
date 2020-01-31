@@ -30,5 +30,5 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1218
-  name: Devtoolslauncher.exe executes specified binary
+  name: Devtoolslauncher.exe Executes Specified Binary
 

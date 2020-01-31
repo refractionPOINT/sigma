@@ -83,5 +83,5 @@ respond:
     tags:
     - attack.persistence
     - attack.t1100
-  name: Windows webshell creation
+  name: Windows Webshell Creation
 

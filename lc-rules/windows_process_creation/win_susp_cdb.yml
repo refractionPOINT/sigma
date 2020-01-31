@@ -30,5 +30,5 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1218
-  name: Possible Application Whitelisting Bypass via WinDbg/CDB as a shellcode runner
+  name: Possible App Whitelisting Bypass via WinDbg/CDB as a Shellcode Runner
 

@@ -1,0 +1,67 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '7'
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \winword.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \powerpnt.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \excel.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \outlook.exe
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/ImageLoaded
+      value: \wmiutils.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/ImageLoaded
+      value: \wbemcomn.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/ImageLoaded
+      value: \wbemprox.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/ImageLoaded
+      value: \wbemdisp.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/ImageLoaded
+      value: \wbemsvc.dll
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Michael R. (@nahamike01)
+    description: Detects DLL's Loaded Via Word Containing VBA Macros Executing WMI
+      Commands
+    falsepositives:
+    - Possible. Requires further testing.
+    level: high
+    references:
+    - https://medium.com/threatpunter/detecting-adversary-tradecraft-with-image-load-event-logging-and-eql-8de93338c16
+    - https://www.carbonblack.com/2019/04/24/cb-tau-threat-intelligence-notification-emotet-utilizing-wmi-to-launch-powershell-encoded-code/
+    - https://media.cert.europa.eu/static/SecurityAdvisories/2019/CERT-EU-SA2019-021.pdf
+    tags:
+    - attack.execution
+    - attack.t1047
+  name: Windows Mangement Instrumentation DLL Loaded Via Microsoft Word
+

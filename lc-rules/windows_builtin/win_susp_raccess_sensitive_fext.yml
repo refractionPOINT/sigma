@@ -72,5 +72,5 @@ respond:
     level: high
     tags:
     - attack.collection
-  name: Suspicious access to sensitive file extensions
+  name: Suspicious Access to Sensitive File Extensions
 

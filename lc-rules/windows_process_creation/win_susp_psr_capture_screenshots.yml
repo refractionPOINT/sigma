@@ -30,5 +30,5 @@ respond:
     tags:
     - attack.persistence
     - attack.t1218
-  name: psr.exe capture screenshots
+  name: Psr.exe Capture Screenshots
 

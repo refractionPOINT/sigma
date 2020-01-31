@@ -36,5 +36,5 @@ respond:
     - attack.t1053
     - car.2013-05-004
     - car.2015-04-001
-  name: Remote Task Creation via ATSVC named pipe
+  name: Remote Task Creation via ATSVC Named Pipe
 

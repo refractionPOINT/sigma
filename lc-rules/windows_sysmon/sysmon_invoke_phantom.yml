@@ -34,5 +34,5 @@ respond:
     tags:
     - attack.t1089
     - attack.defense_evasion
-  name: Suspect svchost memory access
+  name: Suspect Svchost Memory Asccess
 

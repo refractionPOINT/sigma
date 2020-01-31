@@ -34,5 +34,5 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1218
-  name: Application Whitelisting bypass via dxcap.exe
+  name: Application Whitelisting Bypass via Dxcap.exe
 

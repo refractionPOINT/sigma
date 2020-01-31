@@ -31,5 +31,5 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1055
-  name: ZOHO dctask64 Process Injection
+  name: ZOHO Dctask64 Process Injection
 

@@ -37,5 +37,5 @@ respond:
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1078
-  name: Multiple Failed Logins with Different Accounts from Single Source System
+  name: Failed Logins with Different Accounts from Single Source System
 

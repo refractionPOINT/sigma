@@ -32,5 +32,5 @@ respond:
     tags:
     - attack.persistence
     - attack.t1122
-  name: Windows Registry Persistence - COM key linking
+  name: Windows Registry Persistence COM Key Linking
 

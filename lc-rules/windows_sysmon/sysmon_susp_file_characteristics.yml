@@ -37,5 +37,5 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1064
-  name: Suspicious File Characteristics due to Missing Fields
+  name: Suspicious File Characteristics Due to Missing Fields
 

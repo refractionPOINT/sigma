@@ -26,5 +26,5 @@ respond:
     - attack.privilege_escalation
     - attack.t1088
     - car.2019-04-001
-  name: UAC Bypass via sdclt
+  name: UAC Bypass via Sdclt
 
