@@ -47,10 +47,20 @@ detect:
       op: is
       path: event/FILE_PATH
       value: C:\ProgramData\DRM\CLR\CLR.exe
+    - op: and
+      rules:
+      - case sensitive: false
+        op: starts with
+        path: event/PARENT/FILE_PATH
+        value: C:\ProgramData\DRM\Windows
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \SearchFilterHost.exe
 respond:
 - action: report
   metadata:
-    author: Florian Roth
+    author: Florian Roth, Markus Neis
     description: Detects specific process characteristics of Winnti malware noticed
       in Dec/Jan 2020 in a campaign against Honk Kong universities
     falsepositives:
