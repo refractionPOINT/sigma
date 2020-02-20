@@ -1,0 +1,48 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: or
+    rules:
+    - op: and
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \dsquery.exe
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: -filter
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: trustedDomain
+    - op: and
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \nltest.exe
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: domain_trusts
+respond:
+- action: report
+  metadata:
+    author: Jakob Weinzettl, oscd.community
+    description: Detects a discovery of domain trusts
+    falsepositives:
+    - Administration of systems
+    level: medium
+    references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1482/T1482.yaml
+    tags:
+    - attack.discovery
+    - attack.t1482
+  name: Domain Trust Discovery
+

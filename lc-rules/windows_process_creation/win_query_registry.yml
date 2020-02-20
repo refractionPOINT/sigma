@@ -16,6 +16,20 @@ detect:
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
+        value: query
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: save
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: export
+    - op: or
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
         value: currentVersion\windows
       - case sensitive: false
         op: contains

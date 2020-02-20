@@ -8,50 +8,6 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: starts with
-      path: event/COMMAND_LINE
-      value: vssadmin.exe delete shadows
-    - case sensitive: false
-      op: starts with
-      path: event/COMMAND_LINE
-      value: vssadmin delete shadows
-    - case sensitive: false
-      op: starts with
-      path: event/COMMAND_LINE
-      value: 'vssadmin create shadow /for=C:'
-    - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: copy\ \\.\\GLOBALROOT\\Device\\.*\\windows\\ntds\\ntds\.dit.*
-    - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: copy\ \\.\\GLOBALROOT\\Device\\.*\\config\\SAM.*
-    - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: copy\ \\.\\GLOBALROOT\\Device\\.*\\config\\SYSTEM.*
-    - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: type\ \\.\\GLOBALROOT\\Device\\.*\\config\\SAM.*
-    - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: type\ \\.\\GLOBALROOT\\Device\\.*\\config\\SYSTEM.*
-    - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: type\ \\.\\GLOBALROOT\\Device\\.*\\windows\\ntds\\ntds\.dit.*
-    - case sensitive: false
-      op: starts with
-      path: event/COMMAND_LINE
-      value: 'reg SAVE HKLM\SYSTEM '
-    - case sensitive: false
-      op: starts with
-      path: event/COMMAND_LINE
-      value: 'reg SAVE HKLM\SAM '
-    - case sensitive: false
       op: contains
       path: event/COMMAND_LINE
       value: ' sekurlsa:'
@@ -115,14 +71,6 @@ detect:
       op: matches
       path: event/COMMAND_LINE
       re: icacls\ .*\ \/grant\ Everyone\:F\ \/T\ \/C\ \/Q
-    - case sensitive: false
-      op: contains
-      path: event/COMMAND_LINE
-      value: ' wmic shadowcopy delete '
-    - case sensitive: false
-      op: contains
-      path: event/COMMAND_LINE
-      value: ' wmic shadowcopy call create Volume='
     - case sensitive: false
       op: contains
       path: event/COMMAND_LINE
@@ -218,7 +166,7 @@ detect:
 respond:
 - action: report
   metadata:
-    author: Florian Roth
+    author: Florian Roth, Daniil Yugoslavskiy, oscd.community (update)
     description: Detects suspicious process starts on Windows systems based on keywords
     falsepositives:
     - False positives depend on scripts and administrative tools used in the monitored

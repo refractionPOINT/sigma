@@ -1,0 +1,49 @@
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '12'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: .*\\SYSTEM\*
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \Control\MiniNt
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '14'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/NewName
+      re: .*\\SYSTEM\*
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/NewName
+      value: \Control\MiniNt
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Ilyas Ochkov, oscd.community
+    description: Detects the addition of a key 'MiniNt' to the registry. Upon a reboot,
+      Windows Event Log service will stopped write events.
+    falsepositives:
+    - Unkown
+    level: high
+    references:
+    - https://twitter.com/0gtweet/status/1182516740955226112
+    tags:
+    - attack.defense_evasion
+    - attack.t1089
+  name: Disable Security Events Logging Adding Reg Key MiniNt
+

@@ -1,0 +1,39 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '5156'
+  - op: or
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/EventData/DestPort
+      value: '5985'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/DestPort
+      value: '5986'
+  - case sensitive: false
+    op: is
+    path: Event/EventData/LayerRTID
+    value: '44'
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects basic PowerShell Remoting by monitoring for network inbound
+      connections to ports 5985 OR 5986
+    falsepositives:
+    - Legitimate use of remote PowerShell execution
+    level: high
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
+    tags:
+    - attack.execution
+    - attack.t1086
+  name: Remote PowerShell Sessions
+

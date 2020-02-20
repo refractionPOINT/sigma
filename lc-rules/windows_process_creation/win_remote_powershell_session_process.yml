@@ -1,0 +1,33 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \wsmprovhost.exe
+    - case sensitive: false
+      op: ends with
+      path: event/PARENT/FILE_PATH
+      value: \wsmprovhost.exe
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects remote PowerShell sections by monitoring for wsmprovhost
+      as a parent or child process (sign of an active ps remote session)
+    falsepositives:
+    - Legitimate usage of remote Powershell, e.g. for monitoring purposes
+    level: high
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
+    tags:
+    - attack.execution
+    - attack.t1086
+  name: Remote PowerShell Session
+

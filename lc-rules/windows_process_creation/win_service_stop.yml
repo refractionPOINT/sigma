@@ -1,0 +1,46 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \taskkill.exe
+    - op: and
+      rules:
+      - op: or
+        rules:
+        - case sensitive: false
+          op: ends with
+          path: event/FILE_PATH
+          value: \sc.exe
+        - case sensitive: false
+          op: ends with
+          path: event/FILE_PATH
+          value: \net.exe
+        - case sensitive: false
+          op: ends with
+          path: event/FILE_PATH
+          value: \net1.exe
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: stop
+respond:
+- action: report
+  metadata:
+    author: Jakob Weinzettl, oscd.community
+    description: Detects a windows service to be stopped
+    falsepositives:
+    - Administrator shutting down the service due to upgrade or removal purposes
+    level: low
+    tags:
+    - attack.impact
+    - attack.t1489
+  name: Stop Windows Service
+

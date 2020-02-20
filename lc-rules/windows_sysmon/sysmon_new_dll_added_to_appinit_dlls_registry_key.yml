@@ -1,0 +1,56 @@
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: and
+    rules:
+    - op: or
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '12'
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '13'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: .*\\SOFTWARE\*
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \Windows\AppInit_Dlls
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '14'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/NewName
+      re: .*\\SOFTWARE\*
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/NewName
+      value: \Windows\AppInit_Dlls
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Ilyas Ochkov, oscd.community
+    description: DLLs that are specified in the AppInit_DLLs value in the Registry
+      key HKLM\Software\Microsoft\Windows NT\CurrentVersion\Windows are loaded by
+      user32.dll into every process that loads user32.dll
+    falsepositives:
+    - Unkown
+    level: medium
+    references:
+    - https://eqllib.readthedocs.io/en/latest/analytics/822dc4c5-b355-4df8-bd37-29c458997b8f.html
+    tags:
+    - attack.persistence
+    - attack.t1103
+  name: New DLL Added to AppInit_DLLs Registry Key
+

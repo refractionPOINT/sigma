@@ -1,0 +1,79 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '7'
+    - op: or
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \wmiclnt.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \WmiApRpl.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \wmiprov.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \wmiutils.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \wbemcomn.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \wbemprox.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \WMINet_Utils.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \wbemsvc.dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \fastprox.dll
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \WmiPrvSe.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \WmiAPsrv.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \svchost.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects non wmiprvse loading WMI modules
+    falsepositives:
+    - Unknown
+    level: high
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1047_windows_management_instrumentation/wmi_wmi_module_load.md
+    tags:
+    - attack.execution
+    - attack.t1047
+  name: WMI Modules Loaded
+

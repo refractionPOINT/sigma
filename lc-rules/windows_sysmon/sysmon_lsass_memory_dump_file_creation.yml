@@ -1,0 +1,34 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '11'
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/TargetFilename
+    value: lsass
+  - case sensitive: false
+    op: ends with
+    path: Event/EventData/TargetFilename
+    value: dmp
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov, oscd.community
+    description: LSASS memory dump creation using operating systems utilities. Procdump
+      will use process name in output file if no name is specified
+    falsepositives:
+    - Dumping lsass memory for forensic investigation purposes by legitimate incident
+      responder or forensic invetigator
+    level: medium
+    references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
+    tags:
+    - attack.credential_access
+    - attack.t1003
+  name: LSASS Memory Dump File Creation
+

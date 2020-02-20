@@ -1,0 +1,46 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - op: or
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '4663'
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '4656'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/ObjectType
+      value: Process
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/ObjectName
+      value: \lsass.exe
+  - case sensitive: false
+    not: true
+    op: ends with
+    path: Event/EventData/SubjectUserName
+    value: $
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects potential mimikatz-like tools accessing LSASS from non system
+      account
+    falsepositives:
+    - Unknown
+    level: critical
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/06_credential_access/T1003_credential_dumping/lsass_access_non_system_account.md
+    tags:
+    - attack.credential_access
+    - attack.t1003
+  name: LSASS Access from Non System Account
+

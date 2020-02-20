@@ -1,0 +1,246 @@
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: or
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: cmd
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: comspec
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: cmd
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: /c
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: echo
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/ServiceFileName
+      re: .*\\pipe\*
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: '%COMSPEC%'
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: /c
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: echo
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/ServiceFileName
+      re: .*\\pipe\*
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: rundll32
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: .dll,a
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: '/p:'
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov
+    description: Detects the use of getsystem Meterpreter/Cobalt Strike command by
+      detecting a specific service installation
+    falsepositives:
+    - Highly unlikely
+    level: critical
+    references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
+    - https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/
+    tags:
+    - attack.privilege_escalation
+    - attack.t1134
+  name: Meterpreter or Cobalt Strike Getsystem Service Installation
+
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: or
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: cmd
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: comspec
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: cmd
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: /c
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: echo
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/ServiceFileName
+      re: .*\\pipe\*
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: '%COMSPEC%'
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: /c
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: echo
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/ServiceFileName
+      re: .*\\pipe\*
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: rundll32
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: .dll,a
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: '/p:'
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov
+    description: Detects the use of getsystem Meterpreter/Cobalt Strike command by
+      detecting a specific service installation
+    falsepositives:
+    - Highly unlikely
+    level: critical
+    references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
+    - https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/
+    tags:
+    - attack.privilege_escalation
+    - attack.t1134
+  name: Meterpreter or Cobalt Strike Getsystem Service Installation
+
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: or
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: cmd
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: comspec
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: cmd
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: /c
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: echo
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/ServiceFileName
+      re: .*\\pipe\*
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: '%COMSPEC%'
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: /c
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: echo
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/ServiceFileName
+      re: .*\\pipe\*
+  - op: and
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: rundll32
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: .dll,a
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ServiceFileName
+      value: '/p:'
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov
+    description: Detects the use of getsystem Meterpreter/Cobalt Strike command by
+      detecting a specific service installation
+    falsepositives:
+    - Highly unlikely
+    level: critical
+    references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
+    - https://blog.cobaltstrike.com/2014/04/02/what-happens-when-i-type-getsystem/
+    tags:
+    - attack.privilege_escalation
+    - attack.t1134
+  name: Meterpreter or Cobalt Strike Getsystem Service Installation
+

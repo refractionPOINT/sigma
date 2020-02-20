@@ -1,0 +1,38 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '4674'
+  - case sensitive: false
+    op: is
+    path: Event/EventData/ObjectType
+    value: SC_MANAGER OBJECT
+  - case sensitive: false
+    op: is
+    path: Event/EventData/ObjectName
+    value: servicesactive
+  - case sensitive: false
+    op: is
+    path: Event/EventData/PrivilegeList
+    value: SeTakeOwnershipPrivilege
+  - case sensitive: false
+    op: is
+    path: Event/EventData/SubjectLogonId
+    value: '0x3e4'
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects non-system users performing privileged operation os the SCM
+      database
+    falsepositives:
+    - Unknown
+    level: critical
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1000_local_admin_check/local_admin_remote_check_openscmanager.md
+  name: SCM Database Privileged Operation
+

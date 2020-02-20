@@ -1,0 +1,46 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: and
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \sc.exe
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: config
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: binpath
+    - op: or
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: powershell
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: cmd
+respond:
+- action: report
+  metadata:
+    author: Victor Sergeev, oscd.community
+    description: Detects service path modification to powershell/cmd
+    falsepositives:
+    - Unknown
+    level: high
+    references:
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1031/T1031.yaml
+    tags:
+    - attack.persistence
+    - attack.t1031
+  name: Suspicious Service Path Modification
+

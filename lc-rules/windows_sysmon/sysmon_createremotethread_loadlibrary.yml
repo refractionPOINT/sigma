@@ -1,0 +1,33 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '8'
+  - case sensitive: false
+    op: ends with
+    path: Event/EventData/StartModule
+    value: \kernel32.dll
+  - case sensitive: false
+    op: is
+    path: Event/EventData/StartFunction
+    value: LoadLibraryA
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects potential use of CreateRemoteThread api and LoadLibrary function
+      to inject DLL into a process
+    falsepositives:
+    - Unknown
+    level: critical
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1055_process_injection/dll_injection_createremotethread_loadlibrary.md
+    tags:
+    - attack.defense_evasion
+    - attack.t1055
+  name: CreateRemoteThread API and LoadLibrary
+

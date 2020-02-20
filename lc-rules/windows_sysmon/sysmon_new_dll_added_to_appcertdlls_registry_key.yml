@@ -1,0 +1,58 @@
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: and
+    rules:
+    - op: or
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '12'
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '13'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: .*\\SYSTEM\*
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \Control\Session Manager\AppCertDlls
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '14'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/NewName
+      re: .*\\SYSTEM\*
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/NewName
+      value: \Control\Session Manager\AppCertDlls
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Ilyas Ochkov, oscd.community
+    description: Dynamic-link libraries (DLLs) that are specified in the AppCertDLLs
+      value in the Registry key can be abused to obtain persistence and privilege
+      escalation by causing a malicious DLL to be loaded and run in the context of
+      separate processes on the computer.
+    falsepositives:
+    - Unkown
+    level: medium
+    references:
+    - http://www.hexacorn.com/blog/2013/01/19/beyond-good-ol-run-key-part-3/
+    - https://eqllib.readthedocs.io/en/latest/analytics/14f90406-10a0-4d36-a672-31cabe149f2f.html
+    tags:
+    - attack.persistence
+    - attack.t1182
+  name: New DLL Added to AppCertDlls Registry Key
+

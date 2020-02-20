@@ -1,0 +1,121 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '11'
+  - op: or
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/TargetFilename
+      value: \pwdump
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/TargetFilename
+      value: \kirbi
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/TargetFilename
+      value: \pwhashes
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/TargetFilename
+      value: \wce_ccache
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/TargetFilename
+      value: \wce_krbtkts
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/TargetFilename
+      value: \fgdump-log
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \test.pwd
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \lsremora64.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \lsremora.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \fgexec.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \wceaux.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \SAM.out
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \SECURITY.out
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \SYSTEM.out
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \NTDS.out
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \DumpExt.dll
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \DumpSvc.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \cachedump64.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \cachedump.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \pstgdump.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \servpw.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \servpw64.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \pwdump.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov, oscd.community
+    description: Files with well-known filenames (parts of credential dump software
+      or files produced by them) creation
+    falsepositives:
+    - Legitimate Administrator using tool for password recovery
+    level: high
+    references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
+    tags:
+    - attack.credential_access
+    - attack.t1003
+  name: Cred Dump Tools Dropped Files
+

@@ -1,0 +1,90 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '9'
+    - case sensitive: false
+      not: true
+      op: contains
+      path: Event/EventData/Device
+      value: floppy
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \wmiprvse.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \sdiagnhost.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \searchindexer.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \csrss.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \defrag.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \smss.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \vssvc.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \compattelrunner.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \wininit.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \autochk.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \taskhost.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \dfsrs.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \vds.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \lsass.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov, oscd.community
+    description: Raw disk access using illegitimate tools, possible defence evasion
+    falsepositives:
+    - Legitimate Administrator using tool for raw access or ongoing forensic investigation
+    level: medium
+    references:
+    - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
+    tags:
+    - attack.defense_evasion
+    - attack.t1006
+  name: Raw Disk Access Using Illegitimate Tools
+

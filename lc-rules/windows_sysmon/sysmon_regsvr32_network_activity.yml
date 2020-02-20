@@ -1,0 +1,37 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: or
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '3'
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '22'
+  - case sensitive: false
+    op: ends with
+    path: Event/EventData/Image
+    value: \regsvr32.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Dmitriy Lifanov, oscd.community
+    description: Detects network connections and DNS queries initiated by Regsvr32.exe
+    falsepositives:
+    - unknown
+    level: high
+    references:
+    - https://pentestlab.blog/2017/05/11/applocker-bypass-regsvr32/
+    - https://oddvar.moe/2017/12/13/applocker-case-study-how-insecure-is-it-really-part-1/
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1117/T1117.md
+    tags:
+    - attack.execution
+    - attack.defense_evasion
+    - attack.t1117
+  name: Regsvr32 Network Activity
+

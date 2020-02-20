@@ -1,0 +1,32 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '7'
+  - case sensitive: false
+    op: is
+    path: Event/EventData/Description
+    value: system.management.automation
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/ImageLoaded
+    value: system.management.automation
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects execution of PowerShell
+    falsepositives:
+    - Unknown
+    level: medium
+    references:
+    - https://github.com/hunters-forge/ThreatHunter-Playbook/blob/8869b7a58dba1cff63bae1d7ab923974b8c0539b/playbooks/WIN-190410151110.yaml
+    tags:
+    - attack.execution
+    - attack.t1086
+  name: PowerShell Execution
+

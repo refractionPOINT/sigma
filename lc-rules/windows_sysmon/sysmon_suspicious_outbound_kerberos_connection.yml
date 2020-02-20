@@ -1,0 +1,54 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '3'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/DestinationPort
+      value: '88'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/Initiated
+      value: 'true'
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \lsass.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \opera.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \chrome.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \firefox.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Ilyas Ochkov, oscd.community
+    description: Detects suspicious outbound network activity via kerberos default
+      port indicating possible lateral movement or first stage PrivEsc via delegation.
+    falsepositives:
+    - Other browsers
+    level: high
+    references:
+    - https://github.com/GhostPack/Rubeus8
+    tags:
+    - attack.lateral_movement
+    - attack.t1208
+  name: Suspicious Outbound Kerberos Connection
+

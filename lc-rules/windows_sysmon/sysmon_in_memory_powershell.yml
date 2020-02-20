@@ -1,0 +1,55 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '7'
+    - op: or
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \System.Management.Automation.Dll
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/ImageLoaded
+        value: \System.Management.Automation.ni.Dll
+  - not: true
+    op: and
+    rules:
+    - op: or
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \powershell.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \WINDOWS\System32\sdiagnhost.exe
+    - case sensitive: false
+      op: is
+      path: Event/EventData/User
+      value: NT AUTHORITY\SYSTEM
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Tom Kern, oscd.community
+    description: Detects loading of essential DLL used by PowerShell, but not by the
+      process powershell.exe. Detects meterpreter's "load powershell" extension.
+    falsepositives:
+    - Used by some .NET binaries, minimal on user workstation.
+    level: high
+    references:
+    - https://adsecurity.org/?p=2921
+    - https://github.com/p3nt4/PowerShdll
+    tags:
+    - attack.t1086
+    - attack.execution
+  name: In-memory PowerShell
+

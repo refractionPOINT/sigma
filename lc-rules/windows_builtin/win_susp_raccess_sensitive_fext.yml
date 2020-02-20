@@ -51,10 +51,6 @@ detect:
     - case sensitive: false
       op: ends with
       path: Event/EventData/RelativeTargetName
-      value: \ntds.dit
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/RelativeTargetName
       value: \groups.xml
     - case sensitive: false
       op: ends with
@@ -69,7 +65,8 @@ respond:
     falsepositives:
     - Help Desk operator doing backup or re-imaging end user machine or pentest or
       backup software
-    level: high
+    - Users working with these data types or exchanging message files
+    level: medium
     tags:
     - attack.collection
   name: Suspicious Access to Sensitive File Extensions

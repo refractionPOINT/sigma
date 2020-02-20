@@ -1,0 +1,39 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '13'
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\UserAuthentication
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \CurrentControlSet\Control\Terminal Server\fDenyTSConnections
+  - case sensitive: false
+    op: is
+    path: Event/EventData/Details
+    value: DWORD (0x00000000)
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects potential malicious modification of the property value of
+      fDenyTSConnections and UserAuthentication to enable remote desktop connections.
+    falsepositives:
+    - Unknown
+    level: high
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/05_defense_evasion/T1112_Modify_Registry/enable_rdp_registry.md
+    tags:
+    - attack.defense_evasion
+    - attack.t1112
+  name: RDP Registry Modification
+

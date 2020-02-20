@@ -1,0 +1,48 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '13'
+  - case sensitive: false
+    op: is
+    path: Event/EventData/IntegrityLevel
+    value: Medium
+  - case sensitive: false
+    op: matches
+    path: Event/EventData/TargetObject
+    re: .*\\services\*
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \ImagePath
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \FailureCommand
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \Parameters\ServiceDll
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov
+    description: Detect modification of services configuration (ImagePath, FailureCommand
+      and ServiceDLL) in registry by processes with Medium integrity level
+    falsepositives:
+    - Unknown
+    level: high
+    references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
+    - https://pentestlab.blog/2017/03/31/insecure-registry-permissions/
+    tags:
+    - attack.privilege_escalation
+    - attack.t1058
+  name: Possible Privilege Escalation via Service Permissions Weakness
+

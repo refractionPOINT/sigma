@@ -15,14 +15,10 @@ detect:
       op: contains
       path: event/COMMAND_LINE
       value: ' a '
-    - case sensitive: false
-      op: contains
-      path: event/COMMAND_LINE
-      value: -r
 respond:
 - action: report
   metadata:
-    author: Timur Zinniatullin, oscd.community
+    author: Timur Zinniatullin, E.M. Anhaus, oscd.community
     description: An adversary may compress data (e.g., sensitive documents) that is
       collected prior to exfiltration in order to make it portable and minimize the
       amount of data sent over the network
@@ -31,6 +27,7 @@ respond:
     level: low
     references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1002/T1002.yaml
+    - https://eqllib.readthedocs.io/en/latest/analytics/1ec33c93-3d0b-4a28-8014-dbdaae5c60ae.html
     tags:
     - attack.exfiltration
     - attack.t1002

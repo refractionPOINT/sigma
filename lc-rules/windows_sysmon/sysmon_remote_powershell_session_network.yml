@@ -1,0 +1,42 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '3'
+    - op: or
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/EventData/DestinationPort
+        value: '5985'
+      - case sensitive: false
+        op: is
+        path: Event/EventData/DestinationPort
+        value: '5986'
+  - case sensitive: false
+    not: true
+    op: is
+    path: Event/EventData/User
+    value: NT AUTHORITY\NETWORK SERVICE
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g
+    description: Detects remote PowerShell connections by monitoring network outbount
+      connections to ports 5985 or 5986 from not network service account
+    falsepositives:
+    - Leigitmate usage of remote PowerShell, e.g. remote administration and monitoring.
+    level: high
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
+    tags:
+    - attack.execution
+    - attack.t1086
+  name: Remote PowerShell Session
+

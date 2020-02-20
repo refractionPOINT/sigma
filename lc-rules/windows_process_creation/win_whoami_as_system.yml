@@ -1,0 +1,34 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: event/USER_NAME
+      value: NT AUTHORITY\SYSTEM
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \whoami.exe
+respond:
+- action: report
+  metadata:
+    author: Teymur Kheirkhabarov
+    description: Detects a whoami.exe executed by LOCAL SYSTEM. This may be a sign
+      of a successful local privilege escalation.
+    falsepositives:
+    - Unknown
+    level: high
+    references:
+    - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
+    tags:
+    - attack.discovery
+    - attack.privilege_escalation
+    - attack.t1033
+  name: Run Whoami as SYSTEM
+

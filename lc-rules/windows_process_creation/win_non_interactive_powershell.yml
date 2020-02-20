@@ -1,0 +1,34 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: and
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \powershell.exe
+    - case sensitive: false
+      not: true
+      op: ends with
+      path: event/PARENT/FILE_PATH
+      value: \explorer.exe
+respond:
+- action: report
+  metadata:
+    author: Roberto Rodriguez @Cyb3rWard0g (rule), oscd.community (improvements)
+    description: Detects non-interactive PowerShell activity by looking at powershell.exe
+      with not explorer.exe as a parent.
+    falsepositives:
+    - Legitimate programs executing PowerShell scripts
+    level: medium
+    references:
+    - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/basic_powershell_execution.md
+    tags:
+    - attack.execution
+    - attack.t1086
+  name: Non Interactive PowerShell
+

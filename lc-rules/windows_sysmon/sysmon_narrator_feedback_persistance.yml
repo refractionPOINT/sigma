@@ -1,0 +1,44 @@
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '12'
+    - case sensitive: false
+      op: is
+      path: Event/EventData/EventType
+      value: DeleteValue
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \AppXypsaf9f1qserqevf0sws76dx4k9a5206\Shell\open\command\DelegateExecute
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '13'
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \AppXypsaf9f1qserqevf0sws76dx4k9a5206\Shell\open\command\(Default)
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Dmitriy Lifanov, oscd.community
+    description: Detects abusing Windows 10 Narrator's Feedback-Hub
+    falsepositives:
+    - unknown
+    level: high
+    references:
+    - https://giuliocomi.blogspot.com/2019/10/abusing-windows-10-narrators-feedback.html
+    tags:
+    - attack.persistence
+    - attack.t1060
+  name: Narrator's Feedback-Hub Persistence
+
