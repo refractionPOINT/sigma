@@ -5,32 +5,26 @@ detect:
   op: and
   rules:
   - op: is windows
-  - op: or
+  - op: and
     rules:
-    - case sensitive: false
-      op: ends with
-      path: event/FILE_PATH
-      value: \taskkill.exe
-    - op: and
+    - op: or
       rules:
-      - op: or
-        rules:
-        - case sensitive: false
-          op: ends with
-          path: event/FILE_PATH
-          value: \sc.exe
-        - case sensitive: false
-          op: ends with
-          path: event/FILE_PATH
-          value: \net.exe
-        - case sensitive: false
-          op: ends with
-          path: event/FILE_PATH
-          value: \net1.exe
       - case sensitive: false
-        op: contains
-        path: event/COMMAND_LINE
-        value: stop
+        op: ends with
+        path: event/FILE_PATH
+        value: \sc.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \net.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \net1.exe
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: stop
 respond:
 - action: report
   metadata:

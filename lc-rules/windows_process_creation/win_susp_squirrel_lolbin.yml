@@ -24,7 +24,7 @@ detect:
       - case sensitive: false
         op: matches
         path: event/COMMAND_LINE
-        re: ".*\\\u2013createShortcut.*\\.exe.*"
+        re: .*\-\-createShortcut.*\.exe.*
 respond:
 - action: report
   metadata:
