@@ -36,5 +36,5 @@ respond:
     tags:
     - attack.execution
     - attack.t1086
-  name: Alternate PowerShell Hosts
+  name: Alternate PowerShell Hosts Module Load
 
