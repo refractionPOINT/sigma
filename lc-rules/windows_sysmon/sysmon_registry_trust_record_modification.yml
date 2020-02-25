@@ -1,0 +1,30 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '12'
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/TargetObject
+    value: TrustRecords
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Antonlovesdnb
+    description: Alerts on trust record modification within the registry, indicating
+      usage of macros
+    falsepositives:
+    - Alerts on legitimate macro usage as well, will need to filter as appropriate
+    level: medium
+    references:
+    - https://outflank.nl/blog/2018/01/16/hunting-for-evil-detect-macros-being-executed/
+    - http://az4n6.blogspot.com/2016/02/more-on-trust-records-macros-and.html
+    tags:
+    - attack.initial_access
+    - attack.t1193
+  name: Windows Registry Trust Record Modification
+
