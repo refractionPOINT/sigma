@@ -19,6 +19,7 @@ respond:
 - action: report
   metadata:
     author: Florian Roth
+    description: Detects RDP session hijacking by using MSTSC shadowing
     falsepositives:
     - Unknown
     level: high

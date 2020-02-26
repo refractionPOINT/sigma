@@ -161,10 +161,6 @@ detect:
       - case sensitive: false
         op: ends with
         path: Event/EventData/SourceImage
-        value: \taskhost.exe
-      - case sensitive: false
-        op: ends with
-        path: Event/EventData/SourceImage
         value: \tstheme.exe
       - case sensitive: false
         op: ends with
