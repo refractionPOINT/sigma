@@ -66,9 +66,9 @@ detect:
         value: cscript
   - case sensitive: false
     not: true
-    op: contains
+    op: matches
     path: Event/EventData/Details
-    value: \AppData\Local\Microsoft\OneDrive\Update\OneDriveSetup.exe
+    re: .*\\AppData\\Local\\Microsoft\\OneDrive\*
   target: log
 respond:
 - action: report
