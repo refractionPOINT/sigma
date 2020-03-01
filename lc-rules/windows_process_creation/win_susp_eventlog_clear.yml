@@ -20,15 +20,15 @@ detect:
           - case sensitive: false
             op: contains
             path: event/COMMAND_LINE
-            value: ' Clear-EventLog '
+            value: Clear-EventLog
           - case sensitive: false
             op: contains
             path: event/COMMAND_LINE
-            value: ' Remove-EventLog '
+            value: Remove-EventLog
           - case sensitive: false
             op: contains
             path: event/COMMAND_LINE
-            value: ' Limit-EventLog '
+            value: Limit-EventLog
       - op: and
         rules:
         - case sensitive: false
@@ -50,7 +50,7 @@ detect:
         - case sensitive: false
           op: contains
           path: event/COMMAND_LINE
-          value: ' clear-log '
+          value: clear-log
         - case sensitive: false
           op: contains
           path: event/COMMAND_LINE
@@ -58,7 +58,7 @@ detect:
         - case sensitive: false
           op: contains
           path: event/COMMAND_LINE
-          value: ' set-log '
+          value: set-log
         - case sensitive: false
           op: contains
           path: event/COMMAND_LINE

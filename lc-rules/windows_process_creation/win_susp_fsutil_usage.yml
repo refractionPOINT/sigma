@@ -22,11 +22,11 @@ detect:
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
-        value: ' deletejournal '
+        value: deletejournal
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
-        value: ' createjournal '
+        value: createjournal
 respond:
 - action: report
   metadata:
