@@ -7,72 +7,79 @@ detect:
   - op: is windows
   - op: and
     rules:
-    - case sensitive: false
-      op: ends with
-      path: event/PARENT/FILE_PATH
-      value: \services.exe
-    - op: or
+    - op: and
       rules:
+      - case sensitive: false
+        op: ends with
+        path: event/PARENT/FILE_PATH
+        value: \services.exe
       - op: or
         rules:
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: cmd
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: comspec
-      - op: and
-        rules:
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: cmd
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: /c
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: echo
-        - case sensitive: false
-          op: matches
-          path: event/COMMAND_LINE
-          re: .*\\pipe\*
-      - op: and
-        rules:
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: '%COMSPEC%'
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: /c
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: echo
-        - case sensitive: false
-          op: matches
-          path: event/COMMAND_LINE
-          re: .*\\pipe\*
-      - op: and
-        rules:
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: rundll32
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: .dll,a
-        - case sensitive: false
-          op: contains
-          path: event/COMMAND_LINE
-          value: '/p:'
+        - op: or
+          rules:
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: cmd
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: comspec
+        - op: and
+          rules:
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: cmd
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: /c
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: echo
+          - case sensitive: false
+            op: matches
+            path: event/COMMAND_LINE
+            re: .*\\pipe\*
+        - op: and
+          rules:
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: '%COMSPEC%'
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: /c
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: echo
+          - case sensitive: false
+            op: matches
+            path: event/COMMAND_LINE
+            re: .*\\pipe\*
+        - op: and
+          rules:
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: rundll32
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: .dll,a
+          - case sensitive: false
+            op: contains
+            path: event/COMMAND_LINE
+            value: '/p:'
+    - case sensitive: false
+      not: true
+      op: contains
+      path: event/COMMAND_LINE
+      value: MpCmdRun
 respond:
 - action: report
   metadata:
