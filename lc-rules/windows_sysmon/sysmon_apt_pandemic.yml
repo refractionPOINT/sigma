@@ -6,20 +6,10 @@ detect:
     op: is
     path: Event/System/EventID
     value: '13'
-  - op: or
-    rules:
-    - case sensitive: false
-      op: starts with
-      path: Event/EventData/TargetObject
-      value: \REGISTRY\MACHINE\SYSTEM\CurrentControlSet\services\null\Instance
-    - case sensitive: false
-      op: starts with
-      path: Event/EventData/TargetObject
-      value: \REGISTRY\MACHINE\SYSTEM\ControlSet001\services\null\Instance
-    - case sensitive: false
-      op: starts with
-      path: Event/EventData/TargetObject
-      value: \REGISTRY\MACHINE\SYSTEM\ControlSet002\services\null\Instance
+  - case sensitive: false
+    op: starts with
+    path: Event/EventData/TargetObject
+    value: HKLM\SYSTEM\CurrentControlSet\services\null\Instance
   target: log
 respond:
 - action: report

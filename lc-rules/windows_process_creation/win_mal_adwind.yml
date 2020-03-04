@@ -73,7 +73,7 @@ detect:
   - case sensitive: false
     op: starts with
     path: Event/EventData/TargetObject
-    value: \REGISTRY\MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+    value: HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
   - case sensitive: false
     op: starts with
     path: Event/EventData/Details
