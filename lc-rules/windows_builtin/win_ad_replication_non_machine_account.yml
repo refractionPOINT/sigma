@@ -26,11 +26,17 @@ detect:
         op: contains
         path: Event/EventData/Properties
         value: 89e95b76-444d-4c62-991a-0facbeda640c
-  - case sensitive: false
-    not: true
-    op: ends with
-    path: Event/EventData/SubjectUserName
-    value: $
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/SubjectUserName
+      value: $
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/SubjectUserName
+      value: MSOL_
   target: log
 respond:
 - action: report
