@@ -25,6 +25,10 @@ detect:
         op: ends with
         path: event/PARENT/FILE_PATH
         value: \php-cgi.exe
+      - case sensitive: false
+        op: ends with
+        path: event/PARENT/FILE_PATH
+        value: \tomcat.exe
     - op: or
       rules:
       - case sensitive: false
