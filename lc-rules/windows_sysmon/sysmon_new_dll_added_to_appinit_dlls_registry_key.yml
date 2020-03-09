@@ -14,28 +14,32 @@ detect:
         op: is
         path: Event/System/EventID
         value: '13'
-    - case sensitive: false
-      op: matches
-      path: Event/EventData/TargetObject
-      re: .*\\SOFTWARE\*
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/TargetObject
-      value: \Windows\AppInit_Dlls
+    - op: or
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/TargetObject
+        value: \SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/TargetObject
+        value: \SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls
   - op: and
     rules:
     - case sensitive: false
       op: is
       path: Event/System/EventID
       value: '14'
-    - case sensitive: false
-      op: matches
-      path: Event/EventData/NewName
-      re: .*\\SOFTWARE\*
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/NewName
-      value: \Windows\AppInit_Dlls
+    - op: or
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/NewName
+        value: \SOFTWARE\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/NewName
+        value: \SOFTWARE\Wow6432Node\Microsoft\Windows NT\CurrentVersion\Windows\AppInit_Dlls
   target: log
 respond:
 - action: report

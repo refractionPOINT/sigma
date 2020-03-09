@@ -9,13 +9,9 @@ detect:
       path: Event/System/EventID
       value: '12'
     - case sensitive: false
-      op: matches
+      op: is
       path: Event/EventData/TargetObject
-      re: .*\\SYSTEM\*
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/TargetObject
-      value: \Control\MiniNt
+      value: HKLM\SYSTEM\CurrentControlSet\Control\MiniNt
   - op: and
     rules:
     - case sensitive: false
@@ -23,13 +19,9 @@ detect:
       path: Event/System/EventID
       value: '14'
     - case sensitive: false
-      op: matches
+      op: is
       path: Event/EventData/NewName
-      re: .*\\SYSTEM\*
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/NewName
-      value: \Control\MiniNt
+      value: HKLM\SYSTEM\CurrentControlSet\Control\MiniNt
   target: log
 respond:
 - action: report

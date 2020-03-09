@@ -9,9 +9,13 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: ends with
+      op: is
       path: Event/EventData/TargetObject
-      value: \SOFTWARE\Classes\CLSID\{E08A0F4B-1F65-4D4D-9A09-BD4625B9C5A1}\Model
+      value: HKCR\CLSID\{E08A0F4B-1F65-4D4D-9A09-BD4625B9C5A1}\Model
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: HKU\\.*_Classes\\CLSID\\\{E08A0F4B\-1F65\-4D4D\-9A09\-BD4625B9C5A1\}\\Model
     - case sensitive: false
       op: ends with
       path: Event/EventData/TargetObject
@@ -36,6 +40,18 @@ detect:
       op: ends with
       path: Event/EventData/TargetObject
       value: \SOFTWARE\App\AppX37cc7fdccd644b4f85f4b22d5a3f105a\DefaultIcon
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: HKU\\.*_Classes\\AppXc52346ec40fb4061ad96be0e6cb7d16a\\.*
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: HKU\\.*_Classes\\AppX3bbba44c6cae4d9695755183472171e2\\.*
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: HKU\\.*_Classes\\CLSID\\\{E3517E26\-8E93\-458D\-A6DF\-8030BC80528B\}\\.*
   target: log
 respond:
 - action: report

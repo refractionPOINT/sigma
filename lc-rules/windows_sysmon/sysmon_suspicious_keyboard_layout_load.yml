@@ -19,15 +19,15 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: is
+      op: contains
       path: Event/EventData/Details
       value: 00000429
     - case sensitive: false
-      op: is
+      op: contains
       path: Event/EventData/Details
       value: 00050429
     - case sensitive: false
-      op: is
+      op: contains
       path: Event/EventData/Details
       value: 0000042a
   target: log

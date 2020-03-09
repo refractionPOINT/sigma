@@ -15,13 +15,9 @@ detect:
         path: Event/System/EventID
         value: '13'
     - case sensitive: false
-      op: matches
+      op: is
       path: Event/EventData/TargetObject
-      re: .*\\SYSTEM\*
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/TargetObject
-      value: \Control\Session Manager\AppCertDlls
+      value: HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\AppCertDlls
   - op: and
     rules:
     - case sensitive: false
@@ -29,13 +25,9 @@ detect:
       path: Event/System/EventID
       value: '14'
     - case sensitive: false
-      op: matches
+      op: is
       path: Event/EventData/NewName
-      re: .*\\SYSTEM\*
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/NewName
-      value: \Control\Session Manager\AppCertDlls
+      value: HKLM\SYSTEM\CurentControlSet\Control\Session Manager\AppCertDlls
   target: log
 respond:
 - action: report

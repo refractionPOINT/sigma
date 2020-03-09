@@ -46,7 +46,7 @@ respond:
   metadata:
     author: Florian Roth
     description: Detects a possible persistence mechanism using RUN key for Windows
-      Explorer and poiting to a suspicious folder
+      Explorer and pointing to a suspicious folder
     falsepositives:
     - Unknown
     level: high

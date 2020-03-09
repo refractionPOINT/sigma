@@ -9,15 +9,7 @@ detect:
   - case sensitive: false
     op: matches
     path: Event/EventData/TargetObject
-    re: HKU\*
-  - case sensitive: false
-    op: matches
-    path: Event/EventData/TargetObject
-    re: .*_Classes\\CLSID\*
-  - case sensitive: false
-    op: ends with
-    path: Event/EventData/TargetObject
-    value: \TreatAs
+    re: HKU\\.*_Classes\\CLSID\\.*\\TreatAs
   target: log
 respond:
 - action: report

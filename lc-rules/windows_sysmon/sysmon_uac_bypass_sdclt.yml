@@ -9,7 +9,7 @@ detect:
   - case sensitive: false
     op: matches
     path: Event/EventData/TargetObject
-    re: HKU\\.*\\Classes\\exefile\\shell\\runas\\command\\isolatedCommand
+    re: HKU\\.*_Classes\\exefile\\shell\\runas\\command\\isolatedCommand
   target: log
 respond:
 - action: report
