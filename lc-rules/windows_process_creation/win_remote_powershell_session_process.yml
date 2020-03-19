@@ -23,7 +23,7 @@ respond:
       as a parent or child process (sign of an active ps remote session)
     falsepositives:
     - Legitimate usage of remote Powershell, e.g. for monitoring purposes
-    level: high
+    level: medium
     references:
     - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/02_execution/T1086_powershell/powershell_remote_session.md
     tags:
