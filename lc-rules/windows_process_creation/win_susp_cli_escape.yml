@@ -8,11 +8,11 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: is
+      op: contains
       path: event/COMMAND_LINE
-      value: ^h^t^t^p
+      value: h^t^t^p
     - case sensitive: false
-      op: is
+      op: contains
       path: event/COMMAND_LINE
       value: h"t"t"p
 respond:
