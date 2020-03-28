@@ -1,0 +1,53 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '11'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetFilename
+      re: .*\\Local\\Microsoft\\Windows\\SchCache\*\.sch
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: C:\windows\system32\svchost.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: C:\windows\system32\dllhost.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: C:\windows\system32\mmc.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: C:\windows\system32\WindowsPowerShell\v1.0\powershell.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: xknow @xknow_infosec
+    description: detects the usage of ADSI (LDAP) operations by tools. This may also
+      detect tools like LDAPFragger.
+    falsepositives:
+    - Other legimate tools, which do ADSI (LDAP) operations, e.g. any remoting activity
+      by MMC, Powershell, Windows etc.
+    level: high
+    references:
+    - https://medium.com/@ivecodoe/detecting-ldapfragger-a-newly-released-cobalt-strike-beacon-using-ldap-for-c2-communication-c274a7f00961
+    - https://blog.fox-it.com/2020/03/19/ldapfragger-command-and-control-over-ldap-attributes/
+    - https://github.com/fox-it/LDAPFragger
+    tags:
+    - attack.t1041
+    - attack.persistence
+  name: Suspicious ADSI-Cache Usage By Unknown Tool
+
