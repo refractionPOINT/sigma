@@ -1,0 +1,47 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '11'
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetFilename
+      value: \desktop.ini
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/EventData/Image
+      value: C:\Windows\explorer.exe
+    - case sensitive: false
+      op: is
+      path: Event/EventData/Image
+      value: C:\Windows\System32\msiexec.exe
+    - case sensitive: false
+      op: is
+      path: Event/EventData/Image
+      value: C:\Windows\System32\mmc.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Maxime Thiebaut (@0xThiebaut)
+    description: Detects unusual processes accessing desktop.ini, which can be leveraged
+      to alter how Explorer displays a folder's content (i.e. renaming files) without
+      changing them on disk.
+    falsepositives:
+    - Operations performed through Windows SCCM or equivalent
+    level: medium
+    references:
+    - https://isc.sans.edu/forums/diary/Desktopini+as+a+postexploitation+tool/25912/
+    tags:
+    - attack.persistence
+    - attack.t1023
+  name: Suspicious desktop.ini Action
+

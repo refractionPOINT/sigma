@@ -1,10 +1,16 @@
 detect:
-  case sensitive: false
   log type: wel
-  op: is
-  path: Event/System/EventID
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '1033'
+  - case sensitive: false
+    op: is
+    path: Event/EventData/Source
+    value: Microsoft-Windows-DHCP-Server
   target: log
-  value: '1033'
 respond:
 - action: report
   metadata:

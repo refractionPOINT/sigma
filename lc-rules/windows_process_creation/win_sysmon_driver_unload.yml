@@ -24,7 +24,8 @@ respond:
   metadata:
     author: Kirill Kiryanov, oscd.community
     description: Detect possible Sysmon driver unload
-    falsepositives: Unknown
+    falsepositives:
+    - Unknown
     level: high
     references:
     - https://www.darkoperator.com/blog/2018/10/5/operating-offensively-against-sysmon
