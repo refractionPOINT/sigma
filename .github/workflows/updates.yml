@@ -20,7 +20,7 @@ jobs:
       - name: Set Upstream
         run: git remote add upstream https://github.com/Neo23x0/sigma.git && git fetch upstream
       - name: Merge
-        run: git merge upstream/master
+        run: git reset --hard upstream/master
       - name: Remove Source Workflow
         run: git rm -rf .github && git commit -m "remove workflow"
       - name: Status
