@@ -67,7 +67,7 @@ respond:
 - action: report
   metadata:
     author: Beyu Denis, oscd.community
-    description: Posible webshell file creation on a static web site
+    description: Possible webshell file creation on a static web site
     falsepositives:
     - Legitimate administrator or developer creating legitimate executable files in
       a web application folder
