@@ -1,0 +1,54 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '11'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetFilename
+      re: .*\\AppData\\Local\\Temp\*\\PROCEXP152\.sys
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: \procexp64.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: \procexp.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: \procmon64.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Image
+      value: \procmon.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: xknow (@xknow_infosec), xorxes (@xor_xes)
+    description: Detects the creation of the PROCEXP152.sys file in the application-data
+      local temporary folder. This driver is used by Sysinternals Process Explorer
+      but also by KDU (https://github.com/hfiref0x/KDU) or Ghost-In-The-Logs (https://github.com/bats3c/Ghost-In-The-Logs),
+      which uses KDU.
+    falsepositives:
+    - Other legimate tools using this driver and filename (like Sysinternals). Note
+      - Clever attackers may easily bypass this detection by just renaming the driver
+      filename. Therefore just Medium-level and don't rely on it.
+    level: medium
+    references:
+    - https://blog.dylan.codes/evading-sysmon-and-windows-event-logging/
+    tags:
+    - attack.t1089
+    - attack.defense_evasion
+  name: Suspicious PROCEXP152.sys File Created In TMP
+

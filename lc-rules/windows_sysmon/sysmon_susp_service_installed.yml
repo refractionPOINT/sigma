@@ -1,0 +1,66 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - op: and
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '13'
+      - op: or
+        rules:
+        - case sensitive: false
+          op: is
+          path: Event/EventData/TargetObject
+          value: HKLM\System\CurrentControlSet\Services\NalDrv\ImagePath
+        - case sensitive: false
+          op: is
+          path: Event/EventData/TargetObject
+          value: HKLM\System\CurrentControlSet\Services\PROCEXP152\ImagePath
+    - not: true
+      op: or
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/Image
+        value: \procexp64.exe
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/Image
+        value: \procexp.exe
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/Image
+        value: \procmon64.exe
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/Image
+        value: \procmon.exe
+  - case sensitive: false
+    not: true
+    op: contains
+    path: Event/EventData/Details
+    value: \WINDOWS\system32\Drivers\PROCEXP152.SYS
+  target: log
+respond:
+- action: report
+  metadata:
+    author: xknow (@xknow_infosec), xorxes (@xor_xes)
+    description: Detects installation of NalDrv or PROCEXP152 services via registry-keys
+      to non-system32 folders. Both services are used in the tool Ghost-In-The-Logs
+      (https://github.com/bats3c/Ghost-In-The-Logs), which uses KDU (https://github.com/hfiref0x/KDU)
+    falsepositives:
+    - Other legimate tools using this service names and drivers. Note - clever attackers
+      may easily bypass this detection by just renaming the services. Therefore just
+      Medium-level and don't rely on it.
+    level: medium
+    references:
+    - https://blog.dylan.codes/evading-sysmon-and-windows-event-logging/
+    tags:
+    - attack.t1089
+    - attack.defense_evasion
+  name: Suspicious Service Installed
+
