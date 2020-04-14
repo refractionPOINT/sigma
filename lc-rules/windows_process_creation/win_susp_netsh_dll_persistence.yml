@@ -25,12 +25,12 @@ respond:
     author: Victor Sergeev, oscd.community
     description: Detects persitence via netsh helper
     falsepositives:
-    - Unkown
+    - Unknown
     level: high
     references:
-    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1060/T1060.yaml
+    - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1128/T1128.md
     tags:
     - attack.persistence
-    - attack.t1060
+    - attack.t1128
   name: Suspicious Netsh DLL Persistence
 

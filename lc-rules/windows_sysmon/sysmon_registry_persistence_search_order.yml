@@ -1,0 +1,54 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '13'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/TargetObject
+      re: HKU\\.*_Classes\\CLSID\\.*\\InProcServer32\\\(Default\)
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Details
+      value: '%%systemroot%%\system32\'
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Details
+      value: '%%systemroot%%\SysWow64\'
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/Details
+      re: .*\\AppData\\Local\\Microsoft\\OneDrive\\.*\\FileCoAuthLib64\.dll
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/Details
+      re: .*\\AppData\\Local\\Microsoft\\OneDrive\\.*\\FileSyncShell64\.dll
+    - case sensitive: false
+      op: matches
+      path: Event/EventData/Details
+      re: .*\\AppData\\Local\\Microsoft\\TeamsMeetingAddin\\.*\\Microsoft\.Teams\.AddinLoader\.dll
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Maxime Thiebaut (@0xThiebaut)
+    description: Detects potential COM object hijacking leveraging the COM Search
+      Order
+    falsepositives:
+    - Some installed utilities (i.e. OneDrive) may serve new COM objects at user-level
+    level: medium
+    references:
+    - https://www.cyberbit.com/blog/endpoint-security/com-hijacking-windows-overlooked-security-vulnerability/
+    tags:
+    - attack.persistence
+    - attack.t1038
+  name: Windows Registry Persistence COM Search Order Hijacking
+

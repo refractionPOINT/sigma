@@ -23,7 +23,7 @@ respond:
 - action: report
   metadata:
     author: Samir Bousseaden
-    description: Detect lateral movement using GPO scheduled task, ususally used to
+    description: Detect lateral movement using GPO scheduled task, usually used to
       deploy ransomware at scale
     falsepositives:
     - if the source IP is not localhost then it's super suspicious, better to monitor
@@ -31,6 +31,7 @@ respond:
     level: high
     references:
     - https://twitter.com/menasec1/status/1106899890377052160
+    - https://www.secureworks.com/blog/ransomware-as-a-distraction
     tags:
     - attack.persistence
     - attack.lateral_movement
