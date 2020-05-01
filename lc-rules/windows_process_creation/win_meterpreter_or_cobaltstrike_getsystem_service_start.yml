@@ -10,7 +10,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: event/PARENT/FILE_PATH
         value: \services.exe
       - op: or
@@ -40,9 +40,9 @@ detect:
             path: event/COMMAND_LINE
             value: echo
           - case sensitive: false
-            op: matches
+            op: contains
             path: event/COMMAND_LINE
-            re: .*\\pipe\*
+            value: \pipe\
         - op: and
           rules:
           - case sensitive: false
@@ -58,9 +58,9 @@ detect:
             path: event/COMMAND_LINE
             value: echo
           - case sensitive: false
-            op: matches
+            op: contains
             path: event/COMMAND_LINE
-            re: .*\\pipe\*
+            value: \pipe\
         - op: and
           rules:
           - case sensitive: false

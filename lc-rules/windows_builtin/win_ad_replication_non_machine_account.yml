@@ -30,7 +30,7 @@ detect:
     op: or
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/SubjectUserName
       value: $
     - case sensitive: false

@@ -11,21 +11,21 @@ detect:
     path: Event/EventData/IntegrityLevel
     value: Medium
   - case sensitive: false
-    op: matches
+    op: contains
     path: Event/EventData/TargetObject
-    re: .*\\services\*
+    value: \services\
   - op: or
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetObject
       value: \ImagePath
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetObject
       value: \FailureCommand
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetObject
       value: \Parameters\ServiceDll
   target: log

@@ -12,13 +12,13 @@ detect:
       - op: or
         rules:
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: event/FILE_PATH
           value: \whoami.exe
         - op: and
           rules:
           - case sensitive: false
-            op: ends with
+            op: starts with
             path: event/FILE_PATH
             value: \wmic.exe
           - case sensitive: false
@@ -32,17 +32,17 @@ detect:
         - op: or
           rules:
           - case sensitive: false
-            op: ends with
+            op: starts with
             path: event/FILE_PATH
             value: \quser.exe
           - case sensitive: false
-            op: ends with
+            op: starts with
             path: event/FILE_PATH
             value: \qwinsta.exe
         - op: and
           rules:
           - case sensitive: false
-            op: ends with
+            op: starts with
             path: event/FILE_PATH
             value: \cmdkey.exe
           - case sensitive: false
@@ -52,7 +52,7 @@ detect:
         - op: and
           rules:
           - case sensitive: false
-            op: ends with
+            op: starts with
             path: event/FILE_PATH
             value: \cmd.exe
           - case sensitive: false
@@ -64,9 +64,9 @@ detect:
             path: event/COMMAND_LINE
             value: 'dir '
           - case sensitive: false
-            op: matches
+            op: contains
             path: event/COMMAND_LINE
-            re: .*\\Users\*
+            value: \Users\
       - case sensitive: false
         not: true
         op: contains
@@ -79,11 +79,11 @@ detect:
         - op: or
           rules:
           - case sensitive: false
-            op: ends with
+            op: starts with
             path: event/FILE_PATH
             value: \net.exe
           - case sensitive: false
-            op: ends with
+            op: starts with
             path: event/FILE_PATH
             value: \net1.exe
         - case sensitive: false

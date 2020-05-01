@@ -8,7 +8,7 @@ detect:
   - op: and
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: event/FILE_PATH
       value: \hh.exe
     - case sensitive: false

@@ -8,12 +8,12 @@ detect:
   - op: and
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: event/FILE_PATH
       value: \powershell.exe
     - case sensitive: false
       not: true
-      op: ends with
+      op: starts with
       path: event/PARENT/FILE_PATH
       value: \explorer.exe
 respond:

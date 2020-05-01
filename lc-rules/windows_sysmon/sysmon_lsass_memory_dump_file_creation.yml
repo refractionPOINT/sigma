@@ -11,7 +11,7 @@ detect:
     path: Event/EventData/TargetFilename
     value: lsass
   - case sensitive: false
-    op: ends with
+    op: starts with
     path: Event/EventData/TargetFilename
     value: dmp
   target: log

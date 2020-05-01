@@ -9,11 +9,11 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetObject
       value: \CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\UserAuthentication
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetObject
       value: \CurrentControlSet\Control\Terminal Server\fDenyTSConnections
   - case sensitive: false

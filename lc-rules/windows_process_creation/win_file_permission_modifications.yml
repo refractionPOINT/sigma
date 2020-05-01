@@ -12,15 +12,15 @@ detect:
       - op: or
         rules:
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: event/FILE_PATH
           value: \takeown.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: event/FILE_PATH
           value: \cacls.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: event/FILE_PATH
           value: \icacls.exe
       - case sensitive: false
@@ -30,7 +30,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: event/FILE_PATH
         value: \attrib.exe
       - case sensitive: false

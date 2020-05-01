@@ -19,19 +19,19 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/ObjectName
       value: lsa\JD
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/ObjectName
       value: lsa\GBG
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/ObjectName
       value: lsa\Skew1
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/ObjectName
       value: lsa\Data
   target: log

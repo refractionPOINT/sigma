@@ -9,7 +9,7 @@ detect:
       path: Event/System/EventID
       value: '4656'
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/ObjectName
       value: \lsass.exe
     - op: or
@@ -75,7 +75,7 @@ detect:
         path: Event/System/EventID
         value: '4663'
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ObjectName
         value: \lsass.exe
       - op: or
@@ -92,35 +92,35 @@ detect:
       op: or
       rules:
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \wmiprvse.exe
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \taskmgr.exe
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \procexp64.exe
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \procexp.exe
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \lsm.exe
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \csrss.exe
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \wininit.exe
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: Event/EventData/ProcessName
         value: \vmtoolsd.exe
   target: log

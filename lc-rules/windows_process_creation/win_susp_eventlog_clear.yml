@@ -12,7 +12,7 @@ detect:
       - op: and
         rules:
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: event/FILE_PATH
           value: \powershell.exe
         - op: or
@@ -32,7 +32,7 @@ detect:
       - op: and
         rules:
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: event/FILE_PATH
           value: \wmic.exe
         - case sensitive: false
@@ -42,7 +42,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: event/FILE_PATH
         value: \wevtutil.exe
       - op: or

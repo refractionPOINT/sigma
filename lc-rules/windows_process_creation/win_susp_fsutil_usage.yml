@@ -10,7 +10,7 @@ detect:
     - op: or
       rules:
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: event/FILE_PATH
         value: \fsutil.exe
       - case sensitive: false

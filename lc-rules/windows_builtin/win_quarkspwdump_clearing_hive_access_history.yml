@@ -11,7 +11,7 @@ detect:
     path: Event/EventData/HiveName
     value: \AppData\Local\Temp\SAM
   - case sensitive: false
-    op: ends with
+    op: starts with
     path: Event/EventData/HiveName
     value: .dmp
   target: log

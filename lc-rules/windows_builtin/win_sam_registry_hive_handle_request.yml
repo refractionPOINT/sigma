@@ -11,7 +11,7 @@ detect:
     path: Event/EventData/ObjectType
     value: Key
   - case sensitive: false
-    op: ends with
+    op: starts with
     path: Event/EventData/ObjectName
     value: \SAM
   target: log

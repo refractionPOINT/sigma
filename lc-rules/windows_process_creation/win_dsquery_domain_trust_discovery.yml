@@ -10,7 +10,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: event/FILE_PATH
         value: \dsquery.exe
       - case sensitive: false
@@ -24,7 +24,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: ends with
+        op: starts with
         path: event/FILE_PATH
         value: \nltest.exe
       - case sensitive: false

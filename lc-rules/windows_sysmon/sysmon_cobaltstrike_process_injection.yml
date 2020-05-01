@@ -9,15 +9,15 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetProcessAddress
       value: 0B80
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetProcessAddress
       value: 0C7C
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetProcessAddress
       value: 0C88
   target: log

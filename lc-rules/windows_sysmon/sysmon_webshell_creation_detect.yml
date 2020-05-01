@@ -11,9 +11,9 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: matches
+        op: contains
         path: Event/EventData/TargetFilename
-        re: .*\\inetpub\\wwwroot\*
+        value: \inetpub\wwwroot\
       - op: or
         rules:
         - case sensitive: false
@@ -33,31 +33,31 @@ detect:
       - op: or
         rules:
         - case sensitive: false
-          op: matches
+          op: contains
           path: Event/EventData/TargetFilename
-          re: .*\\www\*
+          value: \www\
         - case sensitive: false
-          op: matches
+          op: contains
           path: Event/EventData/TargetFilename
-          re: .*\\htdocs\*
+          value: \htdocs\
         - case sensitive: false
-          op: matches
+          op: contains
           path: Event/EventData/TargetFilename
-          re: .*\\html\*
+          value: \html\
       - case sensitive: false
         op: contains
         path: Event/EventData/TargetFilename
         value: .ph
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: Event/EventData/TargetFilename
       value: .jsp
     - op: and
       rules:
       - case sensitive: false
-        op: matches
+        op: contains
         path: Event/EventData/TargetFilename
-        re: .*\\cgi\-bin\*
+        value: \cgi-bin\
       - case sensitive: false
         op: contains
         path: Event/EventData/TargetFilename

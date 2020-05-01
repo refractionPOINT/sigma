@@ -66,9 +66,9 @@ detect:
         value: cscript
   - case sensitive: false
     not: true
-    op: matches
+    op: contains
     path: Event/EventData/Details
-    re: .*\\AppData\\Local\\Microsoft\\OneDrive\*
+    value: \AppData\Local\Microsoft\OneDrive\
   target: log
 respond:
 - action: report

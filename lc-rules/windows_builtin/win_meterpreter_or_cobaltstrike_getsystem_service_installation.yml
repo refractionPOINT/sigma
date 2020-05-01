@@ -27,9 +27,9 @@ detect:
       path: Event/EventData/ServiceFileName
       value: echo
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/ServiceFileName
-      re: .*\\pipe\*
+      value: \pipe\
   - op: and
     rules:
     - case sensitive: false
@@ -45,9 +45,9 @@ detect:
       path: Event/EventData/ServiceFileName
       value: echo
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/ServiceFileName
-      re: .*\\pipe\*
+      value: \pipe\
   - op: and
     rules:
     - case sensitive: false
@@ -109,9 +109,9 @@ detect:
       path: Event/EventData/ServiceFileName
       value: echo
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/ServiceFileName
-      re: .*\\pipe\*
+      value: \pipe\
   - op: and
     rules:
     - case sensitive: false
@@ -127,9 +127,9 @@ detect:
       path: Event/EventData/ServiceFileName
       value: echo
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/ServiceFileName
-      re: .*\\pipe\*
+      value: \pipe\
   - op: and
     rules:
     - case sensitive: false
@@ -191,9 +191,9 @@ detect:
       path: Event/EventData/ServiceFileName
       value: echo
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/ServiceFileName
-      re: .*\\pipe\*
+      value: \pipe\
   - op: and
     rules:
     - case sensitive: false
@@ -209,9 +209,9 @@ detect:
       path: Event/EventData/ServiceFileName
       value: echo
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/ServiceFileName
-      re: .*\\pipe\*
+      value: \pipe\
   - op: and
     rules:
     - case sensitive: false

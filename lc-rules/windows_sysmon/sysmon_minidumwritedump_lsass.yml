@@ -13,101 +13,101 @@ detect:
       - op: or
         rules:
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/ImageLoaded
           value: \dbghelp.dll
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/ImageLoaded
           value: \dbgcore.dll
       - op: or
         rules:
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \msbuild.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \cmd.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \svchost.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \rundll32.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \powershell.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \word.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \excel.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \powerpnt.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \outlook.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \monitoringhost.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \wmic.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \msiexec.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \bash.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \wscript.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \cscript.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \mshta.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \regsvr32.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \schtasks.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \dnx.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \regsvcs.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \sc.exe
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/Image
           value: \scriptrunner.exe
     - case sensitive: false
@@ -126,11 +126,11 @@ detect:
       - op: or
         rules:
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/ImageLoaded
           value: \dbghelp.dll
         - case sensitive: false
-          op: ends with
+          op: starts with
           path: Event/EventData/ImageLoaded
           value: \dbgcore.dll
       - case sensitive: false

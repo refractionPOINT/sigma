@@ -8,11 +8,11 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: event/PARENT/FILE_PATH
       value: \pcalua.exe
     - case sensitive: false
-      op: ends with
+      op: starts with
       path: event/PARENT/FILE_PATH
       value: \forfiles.exe
 respond:

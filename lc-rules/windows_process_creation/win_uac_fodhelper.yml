@@ -6,7 +6,7 @@ detect:
   rules:
   - op: is windows
   - case sensitive: false
-    op: ends with
+    op: starts with
     path: event/PARENT/FILE_PATH
     value: \fodhelper.exe
 respond:

@@ -7,7 +7,7 @@ detect:
     path: Event/System/EventID
     value: '8'
   - case sensitive: false
-    op: ends with
+    op: starts with
     path: Event/EventData/StartModule
     value: \kernel32.dll
   - case sensitive: false
