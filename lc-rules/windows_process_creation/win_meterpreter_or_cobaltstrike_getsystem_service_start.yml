@@ -10,7 +10,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/PARENT/FILE_PATH
         value: \services.exe
       - op: or

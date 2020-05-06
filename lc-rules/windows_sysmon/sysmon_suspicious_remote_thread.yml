@@ -11,191 +11,191 @@ detect:
     - op: or
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \bash.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \cvtres.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \defrag.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \dnx.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \esentutl.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \excel.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \expand.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \explorer.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \find.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \findstr.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \forfiles.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \git.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \gpupdate.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \hh.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \iexplore.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \installutil.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \lync.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \makecab.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \mDNSResponder.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \monitoringhost.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \msbuild.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \mshta.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \msiexec.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \mspaint.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \outlook.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \ping.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \powerpnt.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \powershell.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \provtool.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \python.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \regsvr32.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \robocopy.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \runonce.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \sapcimc.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \schtasks.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \smartscreen.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \spoolsv.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \tstheme.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \userinit.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \vssadmin.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \vssvc.exe
       - case sensitive: false
-        op: matches
+        op: contains
         path: Event/EventData/SourceImage
-        re: \\w3wp\.exe.*.*
+        value: \w3wp.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \winlogon.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \winscp.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \wmic.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \word.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/SourceImage
         value: \wscript.exe
   - case sensitive: false

@@ -35,75 +35,75 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \test.pwd
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \lsremora64.dll
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \lsremora.dll
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \fgexec.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \wceaux.dll
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \SAM.out
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \SECURITY.out
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \SYSTEM.out
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \NTDS.out
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \DumpExt.dll
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \DumpSvc.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \cachedump64.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \cachedump.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \pstgdump.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \servpw.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \servpw64.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \pwdump.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \procdump64.exe
   target: log

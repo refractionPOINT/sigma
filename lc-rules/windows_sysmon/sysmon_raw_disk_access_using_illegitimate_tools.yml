@@ -17,59 +17,59 @@ detect:
     op: or
     rules:
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \wmiprvse.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \sdiagnhost.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \searchindexer.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \csrss.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \defrag.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \smss.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \vssvc.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \compattelrunner.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \wininit.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \autochk.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \taskhost.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \dfsrs.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \vds.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \lsass.exe
   target: log

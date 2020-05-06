@@ -49,7 +49,7 @@ detect:
         path: Event/EventData/TargetFilename
         value: .ph
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: .jsp
     - op: and

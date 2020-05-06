@@ -10,7 +10,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \wmic.exe
       - case sensitive: false
@@ -18,7 +18,7 @@ detect:
         path: event/COMMAND_LINE
         value: /format
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: event/FILE_PATH
       value: \msxsl.exe
 respond:

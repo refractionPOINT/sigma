@@ -8,7 +8,7 @@ detect:
   - op: and
     rules:
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: event/FILE_PATH
       value: \cmstp.exe
     - op: or

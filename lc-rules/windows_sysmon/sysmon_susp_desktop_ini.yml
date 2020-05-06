@@ -9,7 +9,7 @@ detect:
       path: Event/System/EventID
       value: '11'
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetFilename
       value: \desktop.ini
   - not: true

@@ -12,11 +12,11 @@ detect:
       - op: or
         rules:
         - case sensitive: false
-          op: starts with
+          op: ends with
           path: event/FILE_PATH
           value: \net.exe
         - case sensitive: false
-          op: starts with
+          op: ends with
           path: event/FILE_PATH
           value: \net1.exe
       - case sensitive: false
@@ -26,7 +26,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \w32tm.exe
       - case sensitive: false
@@ -36,7 +36,7 @@ detect:
     - op: and
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \powershell.exe
       - case sensitive: false

@@ -11,58 +11,58 @@ detect:
     - op: or
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \wmiclnt.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \WmiApRpl.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \wmiprov.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \wmiutils.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \wbemcomn.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \wbemprox.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \WMINet_Utils.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \wbemsvc.dll
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: Event/EventData/ImageLoaded
         value: \fastprox.dll
   - not: true
     op: or
     rules:
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \WmiPrvSe.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \WmiPrvSE.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \WmiAPsrv.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \svchost.exe
   target: log

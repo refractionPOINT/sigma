@@ -30,17 +30,17 @@ detect:
         path: event/PARENT/FILE_PATH
         value: C:\ProgramData\DRM
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \wmplayer.exe
     - op: and
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/PARENT/FILE_PATH
         value: \Test.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \wmplayer.exe
     - case sensitive: false
@@ -54,7 +54,7 @@ detect:
         path: event/PARENT/FILE_PATH
         value: C:\ProgramData\DRM\Windows
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \SearchFilterHost.exe
 respond:

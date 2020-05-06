@@ -18,7 +18,7 @@ detect:
       value: system.management.automation
   - case sensitive: false
     not: true
-    op: starts with
+    op: ends with
     path: Event/EventData/Image
     value: \powershell.exe
   target: log

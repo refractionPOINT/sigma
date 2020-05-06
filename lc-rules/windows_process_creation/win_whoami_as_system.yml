@@ -12,7 +12,7 @@ detect:
       path: event/USER_NAME
       value: NT AUTHORITY\SYSTEM
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: event/FILE_PATH
       value: \whoami.exe
 respond:

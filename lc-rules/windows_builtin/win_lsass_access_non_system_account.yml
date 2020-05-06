@@ -19,12 +19,12 @@ detect:
       path: Event/EventData/ObjectType
       value: Process
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/ObjectName
       value: \lsass.exe
   - case sensitive: false
     not: true
-    op: starts with
+    op: ends with
     path: Event/EventData/SubjectUserName
     value: $
   target: log

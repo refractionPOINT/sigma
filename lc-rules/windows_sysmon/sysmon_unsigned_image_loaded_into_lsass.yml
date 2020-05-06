@@ -7,7 +7,7 @@ detect:
     path: Event/System/EventID
     value: '7'
   - case sensitive: false
-    op: starts with
+    op: ends with
     path: Event/EventData/Image
     value: \lsass.exe
   - case sensitive: false

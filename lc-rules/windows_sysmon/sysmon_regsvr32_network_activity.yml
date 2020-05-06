@@ -13,7 +13,7 @@ detect:
       path: Event/System/EventID
       value: '22'
   - case sensitive: false
-    op: starts with
+    op: ends with
     path: Event/EventData/Image
     value: \regsvr32.exe
   target: log

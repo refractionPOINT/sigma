@@ -20,19 +20,19 @@ detect:
     op: or
     rules:
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \lsass.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \opera.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \chrome.exe
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/Image
       value: \firefox.exe
   target: log

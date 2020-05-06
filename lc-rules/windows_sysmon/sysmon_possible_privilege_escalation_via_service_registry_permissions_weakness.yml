@@ -17,15 +17,15 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetObject
       value: \ImagePath
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetObject
       value: \FailureCommand
     - case sensitive: false
-      op: starts with
+      op: ends with
       path: Event/EventData/TargetObject
       value: \Parameters\ServiceDll
   target: log

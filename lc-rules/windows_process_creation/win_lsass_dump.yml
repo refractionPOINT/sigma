@@ -21,7 +21,7 @@ detect:
           value: .dmp
       - case sensitive: false
         not: true
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \werfault.exe
     - op: and
@@ -31,7 +31,7 @@ detect:
         path: event/FILE_PATH
         value: \procdump
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: .exe
       - case sensitive: false

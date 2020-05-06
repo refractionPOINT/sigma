@@ -93,83 +93,83 @@ detect:
       op: or
       rules:
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \cmd.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \powershell.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \powershell_ise.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \psexec.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \psexec64.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \cscript.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \wscript.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \mshta.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \regsvr32.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \wmic.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \certutil.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \rundll32.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \cmstp.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \msiexec.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \7z.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \winrar.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \wevtutil.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \net.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \net1.exe
       - case sensitive: false
-        op: starts with
+        op: ends with
         path: event/FILE_PATH
         value: \netsh.exe
 respond:

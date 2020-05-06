@@ -6,7 +6,7 @@ detect:
   rules:
   - op: is windows
   - case sensitive: false
-    op: starts with
+    op: ends with
     path: event/FILE_PATH
     value: \dnx.exe
 respond:
