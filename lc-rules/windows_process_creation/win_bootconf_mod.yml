@@ -14,7 +14,7 @@ detect:
         path: event/FILE_PATH
         value: \bcdedit.exe
       - case sensitive: false
-        op: is
+        op: contains
         path: event/COMMAND_LINE
         value: set
     - op: or
