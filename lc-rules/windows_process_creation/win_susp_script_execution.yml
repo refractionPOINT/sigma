@@ -20,19 +20,19 @@ detect:
     - op: or
       rules:
       - case sensitive: false
-        op: ends with
+        op: contains
         path: event/COMMAND_LINE
         value: .jse
       - case sensitive: false
-        op: ends with
+        op: contains
         path: event/COMMAND_LINE
         value: .vbe
       - case sensitive: false
-        op: ends with
+        op: contains
         path: event/COMMAND_LINE
         value: .js
       - case sensitive: false
-        op: ends with
+        op: contains
         path: event/COMMAND_LINE
         value: .vba
 respond:
