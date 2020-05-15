@@ -1,0 +1,36 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '3'
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \notepad.exe
+  - case sensitive: false
+    not: true
+    op: is
+    path: Event/EventData/DestinationPort
+    value: '9100'
+  target: log
+respond:
+- action: report
+  metadata:
+    author: EagleEye Team
+    description: Detects suspicious network connection by Notepad
+    falsepositives:
+    - None observed so far
+    level: high
+    references:
+    - https://www.sans.org/cyber-security-summit/archives/file/summit-archive-1492186586.pdf
+    - https://blog.cobaltstrike.com/2013/08/08/why-is-notepad-exe-connecting-to-the-internet/
+    tags:
+    - attack.command_and_control
+    - attack.execution
+  name: Notepad Making Network Connection
+

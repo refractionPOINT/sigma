@@ -15,16 +15,6 @@ detect:
         value: \services.exe
       - op: or
         rules:
-        - op: or
-          rules:
-          - case sensitive: false
-            op: contains
-            path: event/COMMAND_LINE
-            value: cmd
-          - case sensitive: false
-            op: contains
-            path: event/COMMAND_LINE
-            value: comspec
         - op: and
           rules:
           - case sensitive: false
@@ -83,7 +73,7 @@ detect:
 respond:
 - action: report
   metadata:
-    author: Teymur Kheirkhabarov
+    author: Teymur Kheirkhabarov, Ecco
     description: Detects the use of getsystem Meterpreter/Cobalt Strike command by
       detecting a specific service starting
     falsepositives:

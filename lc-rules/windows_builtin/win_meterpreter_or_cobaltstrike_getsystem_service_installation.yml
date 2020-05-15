@@ -2,16 +2,6 @@ detect:
   log type: wel
   op: or
   rules:
-  - op: or
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: cmd
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: comspec
   - op: and
     rules:
     - case sensitive: false
@@ -66,7 +56,7 @@ detect:
 respond:
 - action: report
   metadata:
-    author: Teymur Kheirkhabarov
+    author: Teymur Kheirkhabarov, Ecco
     description: Detects the use of getsystem Meterpreter/Cobalt Strike command by
       detecting a specific service installation
     falsepositives:
@@ -84,16 +74,6 @@ detect:
   log type: wel
   op: or
   rules:
-  - op: or
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: cmd
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: comspec
   - op: and
     rules:
     - case sensitive: false
@@ -148,7 +128,7 @@ detect:
 respond:
 - action: report
   metadata:
-    author: Teymur Kheirkhabarov
+    author: Teymur Kheirkhabarov, Ecco
     description: Detects the use of getsystem Meterpreter/Cobalt Strike command by
       detecting a specific service installation
     falsepositives:
@@ -166,16 +146,6 @@ detect:
   log type: wel
   op: or
   rules:
-  - op: or
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: cmd
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: comspec
   - op: and
     rules:
     - case sensitive: false
@@ -230,7 +200,7 @@ detect:
 respond:
 - action: report
   metadata:
-    author: Teymur Kheirkhabarov
+    author: Teymur Kheirkhabarov, Ecco
     description: Detects the use of getsystem Meterpreter/Cobalt Strike command by
       detecting a specific service installation
     falsepositives:
