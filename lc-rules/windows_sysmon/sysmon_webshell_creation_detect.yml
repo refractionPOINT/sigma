@@ -1,67 +1,118 @@
 detect:
   log type: wel
-  op: and
+  op: or
   rules:
-  - case sensitive: false
-    op: is
-    path: Event/System/EventID
-    value: '11'
   - op: or
     rules:
     - op: and
       rules:
-      - case sensitive: false
-        op: contains
-        path: Event/EventData/TargetFilename
-        value: \inetpub\wwwroot\
-      - op: or
+      - op: and
+        rules:
+        - case sensitive: false
+          op: is
+          path: Event/System/EventID
+          value: '11'
+        - case sensitive: false
+          op: contains
+          path: Event/EventData/TargetFilename
+          value: \inetpub\wwwroot\
+        - op: or
+          rules:
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: .asp
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: .ashx
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: .ph
+      - not: true
+        op: or
         rules:
         - case sensitive: false
           op: contains
           path: Event/EventData/TargetFilename
-          value: .asp
+          value: \AppData\Local\Temp\
         - case sensitive: false
           op: contains
           path: Event/EventData/TargetFilename
-          value: .ashx
+          value: \Windows\Temp\
+    - op: and
+      rules:
+      - op: and
+        rules:
+        - case sensitive: false
+          op: is
+          path: Event/System/EventID
+          value: '11'
+        - op: or
+          rules:
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: \www\
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: \htdocs\
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: \html\
         - case sensitive: false
           op: contains
           path: Event/EventData/TargetFilename
           value: .ph
-    - op: and
-      rules:
-      - op: or
+      - not: true
+        op: or
         rules:
         - case sensitive: false
           op: contains
           path: Event/EventData/TargetFilename
-          value: \www\
+          value: \AppData\Local\Temp\
         - case sensitive: false
           op: contains
           path: Event/EventData/TargetFilename
-          value: \htdocs\
-        - case sensitive: false
-          op: contains
-          path: Event/EventData/TargetFilename
-          value: \html\
-      - case sensitive: false
-        op: contains
-        path: Event/EventData/TargetFilename
-        value: .ph
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/TargetFilename
-      value: .jsp
+          value: \Windows\Temp\
+  - op: and
+    rules:
     - op: and
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '11'
+      - op: or
+        rules:
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/TargetFilename
+          value: .jsp
+        - op: and
+          rules:
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: \cgi-bin\
+          - case sensitive: false
+            op: contains
+            path: Event/EventData/TargetFilename
+            value: .pl
+    - not: true
+      op: or
       rules:
       - case sensitive: false
         op: contains
         path: Event/EventData/TargetFilename
-        value: \cgi-bin\
+        value: \AppData\Local\Temp\
       - case sensitive: false
         op: contains
         path: Event/EventData/TargetFilename
-        value: .pl
+        value: \Windows\Temp\
   target: log
 respond:
 - action: report
