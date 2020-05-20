@@ -14,21 +14,26 @@ detect:
       value: '4766'
   - op: and
     rules:
-    - case sensitive: false
-      op: is
-      path: Event/System/EventID
-      value: '4738'
-    - not: true
-      op: or
+    - op: and
       rules:
       - case sensitive: false
         op: is
-        path: Event/EventData/SidHistory
-        value: '-'
-      - case sensitive: false
-        op: is
-        path: Event/EventData/SidHistory
-        value: '%%1793'
+        path: Event/System/EventID
+        value: '4738'
+      - not: true
+        op: or
+        rules:
+        - case sensitive: false
+          op: is
+          path: Event/EventData/SidHistory
+          value: '-'
+        - case sensitive: false
+          op: is
+          path: Event/EventData/SidHistory
+          value: '%%1793'
+    - not: false
+      op: exists
+      path: Event/EventData/SidHistory
   target: log
 respond:
 - action: report

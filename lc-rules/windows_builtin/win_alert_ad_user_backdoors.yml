@@ -8,21 +8,20 @@ detect:
       rules:
       - op: and
         rules:
-        - case sensitive: false
-          op: is
-          path: Event/System/EventID
-          value: '4738'
-        - not: true
-          op: or
+        - op: and
           rules:
           - case sensitive: false
             op: is
-            path: Event/EventData/AllowedToDelegateTo
-            value: None
+            path: Event/System/EventID
+            value: '4738'
           - case sensitive: false
+            not: true
             op: is
             path: Event/EventData/AllowedToDelegateTo
             value: '-'
+        - not: false
+          op: exists
+          path: Event/EventData/AllowedToDelegateTo
       - op: and
         rules:
         - case sensitive: false
