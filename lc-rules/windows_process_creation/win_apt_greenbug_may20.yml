@@ -17,20 +17,10 @@ detect:
         op: contains
         path: event/COMMAND_LINE
         value: CSIDL_APPDATA
-    - op: and
-      rules:
-      - case sensitive: false
-        op: contains
-        path: event/COMMAND_LINE
-        value: PowerShell.exe
-      - case sensitive: false
-        op: contains
-        path: event/COMMAND_LINE
-        value: -ExecutionPolicy Bypass
-      - case sensitive: false
-        op: contains
-        path: event/COMMAND_LINE
-        value: CSIDL_SYSTEM_DRIVE
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: CSIDL_SYSTEM_DRIVE
     - op: or
       rules:
       - case sensitive: false
