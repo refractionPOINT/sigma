@@ -1,0 +1,163 @@
+detect:
+  log type: wel
+  op: or
+  rules:
+  - op: and
+    rules:
+    - op: and
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '7'
+      - op: or
+        rules:
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/ImageLoaded
+          value: \dbghelp.dll
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/ImageLoaded
+          value: \dbgcore.dll
+      - op: or
+        rules:
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \msbuild.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \cmd.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \svchost.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \rundll32.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \powershell.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \word.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \excel.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \powerpnt.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \outlook.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \monitoringhost.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \wmic.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \bash.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \wscript.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \cscript.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \mshta.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \regsvr32.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \schtasks.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \dnx.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \regsvcs.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \sc.exe
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/Image
+          value: \scriptrunner.exe
+    - case sensitive: false
+      not: true
+      op: contains
+      path: Event/EventData/Image
+      value: Visual Studio
+  - op: and
+    rules:
+    - op: and
+      rules:
+      - case sensitive: false
+        op: is
+        path: Event/System/EventID
+        value: '7'
+      - op: or
+        rules:
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/ImageLoaded
+          value: \dbghelp.dll
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/ImageLoaded
+          value: \dbgcore.dll
+      - case sensitive: false
+        op: is
+        path: Event/EventData/Signed
+        value: 'FALSE'
+    - case sensitive: false
+      not: true
+      op: contains
+      path: Event/EventData/Image
+      value: Visual Studio
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Perez Diego (@darkquassar), oscd.community, Ecco
+    description: Detects the load of dbghelp/dbgcore DLL (used to make memory dumps)
+      by suspicious processes. Tools like ProcessHacker and some attacker tradecract
+      use MiniDumpWriteDump API found in dbghelp.dll or dbgcore.dll. As an example,
+      SilentTrynity C2 Framework has a module that leverages this API to dump the
+      contents of Lsass.exe and transfer it over the network back to the attacker's
+      machine.
+    falsepositives:
+    - Penetration tests
+    level: high
+    references:
+    - https://docs.microsoft.com/en-us/windows/win32/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump
+    - https://www.pinvoke.net/default.aspx/dbghelp/MiniDumpWriteDump.html
+    - https://medium.com/@fsx30/bypass-edrs-memory-protection-introduction-to-hooking-2efb21acffd6
+    tags:
+    - attack.credential_access
+    - attack.t1003
+  name: Load of dbghelp/dbgcore DLL from Suspicious Process
+

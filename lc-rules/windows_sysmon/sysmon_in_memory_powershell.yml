@@ -19,22 +19,16 @@ detect:
         path: Event/EventData/ImageLoaded
         value: \System.Management.Automation.ni.Dll
   - not: true
-    op: and
+    op: or
     rules:
-    - op: or
-      rules:
-      - case sensitive: false
-        op: ends with
-        path: Event/EventData/Image
-        value: \powershell.exe
-      - case sensitive: false
-        op: ends with
-        path: Event/EventData/Image
-        value: \WINDOWS\System32\sdiagnhost.exe
     - case sensitive: false
-      op: is
-      path: Event/EventData/User
-      value: NT AUTHORITY\SYSTEM
+      op: ends with
+      path: Event/EventData/Image
+      value: \powershell.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \WINDOWS\System32\sdiagnhost.exe
   target: log
 respond:
 - action: report

@@ -56,15 +56,15 @@ detect:
     - case sensitive: false
       op: ends with
       path: Event/EventData/Image
-      value: \WmiPrvSE.exe
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/Image
       value: \WmiAPsrv.exe
     - case sensitive: false
       op: ends with
       path: Event/EventData/Image
       value: \svchost.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \DeviceCensus.exe
   target: log
 respond:
 - action: report
