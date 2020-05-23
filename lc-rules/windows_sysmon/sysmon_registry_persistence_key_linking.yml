@@ -7,6 +7,10 @@ detect:
     path: Event/System/EventID
     value: '12'
   - case sensitive: false
+    op: is
+    path: Event/EventData/EventType
+    value: CreateKey
+  - case sensitive: false
     op: matches
     path: Event/EventData/TargetObject
     re: HKU\\.*_Classes\\CLSID\\.*\\TreatAs

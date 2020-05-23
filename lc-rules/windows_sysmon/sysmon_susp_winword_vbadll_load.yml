@@ -9,33 +9,33 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \winword.exe
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \powerpnt.exe
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \excel.exe
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \outlook.exe
   - op: or
     rules:
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/ImageLoaded
       value: \VBE7.DLL
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/ImageLoaded
       value: \VBEUI.DLL
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/ImageLoaded
       value: \VBE7INTL.DLL
   target: log

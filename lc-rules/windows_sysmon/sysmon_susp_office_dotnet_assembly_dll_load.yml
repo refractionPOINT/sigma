@@ -9,25 +9,25 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \winword.exe
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \powerpnt.exe
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \excel.exe
     - case sensitive: false
-      op: contains
+      op: ends with
       path: Event/EventData/Image
       value: \outlook.exe
   - case sensitive: false
     op: matches
     path: Event/EventData/ImageLoaded
-    re: .*C\:\\Windows\\assembly\*
+    re: C\:\\Windows\\assembly\*
   target: log
 respond:
 - action: report

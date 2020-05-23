@@ -26,21 +26,11 @@ detect:
         op: ends with
         path: Event/EventData/ImageLoaded
         value: \wlbsctrl.dll
-  - not: true
-    op: and
-    rules:
-    - case sensitive: false
-      op: is
-      path: Event/System/EventID
-      value: '7'
-    - case sensitive: false
-      op: ends with
-      path: Event/EventData/Image
-      value: \svchost.exe
-    - case sensitive: false
-      op: matches
-      path: Event/EventData/ImageLoaded
-      re: C\:\\Windows\\WinSxS\*
+  - case sensitive: false
+    not: true
+    op: matches
+    path: Event/EventData/ImageLoaded
+    re: C\:\\Windows\\WinSxS\*
   target: log
 respond:
 - action: report

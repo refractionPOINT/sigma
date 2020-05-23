@@ -12,6 +12,10 @@ detect:
       op: contains
       path: Event/EventData/TargetObject
       value: \cmmgr32.exe
+    - case sensitive: false
+      op: is
+      path: Event/EventData/EventType
+      value: CreateKey
   - op: and
     rules:
     - case sensitive: false

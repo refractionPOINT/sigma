@@ -12,6 +12,10 @@ detect:
       op: is
       path: Event/EventData/TargetObject
       value: HKLM\SYSTEM\CurrentControlSet\Control\MiniNt
+    - case sensitive: false
+      op: is
+      path: Event/EventData/EventType
+      value: CreateKey
   - op: and
     rules:
     - case sensitive: false
