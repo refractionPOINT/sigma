@@ -28,6 +28,10 @@ detect:
     - case sensitive: false
       op: ends with
       path: Event/EventData/Image
+      value: \powershell_ise.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
       value: \WINDOWS\System32\sdiagnhost.exe
   target: log
 respond:

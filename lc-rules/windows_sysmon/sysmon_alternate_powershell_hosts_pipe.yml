@@ -12,11 +12,17 @@ detect:
       op: starts with
       path: Event/EventData/PipeName
       value: \PSHost
-  - case sensitive: false
-    not: true
-    op: ends with
-    path: Event/EventData/Image
-    value: \powershell.exe
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \powershell.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \powershell_ise.exe
   target: log
 respond:
 - action: report
