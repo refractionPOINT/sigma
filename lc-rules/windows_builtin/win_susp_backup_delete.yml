@@ -9,7 +9,7 @@ detect:
   - case sensitive: false
     op: is
     path: Event/EventData/Source
-    value: Backup
+    value: Microsoft-Windows-Backup
   target: log
 respond:
 - action: report
