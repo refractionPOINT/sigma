@@ -65,6 +65,18 @@ detect:
       op: ends with
       path: Event/EventData/Image
       value: \DeviceCensus.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \CompatTelRunner.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \sdiagnhost.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \SIHClient.exe
   target: log
 respond:
 - action: report
