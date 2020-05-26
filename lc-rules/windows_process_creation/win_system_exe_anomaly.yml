@@ -69,6 +69,34 @@ detect:
         op: ends with
         path: event/FILE_PATH
         value: \taskhost.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \Taskmgr.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \sihost.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \RuntimeBroker.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \smartscreen.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \dllhost.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \audiodg.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \wlanext.exe
     - not: true
       op: or
       rules:
