@@ -1,0 +1,156 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '11'
+    - op: or
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \svchost.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \rundll32.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \services.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \powershell.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \regsvr32.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \spoolsv.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \lsass.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \smss.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \csrss.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \conhost.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \wininit.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \lsm.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \winlogon.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \explorer.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \taskhost.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \Taskmgr.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \taskmgr.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \sihost.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \RuntimeBroker.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \runtimebroker.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \smartscreen.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \dllhost.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \audiodg.exe
+      - case sensitive: false
+        op: ends with
+        path: Event/EventData/Image
+        value: \wlanext.exe
+  - not: true
+    op: or
+    rules:
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Image
+      value: C:\Windows\System32\
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Image
+      value: C:\Windows\system32\
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Image
+      value: C:\Windows\SysWow64\
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Image
+      value: C:\Windows\SysWOW64\
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Image
+      value: C:\Windows\winsxs\
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Image
+      value: C:\Windows\WinSxS\
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/Image
+      value: \SystemRoot\System32\
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Sander Wiebing
+    description: Detects the creation of a executable with a sytem process name in
+      a suspicious folder
+    falsepositives:
+    - System processes copied outside the default folder
+    level: high
+    references:
+    - https://attack.mitre.org/techniques/T1036/
+    tags:
+    - attack.defense_evasion
+    - attack.t1036
+  name: File Created with System Process Name
+
