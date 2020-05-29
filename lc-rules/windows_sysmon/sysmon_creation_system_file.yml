@@ -12,130 +12,130 @@ detect:
       rules:
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \svchost.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \rundll32.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \services.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \powershell.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \regsvr32.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \spoolsv.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \lsass.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \smss.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \csrss.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \conhost.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \wininit.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \lsm.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \winlogon.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \explorer.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \taskhost.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \Taskmgr.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \taskmgr.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \sihost.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \RuntimeBroker.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \runtimebroker.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \smartscreen.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \dllhost.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \audiodg.exe
       - case sensitive: false
         op: ends with
-        path: Event/EventData/Image
+        path: Event/EventData/TargetFilename
         value: \wlanext.exe
   - not: true
     op: or
     rules:
     - case sensitive: false
       op: starts with
-      path: Event/EventData/Image
+      path: Event/EventData/TargetFilename
       value: C:\Windows\System32\
     - case sensitive: false
       op: starts with
-      path: Event/EventData/Image
+      path: Event/EventData/TargetFilename
       value: C:\Windows\system32\
     - case sensitive: false
       op: starts with
-      path: Event/EventData/Image
+      path: Event/EventData/TargetFilename
       value: C:\Windows\SysWow64\
     - case sensitive: false
       op: starts with
-      path: Event/EventData/Image
+      path: Event/EventData/TargetFilename
       value: C:\Windows\SysWOW64\
     - case sensitive: false
       op: starts with
-      path: Event/EventData/Image
+      path: Event/EventData/TargetFilename
       value: C:\Windows\winsxs\
     - case sensitive: false
       op: starts with
-      path: Event/EventData/Image
+      path: Event/EventData/TargetFilename
       value: C:\Windows\WinSxS\
     - case sensitive: false
       op: starts with
-      path: Event/EventData/Image
+      path: Event/EventData/TargetFilename
       value: \SystemRoot\System32\
   target: log
 respond:
