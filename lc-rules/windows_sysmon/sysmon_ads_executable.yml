@@ -13,10 +13,9 @@ detect:
       op: is
       path: Event/EventData/Imphash
       value: '00000000000000000000000000000000'
-    - case sensitive: false
-      op: is
+    - not: true
+      op: exists
       path: Event/EventData/Imphash
-      value: None
   target: log
 respond:
 - action: report
