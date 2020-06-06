@@ -1,20 +1,14 @@
 detect:
-  log type: wel
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
   op: and
   rules:
+  - op: is windows
   - case sensitive: false
-    op: is
-    path: Event/System/EventID
-    value: '13'
-  - case sensitive: false
-    op: ends with
-    path: Event/EventData/TargetObject
-    value: SOFTWARE\Microsoft\.NETFramework\ETWEnabled
-  - case sensitive: false
-    op: is
-    path: Event/EventData/Details
-    value: DWORD (0x00000000)
-  target: log
+    op: contains
+    path: event/COMMAND_LINE
+    value: COMPlus_ETWEnabled=0
 respond:
 - action: report
   metadata:
@@ -36,6 +30,5 @@ respond:
     - https://github.com/dotnet/runtime/blob/4f9ae42d861fcb4be2fcd5d3d55d5f227d30e723/docs/coding-guidelines/clr-jit-coding-conventions.md#1412-disabling-code
     tags:
     - attack.defense_evasion
-    - attack.t1112
-  name: COMPlus_ETWEnabled Registry Modification
+  name: COMPlus_ETWEnabled Command Line Arguments
 

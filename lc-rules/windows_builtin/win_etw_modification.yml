@@ -5,15 +5,19 @@ detect:
   - case sensitive: false
     op: is
     path: Event/System/EventID
-    value: '13'
+    value: '4657'
   - case sensitive: false
     op: ends with
-    path: Event/EventData/TargetObject
-    value: SOFTWARE\Microsoft\.NETFramework\ETWEnabled
+    path: Event/EventData/ObjectName
+    value: \SOFTWARE\Microsoft\.NETFramework
   - case sensitive: false
     op: is
-    path: Event/EventData/Details
-    value: DWORD (0x00000000)
+    path: Event/EventData/ObjectValueName
+    value: ETWEnabled
+  - case sensitive: false
+    op: is
+    path: Event/EventData/NewValue
+    value: '0'
   target: log
 respond:
 - action: report
