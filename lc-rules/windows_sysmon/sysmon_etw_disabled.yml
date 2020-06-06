@@ -1,0 +1,33 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '13'
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/TargetObject
+    value: SOFTWARE\Microsoft\.NETFramework\ETWEnabled
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/Details
+    value: '0x00000000'
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects methods that disable ETW (Event Tracing) to evade detection
+    falsepositives:
+    - Services or programs that disable the ETW temporarily
+    level: high
+    references:
+    - https://twitter.com/_xpn_/status/1268712093928378368?s=20
+    - https://gist.github.com/Cyb3rWard0g/a4a115fd3ab518a0e593525a379adee3
+    tags:
+    - attack.defense_evasion
+    - attack.t1089
+  name: ETW Disabled
+
