@@ -1,0 +1,56 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: or
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '12'
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '13'
+  - op: or
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \Security\Trusted Documents\TrustRecords
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \Security\AccessVBOM
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/TargetObject
+      value: \Security\VBAWarnings
+  - op: or
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/EventData/EventType
+      value: SetValue
+    - case sensitive: false
+      op: is
+      path: Event/EventData/EventType
+      value: DeleteValue
+    - case sensitive: false
+      op: is
+      path: Event/EventData/EventType
+      value: CreateValue
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Trent Liffick (@tliffick)
+    description: Detects registry changes to Office macro settings
+    falsepositives:
+    - Valid Macros and/or internal documents
+    level: high
+    tags:
+    - attack.defense_evasion
+    - attack.t1112
+  name: Office Security Settings Changed
+
