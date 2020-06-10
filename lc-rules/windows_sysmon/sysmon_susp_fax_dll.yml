@@ -1,0 +1,43 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - op: and
+    rules:
+    - case sensitive: false
+      op: is
+      path: Event/System/EventID
+      value: '7'
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: fxssvc.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/ImageLoaded
+      value: ualapi.dll
+  - case sensitive: false
+    not: true
+    op: starts with
+    path: Event/EventData/ImageLoaded
+    value: C:\Windows\WinSxS\
+  target: log
+respond:
+- action: report
+  metadata:
+    author: NVISO
+    description: The Fax service attempts to load ualapi.dll, which is non-existent.
+      An attacker can then (side)load their own malicious DLL using this service.
+    falsepositives:
+    - Unlikely
+    level: high
+    references:
+    - https://windows-internals.com/faxing-your-way-to-system/
+    tags:
+    - attack.persistence
+    - attack.defense_evasion
+    - attack.t1073
+    - attack.t1038
+    - attack.t1112
+  name: Fax Service DLL Search Order Hijack
+

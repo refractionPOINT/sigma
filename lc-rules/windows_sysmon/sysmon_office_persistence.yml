@@ -1,0 +1,65 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '11'
+  - op: or
+    rules:
+    - op: or
+      rules:
+      - op: and
+        rules:
+        - case sensitive: false
+          op: contains
+          path: Event/EventData/TargetFilename
+          value: \Microsoft\Word\Startup\
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/TargetFilename
+          value: .wll
+      - op: and
+        rules:
+        - case sensitive: false
+          op: contains
+          path: Event/EventData/TargetFilename
+          value: \Microsoft\Excel\Startup\
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/TargetFilename
+          value: .xll
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/TargetFilename
+        value: \Microsoft\Addins\
+      - op: or
+        rules:
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/TargetFilename
+          value: .xlam
+        - case sensitive: false
+          op: ends with
+          path: Event/EventData/TargetFilename
+          value: .xla
+  target: log
+respond:
+- action: report
+  metadata:
+    author: NVISO
+    description: Detects add-ins that load when Microsoft Word or Excel starts (.wll/.xll
+      are simply .dll fit for Word or Excel).
+    falsepositives:
+    - Legitimate add-ins
+    level: high
+    references:
+    - Internal research
+    tags:
+    - attack.persistence
+    - attack.t1137
+  name: Microsoft Office Add-In Loading
+
