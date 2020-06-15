@@ -11,9 +11,9 @@ detect:
     path: Event/EventData/Image
     value: C:\Windows\System32\wbem\WmiPrvSE.exe
   - case sensitive: false
-    op: is
+    op: ends with
     path: Event/EventData/ImageLoaded
-    value: wbemcons.dll
+    value: \wbemcons.dll
   target: log
 respond:
 - action: report

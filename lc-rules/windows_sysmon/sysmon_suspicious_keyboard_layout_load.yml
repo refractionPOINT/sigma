@@ -9,13 +9,13 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/TargetObject
-      re: .*\\Keyboard\ Layout\\Preload\*
+      value: \Keyboard Layout\Preload\
     - case sensitive: false
-      op: matches
+      op: contains
       path: Event/EventData/TargetObject
-      re: .*\\Keyboard\ Layout\\Substitutes\*
+      value: \Keyboard Layout\Substitutes\
   - op: or
     rules:
     - case sensitive: false

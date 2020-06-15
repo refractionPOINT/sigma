@@ -11,7 +11,7 @@ detect:
     - case sensitive: false
       op: matches
       path: Event/EventData/TargetFilename
-      re: .*\\AppData\\Local\\Temp\*\\PROCEXP152\.sys
+      re: .*\\AppData\\Local\\Temp\\.*\\PROCEXP152\.sys
   - not: true
     op: or
     rules:

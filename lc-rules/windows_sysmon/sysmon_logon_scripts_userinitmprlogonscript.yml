@@ -85,10 +85,6 @@ detect:
     - case sensitive: false
       op: is
       path: Event/System/EventID
-      value: '11'
-    - case sensitive: false
-      op: is
-      path: Event/System/EventID
       value: '12'
     - case sensitive: false
       op: is

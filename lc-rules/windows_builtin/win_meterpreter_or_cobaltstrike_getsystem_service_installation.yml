@@ -1,57 +1,63 @@
 detect:
   log type: wel
-  op: or
+  op: and
   rules:
-  - op: and
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '7045'
+  - op: or
     rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: cmd
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: /c
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: echo
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: \pipe\
-  - op: and
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: '%COMSPEC%'
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: /c
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: echo
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: \pipe\
-  - op: and
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: rundll32
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: .dll,a
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: '/p:'
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: cmd
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: /c
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: echo
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: \pipe\
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: '%COMSPEC%'
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: /c
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: echo
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: \pipe\
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: rundll32
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: .dll,a
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: '/p:'
   target: log
 respond:
 - action: report
@@ -72,58 +78,64 @@ respond:
 
 detect:
   log type: wel
-  op: or
+  op: and
   rules:
-  - op: and
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '6'
+  - op: or
     rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: cmd
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: /c
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: echo
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: \pipe\
-  - op: and
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: '%COMSPEC%'
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: /c
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: echo
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: \pipe\
-  - op: and
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: rundll32
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: .dll,a
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: '/p:'
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: cmd
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: /c
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: echo
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: \pipe\
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: '%COMSPEC%'
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: /c
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: echo
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: \pipe\
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: rundll32
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: .dll,a
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: '/p:'
   target: log
 respond:
 - action: report
@@ -144,58 +156,64 @@ respond:
 
 detect:
   log type: wel
-  op: or
+  op: and
   rules:
-  - op: and
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '4697'
+  - op: or
     rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: cmd
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: /c
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: echo
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: \pipe\
-  - op: and
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: '%COMSPEC%'
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: /c
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: echo
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: \pipe\
-  - op: and
-    rules:
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: rundll32
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: .dll,a
-    - case sensitive: false
-      op: contains
-      path: Event/EventData/ServiceFileName
-      value: '/p:'
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: cmd
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: /c
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: echo
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: \pipe\
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: '%COMSPEC%'
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: /c
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: echo
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: \pipe\
+    - op: and
+      rules:
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: rundll32
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: .dll,a
+      - case sensitive: false
+        op: contains
+        path: Event/EventData/ServiceFileName
+        value: '/p:'
   target: log
 respond:
 - action: report

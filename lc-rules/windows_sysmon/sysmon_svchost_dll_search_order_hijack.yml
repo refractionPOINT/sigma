@@ -28,9 +28,9 @@ detect:
         value: \wlbsctrl.dll
   - case sensitive: false
     not: true
-    op: matches
+    op: starts with
     path: Event/EventData/ImageLoaded
-    re: C\:\\Windows\\WinSxS\*
+    value: C:\Windows\WinSxS\
   target: log
 respond:
 - action: report

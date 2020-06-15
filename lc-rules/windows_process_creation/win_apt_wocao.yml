@@ -76,7 +76,7 @@ detect:
     - case sensitive: false
       op: matches
       path: event/COMMAND_LINE
-      re: .*reg\ query\ HKEY_CURRENT_USER\\Software\*\\PuTTY\\Sessions\\.*
+      re: .*reg\ query\ HKEY_CURRENT_USER\\Software\\.*\\PuTTY\\Sessions\\.*
 respond:
 - action: report
   metadata:

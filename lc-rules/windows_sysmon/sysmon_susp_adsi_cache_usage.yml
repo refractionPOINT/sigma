@@ -11,7 +11,7 @@ detect:
     - case sensitive: false
       op: matches
       path: Event/EventData/TargetFilename
-      re: .*\\Local\\Microsoft\\Windows\\SchCache\*\.sch
+      re: .*\\Local\\Microsoft\\Windows\\SchCache\\.*\.sch
   - not: true
     op: or
     rules:

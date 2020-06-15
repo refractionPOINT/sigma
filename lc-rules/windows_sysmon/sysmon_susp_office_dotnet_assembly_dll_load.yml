@@ -25,9 +25,9 @@ detect:
       path: Event/EventData/Image
       value: \outlook.exe
   - case sensitive: false
-    op: matches
+    op: starts with
     path: Event/EventData/ImageLoaded
-    re: C\:\\Windows\\assembly\*
+    value: C:\Windows\assembly\
   target: log
 respond:
 - action: report
