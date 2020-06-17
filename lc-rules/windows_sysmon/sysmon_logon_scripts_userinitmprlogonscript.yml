@@ -22,13 +22,13 @@ detect:
       op: or
       rules:
       - case sensitive: false
-        op: ends with
+        op: contains
         path: event/COMMAND_LINE
-        value: \netlogon.bat
+        value: netlogon.bat
       - case sensitive: false
-        op: ends with
+        op: contains
         path: event/COMMAND_LINE
-        value: \UsrLogon.cmd
+        value: UsrLogon.cmd
 respond:
 - action: report
   metadata:
