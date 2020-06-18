@@ -42,5 +42,6 @@ respond:
     - attack.defense_evasion
     - attack.t1183
     - car.2013-01-002
+    - attack.t1546.012
   name: Registry Persistence Mechanisms
 

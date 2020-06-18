@@ -45,5 +45,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1070
+    - attack.t1551
   name: Fsutil Suspicious Invocation
 

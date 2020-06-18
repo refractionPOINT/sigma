@@ -30,5 +30,6 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1170
+    - attack.t1218.005
   name: MSHTA Spwaned by SVCHOST
 

@@ -34,5 +34,6 @@ respond:
     - attack.defense_evasion
     - attack.t1085
     - car.2013-10-002
+    - attack.t1218.011
   name: Sofacy Trojan Loader Activity
 

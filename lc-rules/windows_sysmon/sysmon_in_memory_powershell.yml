@@ -49,5 +49,6 @@ respond:
     tags:
     - attack.t1086
     - attack.execution
+    - attack.t1059.001
   name: In-memory PowerShell
 

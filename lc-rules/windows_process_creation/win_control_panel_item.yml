@@ -35,5 +35,6 @@ respond:
     - attack.execution
     - attack.t1196
     - attack.defense_evasion
+    - attack.t1218
   name: Control Panel Items
 

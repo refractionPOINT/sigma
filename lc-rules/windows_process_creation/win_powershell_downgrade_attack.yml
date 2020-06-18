@@ -53,5 +53,6 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1086
+    - attack.t1059.001
   name: PowerShell Downgrade Attack
 

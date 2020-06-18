@@ -29,5 +29,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1117
+    - attack.t1218.010
   name: BlueMashroom DLL Load
 

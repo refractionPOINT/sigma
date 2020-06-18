@@ -29,5 +29,6 @@ respond:
     - attack.lateral_movement
     - attack.t1077
     - attack.t1105
+    - attack.t1021
   name: Copy from Admin Share
 

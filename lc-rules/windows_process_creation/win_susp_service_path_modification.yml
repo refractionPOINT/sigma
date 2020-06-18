@@ -42,5 +42,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1031
+    - attack.t1543.003
   name: Suspicious Service Path Modification
 

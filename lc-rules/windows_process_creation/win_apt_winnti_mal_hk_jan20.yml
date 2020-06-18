@@ -72,5 +72,6 @@ respond:
     - attack.defense_evasion
     - attack.t1073
     - attack.g0044
+    - attack.t1574.002
   name: Winnti Malware HK University Campaign
 

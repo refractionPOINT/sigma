@@ -38,5 +38,6 @@ respond:
     - attack.privilege_escalation
     - attack.credential_access
     - attack.t1171
+    - attack.t1557.001
   name: RottenPotato Like Attack Pattern
 

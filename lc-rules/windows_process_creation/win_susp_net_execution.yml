@@ -75,5 +75,6 @@ respond:
     - attack.lateral_movement
     - attack.discovery
     - attack.defense_evasion
+    - attack.t1021
   name: Net.exe Execution
 

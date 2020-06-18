@@ -38,5 +38,7 @@ respond:
     - attack.execution
     - attack.t1191
     - attack.t1088
+    - attack.t1548.002
+    - attack.t1218
   name: Bypass UAC via CMSTP
 

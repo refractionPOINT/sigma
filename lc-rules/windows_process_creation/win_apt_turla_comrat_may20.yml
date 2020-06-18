@@ -49,5 +49,6 @@ respond:
     - attack.t1027
     - attack.discovery
     - attack.t1016
+    - attack.t1059.001
   name: Turla Group Commands May 2020
 

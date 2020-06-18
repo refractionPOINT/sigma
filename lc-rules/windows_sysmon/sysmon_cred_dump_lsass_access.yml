@@ -124,5 +124,6 @@ respond:
     - attack.s0002
     - attack.credential_access
     - car.2019-04-004
+    - attack.t1003.001
   name: Credentials Dumping Tools Accessing LSASS Memory
 

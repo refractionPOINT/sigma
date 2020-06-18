@@ -41,5 +41,6 @@ respond:
     tags:
     - attack.credential_access
     - attack.t1003
+    - attack.t1003.001
   name: Process Dump via Comsvcs DLL
 

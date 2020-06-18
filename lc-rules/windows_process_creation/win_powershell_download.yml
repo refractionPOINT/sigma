@@ -41,5 +41,6 @@ respond:
     tags:
     - attack.t1086
     - attack.execution
+    - attack.t1059.001
   name: PowerShell Download from URL
 

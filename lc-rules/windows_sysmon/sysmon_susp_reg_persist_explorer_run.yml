@@ -56,5 +56,6 @@ respond:
     - attack.persistence
     - attack.t1060
     - capec.270
+    - attack.t1547.001
   name: Registry Persistence via Explorer Run Key
 

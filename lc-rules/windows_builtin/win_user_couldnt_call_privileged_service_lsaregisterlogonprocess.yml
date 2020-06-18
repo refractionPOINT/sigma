@@ -31,5 +31,6 @@ respond:
     - attack.lateral_movement
     - attack.privilege_escalation
     - attack.t1208
+    - attack.t1558.003
   name: User Couldn't Call a Privileged Service 'LsaRegisterLogonProcess'
 

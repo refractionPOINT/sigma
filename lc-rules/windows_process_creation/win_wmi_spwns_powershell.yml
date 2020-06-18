@@ -31,5 +31,6 @@ respond:
     - attack.execution
     - attack.defense_evasion
     - attack.t1064
+    - attack.t1059.001
   name: WMI Spawning Windows PowerShell
 

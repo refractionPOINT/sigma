@@ -25,5 +25,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1107
+    - attack.t1551.004
   name: Backup Catalog Deleted
 

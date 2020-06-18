@@ -27,5 +27,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1073
+    - attack.t1574.002
   name: DNS Server Error Failed Loading the ServerLevelPluginDLL
 

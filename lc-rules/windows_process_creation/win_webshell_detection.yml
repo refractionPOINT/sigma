@@ -72,5 +72,6 @@ respond:
     - attack.privilege_escalation
     - attack.persistence
     - attack.t1100
+    - attack.t1505.003
   name: Webshell Detection With Command Line Keywords
 

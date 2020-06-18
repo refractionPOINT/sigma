@@ -39,5 +39,7 @@ respond:
     - attack.t1073
     - attack.t1038
     - attack.t1112
+    - attack.t1574.001
+    - attack.t1574.002
   name: Fax Service DLL Search Order Hijack
 

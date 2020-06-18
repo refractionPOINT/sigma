@@ -64,5 +64,6 @@ respond:
     - attack.lateral_movement
     - attack.t1047
     - attack.t1175
+    - attack.t1021
   name: Impacket Lateralization Detection
 

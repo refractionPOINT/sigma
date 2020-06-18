@@ -61,5 +61,9 @@ respond:
     - attack.credential_access
     - car.2013-07-001
     - car.2019-04-004
+    - attack.t1003.002
+    - attack.t1003.004
+    - attack.t1003.001
+    - attack.t1003.006
   name: Mimikatz Use
 

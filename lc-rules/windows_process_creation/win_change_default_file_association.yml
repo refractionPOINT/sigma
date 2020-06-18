@@ -38,5 +38,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1042
+    - attack.t1546.001
   name: Change Default File Association
 

@@ -24,5 +24,6 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1064
+    - attack.t1059
   name: Suspicious RASdial Activity
 

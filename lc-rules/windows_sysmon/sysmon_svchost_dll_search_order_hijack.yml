@@ -52,5 +52,7 @@ respond:
     - attack.t1073
     - attack.t1038
     - attack.t1112
+    - attack.t1574.002
+    - attack.t1574.001
   name: Svchost DLL Search Order Hijack
 

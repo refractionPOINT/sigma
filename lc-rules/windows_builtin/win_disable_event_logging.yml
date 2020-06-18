@@ -32,5 +32,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1054
+    - attack.t1562.006
   name: Disabling Windows Event Auditing
 

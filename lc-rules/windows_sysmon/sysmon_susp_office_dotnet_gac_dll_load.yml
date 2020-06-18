@@ -42,5 +42,6 @@ respond:
     tags:
     - attack.initial_access
     - attack.t1193
+    - attack.t1566.001
   name: GAC DLL Loaded Via Office Applications
 

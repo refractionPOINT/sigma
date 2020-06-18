@@ -69,5 +69,6 @@ respond:
     - attack.exfiltration
     - attack.t1020
     - attack.t1002
+    - attack.t1560
   name: Suspicious Compression Tool Parameters
 

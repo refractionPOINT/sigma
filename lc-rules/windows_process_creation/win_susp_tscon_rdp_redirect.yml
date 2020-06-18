@@ -25,5 +25,6 @@ respond:
     - attack.privilege_escalation
     - attack.t1076
     - car.2013-07-002
+    - attack.t1021
   name: Suspicious RDP Redirect Using TSCON
 

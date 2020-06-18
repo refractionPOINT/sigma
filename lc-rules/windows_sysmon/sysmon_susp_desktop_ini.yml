@@ -43,5 +43,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1023
+    - attack.t1547.009
   name: Suspicious desktop.ini Action
 

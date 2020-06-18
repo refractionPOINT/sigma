@@ -54,5 +54,6 @@ respond:
     - attack.t1086
     - attack.defense_evasion
     - attack.t1027
+    - attack.t1059.001
   name: CrackMapExec PowerShell Obfuscation
 

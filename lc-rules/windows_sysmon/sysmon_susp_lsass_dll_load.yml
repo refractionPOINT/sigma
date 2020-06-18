@@ -38,5 +38,6 @@ respond:
     tags:
     - attack.execution
     - attack.t1177
+    - attack.t1547.008
   name: DLL Load via LSASS
 

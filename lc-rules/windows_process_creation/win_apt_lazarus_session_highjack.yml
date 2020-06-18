@@ -42,5 +42,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1036
+    - attack.t1036.005
   name: Lazarus Session Highjacker
 

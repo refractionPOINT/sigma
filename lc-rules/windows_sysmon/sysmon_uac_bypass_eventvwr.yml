@@ -46,5 +46,6 @@ respond:
     - attack.privilege_escalation
     - attack.t1088
     - car.2019-04-001
+    - attack.t1548.002
   name: UAC Bypass via Event Viewer
 

@@ -63,5 +63,6 @@ respond:
     - attack.t1098
     - attack.exfiltration
     - attack.t1002
+    - attack.t1560
   name: Judgement Panda Exfil Activity
 

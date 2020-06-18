@@ -28,5 +28,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1122
+    - attack.t1546.015
   name: Windows Registry Persistence COM Key Linking
 

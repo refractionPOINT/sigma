@@ -23,5 +23,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1050
+    - attack.t1543.003
   name: Suspicious Driver Load from Temp
 

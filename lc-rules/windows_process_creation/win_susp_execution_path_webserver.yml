@@ -55,5 +55,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1100
+    - attack.t1505.003
   name: Execution in Webserver Root Folder
 

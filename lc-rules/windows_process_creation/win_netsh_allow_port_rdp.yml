@@ -55,5 +55,6 @@ respond:
     tags:
     - attack.command_and_control
     - attack.t1076
+    - attack.t1021.001
   name: Netsh RDP Port Opening
 

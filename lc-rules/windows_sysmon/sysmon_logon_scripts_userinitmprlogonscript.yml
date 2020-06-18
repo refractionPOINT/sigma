@@ -43,6 +43,7 @@ respond:
     - https://attack.mitre.org/techniques/T1037/
     tags:
     - attack.t1037
+    - attack.t1037.001
     - attack.persistence
     - attack.lateral_movement
   name: Logon Scripts (UserInitMprLogonScript)
@@ -72,6 +73,7 @@ respond:
     - https://attack.mitre.org/techniques/T1037/
     tags:
     - attack.t1037
+    - attack.t1037.001
     - attack.persistence
     - attack.lateral_movement
   name: Logon Scripts (UserInitMprLogonScript)
@@ -113,6 +115,7 @@ respond:
     - https://attack.mitre.org/techniques/T1037/
     tags:
     - attack.t1037
+    - attack.t1037.001
     - attack.persistence
     - attack.lateral_movement
   name: Logon Scripts (UserInitMprLogonScript)

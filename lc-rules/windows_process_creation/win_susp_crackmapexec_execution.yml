@@ -42,5 +42,7 @@ respond:
     - attack.t1047
     - attack.t1053
     - attack.t1086
+    - attack.t1059.003
+    - attack.t1059.001
   name: CrackMapExec Command Execution
 

@@ -111,5 +111,6 @@ respond:
     - attack.t1085
     - attack.defense_evasion
     - attack.execution
+    - attack.t1218
   name: Rundll32 Internet Connection
 

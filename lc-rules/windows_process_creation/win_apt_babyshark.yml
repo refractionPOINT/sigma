@@ -37,5 +37,8 @@ respond:
     - attack.t1012
     - attack.defense_evasion
     - attack.t1170
+    - attack.t1218
+    - attack.t1059.003
+    - attack.t1059.001
   name: Baby Shark Activity
 

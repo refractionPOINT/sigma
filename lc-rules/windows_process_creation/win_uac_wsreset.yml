@@ -30,5 +30,6 @@ respond:
     tags:
     - attack.privilege_escalation
     - attack.t1088
+    - attack.t1548.002
   name: Bypass UAC via WSReset.exe
 

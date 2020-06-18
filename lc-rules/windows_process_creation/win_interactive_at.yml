@@ -30,5 +30,6 @@ respond:
     tags:
     - attack.privilege_escalation
     - attack.t1053
+    - attack.t1053.002
   name: Interactive AT Job
 

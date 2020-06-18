@@ -50,5 +50,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1038
+    - attack.t1574.001
   name: Windows Registry Persistence COM Search Order Hijacking
 

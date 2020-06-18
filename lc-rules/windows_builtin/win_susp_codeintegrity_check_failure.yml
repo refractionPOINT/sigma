@@ -22,5 +22,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1009
+    - attack.t1027
   name: Failed Code Integrity Checks
 

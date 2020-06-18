@@ -21,5 +21,6 @@ respond:
     - attack.execution
     - attack.t1035
     - attack.s0029
+    - attack.t1569.002
   name: PsExec Service Start
 

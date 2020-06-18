@@ -159,5 +159,6 @@ respond:
     tags:
     - attack.credential_access
     - attack.t1003
+    - attack.t1003.001
   name: Load of dbghelp/dbgcore DLL from Suspicious Process
 

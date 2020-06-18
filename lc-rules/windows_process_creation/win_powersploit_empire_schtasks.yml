@@ -52,5 +52,7 @@ respond:
     - attack.g0022
     - attack.g0060
     - car.2013-08-001
+    - attack.t1053.005
+    - attack.t1059.001
   name: Default PowerSploit and Empire Schtasks Persistence
 

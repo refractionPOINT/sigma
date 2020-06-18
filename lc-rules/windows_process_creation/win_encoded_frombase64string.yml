@@ -33,5 +33,6 @@ respond:
     - attack.t1140
     - attack.execution
     - attack.defense_evasion
+    - attack.t1059.001
   name: Encoded FromBase64String
 

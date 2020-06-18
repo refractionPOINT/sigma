@@ -56,5 +56,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1103
+    - attack.t1546.010
   name: New DLL Added to AppInit_DLLs Registry Key
 

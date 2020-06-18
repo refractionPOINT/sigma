@@ -76,5 +76,6 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1085
+    - attack.t1218.011
   name: Suspicious Rundll32 Activity
 

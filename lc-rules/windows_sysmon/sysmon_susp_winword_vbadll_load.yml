@@ -52,5 +52,6 @@ respond:
     tags:
     - attack.initial_access
     - attack.t1193
+    - attack.t1566.001
   name: VBA DLL Loaded Via Microsoft Word
 

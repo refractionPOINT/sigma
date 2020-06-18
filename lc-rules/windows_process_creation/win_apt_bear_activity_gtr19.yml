@@ -42,5 +42,6 @@ respond:
     - attack.credential_access
     - attack.t1081
     - attack.t1003
+    - attack.t1552.001
   name: Judgement Panda Credential Access Activity
 

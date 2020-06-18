@@ -36,5 +36,6 @@ respond:
     - attack.persistence
     - attack.lateral_movement
     - attack.t1053
+    - attack.t1053.005
   name: Persistence and Execution at Scale via GPO Scheduled Task
 

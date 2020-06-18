@@ -29,5 +29,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1138
+    - attack.t1546.011
   name: Possible Shim Database Persistence via sdbinst.exe
 

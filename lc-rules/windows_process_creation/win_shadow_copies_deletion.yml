@@ -50,5 +50,6 @@ respond:
     - attack.impact
     - attack.t1070
     - attack.t1490
+    - attack.t1551
   name: Shadow Copies Deletion Using Operating Systems Utilities
 

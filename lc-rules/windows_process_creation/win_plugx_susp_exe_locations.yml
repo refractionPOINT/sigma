@@ -247,5 +247,6 @@ respond:
     - attack.s0013
     - attack.defense_evasion
     - attack.t1073
+    - attack.t1574.002
   name: Executable Used by PlugX in Uncommon Location
 

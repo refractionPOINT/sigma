@@ -24,5 +24,6 @@ respond:
     tags:
     - attack.t1084
     - attack.persistence
+    - attack.t1546.003
   name: WMI Persistence - Script Event Consumer File Write
 

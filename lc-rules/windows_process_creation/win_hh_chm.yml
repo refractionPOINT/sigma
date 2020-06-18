@@ -30,5 +30,6 @@ respond:
     - attack.defense_evasion
     - attack.execution
     - attack.t1223
+    - attack.t1218.001
   name: HH.exe Execution
 

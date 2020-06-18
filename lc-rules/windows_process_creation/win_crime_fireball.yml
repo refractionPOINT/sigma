@@ -25,5 +25,6 @@ respond:
     - attack.t1059
     - attack.defense_evasion
     - attack.t1085
+    - attack.t1218.011
   name: Fireball Archer Install
 

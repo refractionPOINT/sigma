@@ -56,5 +56,6 @@ respond:
     - attack.execution
     - attack.defense_evasion
     - attack.t1223
+    - attack.t1218.001
   name: HTML Help Shell Spawn
 

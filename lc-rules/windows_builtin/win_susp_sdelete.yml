@@ -44,5 +44,7 @@ respond:
     - attack.t1107
     - attack.t1066
     - attack.s0195
+    - attack.t1551.004
+    - attack.t1027
   name: Secure Deletion with SDelete
 

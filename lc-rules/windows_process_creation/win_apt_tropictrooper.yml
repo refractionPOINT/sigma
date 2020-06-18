@@ -21,5 +21,6 @@ respond:
     tags:
     - attack.execution
     - attack.t1085
+    - attack.t1218.011
   name: TropicTrooper Campaign November 2018
 

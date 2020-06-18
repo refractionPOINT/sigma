@@ -47,5 +47,6 @@ respond:
     tags:
     - attack.execution
     - attack.t1064
+    - attack.t1059.005
   name: WSF/JSE/JS/VBA/VBE File Execution
 

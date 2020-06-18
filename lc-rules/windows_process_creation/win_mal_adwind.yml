@@ -27,6 +27,7 @@ respond:
     tags:
     - attack.execution
     - attack.t1064
+    - attack.t1059.005
   name: Adwind RAT / JRAT
 
 detect:
@@ -60,6 +61,7 @@ respond:
     tags:
     - attack.execution
     - attack.t1064
+    - attack.t1059.005
   name: Adwind RAT / JRAT
 
 detect:
@@ -91,5 +93,6 @@ respond:
     tags:
     - attack.execution
     - attack.t1064
+    - attack.t1059.005
   name: Adwind RAT / JRAT
 

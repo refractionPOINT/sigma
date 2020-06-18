@@ -35,5 +35,7 @@ respond:
     tags:
     - attack.execution
     - attack.t1175
+    - attack.t1021.003
+    - attack.t1559.001
   name: MMC20 Lateral Movement
 

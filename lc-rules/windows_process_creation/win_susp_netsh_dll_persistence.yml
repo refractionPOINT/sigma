@@ -32,5 +32,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1128
+    - attack.t1546.007
   name: Suspicious Netsh DLL Persistence
 

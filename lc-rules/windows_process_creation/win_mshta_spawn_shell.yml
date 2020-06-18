@@ -67,5 +67,6 @@ respond:
     - car.2013-02-003
     - car.2013-03-001
     - car.2014-04-003
+    - attack.t1218
   name: MSHTA Spawning Windows Shell
 

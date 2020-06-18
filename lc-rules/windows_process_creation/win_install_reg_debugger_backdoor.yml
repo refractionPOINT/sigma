@@ -50,5 +50,6 @@ respond:
     - attack.persistence
     - attack.privilege_escalation
     - attack.t1015
+    - attack.t1546.008
   name: Suspicious Debugger Registration Cmdline
 

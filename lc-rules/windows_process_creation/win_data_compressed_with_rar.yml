@@ -31,5 +31,6 @@ respond:
     tags:
     - attack.exfiltration
     - attack.t1002
+    - attack.t1560
   name: Data Compressed - rar.exe
 

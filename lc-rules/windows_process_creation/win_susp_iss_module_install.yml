@@ -24,5 +24,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1100
+    - attack.t1505.003
   name: IIS Native-Code Module Command Line Installation
 

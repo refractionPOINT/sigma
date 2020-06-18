@@ -31,5 +31,7 @@ respond:
     tags:
     - attack.execution
     - attack.t1059
+    - attack.t1059.005
+    - attack.t1059.001
   name: Command Line Execution with Suspicious URL and AppData Strings
 

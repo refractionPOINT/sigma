@@ -32,5 +32,6 @@ respond:
     - attack.credential_access
     - attack.t1003
     - car.2013-05-009
+    - attack.t1003.001
   name: Process Dump via Rundll32 and Comsvcs.dll
 

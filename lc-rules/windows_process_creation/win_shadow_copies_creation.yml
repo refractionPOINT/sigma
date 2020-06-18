@@ -44,5 +44,7 @@ respond:
     tags:
     - attack.credential_access
     - attack.t1003
+    - attack.t1003.002
+    - attack.t1003.003
   name: Shadow Copies Creation Using Operating Systems Utilities
 

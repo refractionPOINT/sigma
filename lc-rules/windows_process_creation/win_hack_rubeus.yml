@@ -57,5 +57,7 @@ respond:
     - attack.credential_access
     - attack.t1003
     - attack.s0005
+    - attack.t1558
+    - attack.t1558.003
   name: Rubeus Hack Tool
 

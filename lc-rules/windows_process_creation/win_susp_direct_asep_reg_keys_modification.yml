@@ -73,5 +73,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1060
+    - attack.t1547.001
   name: Direct Autorun Keys Modification
 

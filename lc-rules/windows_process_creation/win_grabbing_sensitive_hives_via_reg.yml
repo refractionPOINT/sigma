@@ -61,5 +61,6 @@ respond:
     - attack.credential_access
     - attack.t1003
     - car.2013-07-001
+    - attack.t1003.002
   name: Grabbing Sensitive Hives via Reg Utility
 

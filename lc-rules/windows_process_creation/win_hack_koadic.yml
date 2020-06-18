@@ -24,5 +24,6 @@ respond:
     tags:
     - attack.execution
     - attack.t1170
+    - attack.t1218.005
   name: Koadic Execution
 

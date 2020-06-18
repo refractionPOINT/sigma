@@ -24,5 +24,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1084
+    - attack.t1546.003
   name: WMI Backdoor Exchange Transport Agent
 

@@ -223,5 +223,6 @@ respond:
     tags:
     - attack.execution
     - attack.t1086
+    - attack.t1059.001
   name: Malicious Base64 Encoded PowerShell Keywords in Command Lines
 
