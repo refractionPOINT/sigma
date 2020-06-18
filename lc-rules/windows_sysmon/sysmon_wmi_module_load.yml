@@ -77,6 +77,18 @@ detect:
       op: ends with
       path: Event/EventData/Image
       value: \SIHClient.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \msfeedssync.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \mmc.exe
+    - case sensitive: false
+      op: ends with
+      path: Event/EventData/Image
+      value: \MoUsoCoreWorker.exe
   target: log
 respond:
 - action: report
