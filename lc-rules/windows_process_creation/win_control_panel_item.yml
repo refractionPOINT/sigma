@@ -5,29 +5,40 @@ detect:
   op: and
   rules:
   - op: is windows
-  - op: and
+  - op: or
     rules:
-    - case sensitive: false
-      op: ends with
-      path: event/COMMAND_LINE
-      value: .cpl
-    - not: true
-      op: or
+    - op: and
+      rules:
+      - case sensitive: false
+        op: ends with
+        path: event/COMMAND_LINE
+        value: .cpl
+      - not: true
+        op: or
+        rules:
+        - case sensitive: false
+          op: contains
+          path: event/COMMAND_LINE
+          value: \System32\
+        - case sensitive: false
+          op: contains
+          path: event/COMMAND_LINE
+          value: '%System%'
+    - op: and
       rules:
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
-        value: \System32\
+        value: reg add
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE
-        value: '%System%'
+        value: CurrentVersion\\Control Panel\\CPLs
 respond:
 - action: report
   metadata:
-    author: Kyaw Min Thein
-    description: Detects the use of a control panel item (.cpl) outside of the System32
-      folder
+    author: Kyaw Min Thein, Furkan Caliskan (@caliskanfurkan_)
+    description: Detects the malicious use of a control panel item
     falsepositives:
     - Unknown
     level: critical
