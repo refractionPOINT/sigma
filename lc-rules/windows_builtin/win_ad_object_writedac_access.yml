@@ -13,7 +13,7 @@ detect:
   - case sensitive: false
     op: is
     path: Event/EventData/AccessMask
-    value: '262144'
+    value: '0x40000'
   - op: or
     rules:
     - case sensitive: false
