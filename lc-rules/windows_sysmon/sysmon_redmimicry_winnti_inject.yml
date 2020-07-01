@@ -1,0 +1,32 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: is
+    path: Event/System/EventID
+    value: '8'
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/SourceImage
+    value: rundll32.exe
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/TargetImage
+    value: svchost.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: Alexander Rausch
+    description: Detects actions caused by the RedMimicry Winnti playbook
+    falsepositives:
+    - Unknown
+    level: high
+    references:
+    - https://redmimicry.com
+    tags:
+    - attack.defense_evasion
+    - attack.t1055
+  name: RedMimicry Winnti Playbook Inject
+
