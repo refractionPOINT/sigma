@@ -1,0 +1,34 @@
+detect:
+  events:
+  - NEW_PROCESS
+  - EXISTING_PROCESS
+  op: and
+  rules:
+  - op: is windows
+  - op: or
+    rules:
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: cmd.exe /c copy %SystemRoot%
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: cmd.exe /c copy C:\Windows
+respond:
+- action: report
+  metadata:
+    author: Florian Roth
+    description: Detects a suspicious copy command that copies a system program from
+      System32 to another directory on disk - sometimes used to use LOLBINs like certutil
+      or desktopimgdownldr to a different location with a different name
+    falsepositives:
+    - False positives depend on scripts and administrative tools used in the monitored
+      environment
+    level: high
+    references:
+    - Internal Research
+    tags:
+    - attack.defense_evasion
+  name: Suspicious Copy From System Root
+
