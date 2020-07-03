@@ -5,7 +5,7 @@ detect:
   op: and
   rules:
   - op: is windows
-  - op: or
+  - op: and
     rules:
     - case sensitive: false
       op: contains

@@ -8,9 +8,9 @@ detect:
   - op: and
     rules:
     - case sensitive: false
-      op: ends with
+      op: contains
       path: event/PARENT/COMMAND_LINE
-      value: \DllHost.exe
+      value: '\DllHost.exe '
     - op: or
       rules:
       - case sensitive: false
@@ -31,7 +31,7 @@ respond:
     - Legitimate CMSTP use (unlikely in modern enterprise environments)
     level: high
     references:
-    - http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
+    - https://web.archive.org/web/20190720093911/http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
     - https://twitter.com/hFireF0X/status/897640081053364225
     tags:
     - attack.defense_evasion

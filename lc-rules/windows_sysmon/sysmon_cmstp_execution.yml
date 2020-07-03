@@ -47,7 +47,7 @@ respond:
     - Legitimate CMSTP use (unlikely in modern enterprise environments)
     level: high
     references:
-    - http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
+    - https://web.archive.org/web/20190720093911/http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
     tags:
     - attack.defense_evasion
     - attack.execution
@@ -77,7 +77,7 @@ respond:
     - Legitimate CMSTP use (unlikely in modern enterprise environments)
     level: high
     references:
-    - http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
+    - https://web.archive.org/web/20190720093911/http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
     tags:
     - attack.defense_evasion
     - attack.execution

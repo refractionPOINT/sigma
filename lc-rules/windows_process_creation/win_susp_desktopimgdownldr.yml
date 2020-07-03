@@ -50,6 +50,7 @@ respond:
     level: high
     references:
     - https://labs.sentinelone.com/living-off-windows-land-a-new-native-file-downldr/
+    - https://twitter.com/SBousseaden/status/1278977301745741825
     tags:
     - attack.defense_evasion
     - attack.t1105
