@@ -63,6 +63,10 @@ detect:
       op: contains
       path: Event/EventData/ProcessName
       value: \procmon.exe
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/ProcessName
+      value: \Google\Chrome\Application\chrome.exe
   target: log
 respond:
 - action: report
