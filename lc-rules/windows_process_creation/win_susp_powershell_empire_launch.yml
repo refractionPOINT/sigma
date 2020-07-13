@@ -19,6 +19,18 @@ detect:
       op: contains
       path: event/COMMAND_LINE
       value: ' -NoP -NonI -W Hidden -enc '
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: ' -noP -sta -w 1 -enc'
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: ' -enc  SQB'
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: ' -nop -exec bypass -EncodedCommand SQB'
 respond:
 - action: report
   metadata:
