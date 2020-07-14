@@ -46,6 +46,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1099
-    - attack.t1551.006
+    - attack.t1070.006
   name: Unauthorized System Time Modification
 
