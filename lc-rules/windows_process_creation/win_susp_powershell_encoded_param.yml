@@ -6,7 +6,7 @@ detect:
   rules:
   - op: is windows
   - case sensitive: false
-    op: is
+    op: contains
     path: event/COMMAND_LINE
     value: (WCHAR)0x
 respond:
