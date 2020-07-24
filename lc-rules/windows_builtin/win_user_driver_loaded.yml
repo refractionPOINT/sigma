@@ -82,9 +82,9 @@ respond:
       and various other tools. So you have to work with a whitelist to find the bad
       stuff.
     falsepositives:
-    - Other legimate tools loading drivers. There are some: Sysinternals, CPU-Z, AVs
-        etc. - but not much. You have to baseline this according to your used products
-        and allowed tools. Also try to exclude users, which are allowed to load drivers.
+    - 'Other legimate tools loading drivers. There are some: Sysinternals, CPU-Z,
+      AVs etc. - but not much. You have to baseline this according to your used products
+      and allowed tools. Also try to exclude users, which are allowed to load drivers.'
     level: medium
     references:
     - https://blog.dylan.codes/evading-sysmon-and-windows-event-logging/
