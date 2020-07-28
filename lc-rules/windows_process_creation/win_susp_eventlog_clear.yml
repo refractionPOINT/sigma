@@ -81,6 +81,5 @@ respond:
     - attack.defense_evasion
     - attack.t1070
     - car.2016-04-002
-    - attack.t1070
   name: Suspicious Eventlog Clear or Configuration Using Wevtutil
 
