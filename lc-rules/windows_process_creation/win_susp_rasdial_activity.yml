@@ -6,9 +6,9 @@ detect:
   rules:
   - op: is windows
   - case sensitive: false
-    op: is
-    path: event/COMMAND_LINE
-    value: rasdial
+    op: ends with
+    path: event/FILE_PATH
+    value: rasdial.exe
 respond:
 - action: report
   metadata:
