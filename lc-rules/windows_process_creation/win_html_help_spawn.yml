@@ -53,9 +53,16 @@ respond:
     references:
     - https://www.trustwave.com/en-us/resources/blogs/spiderlabs-blog/chm-badness-delivers-a-banking-trojan/
     tags:
-    - attack.execution
     - attack.defense_evasion
-    - attack.t1223
     - attack.t1218.001
+    - attack.t1218.010
+    - attack.t1218.011
+    - attack.execution
+    - attack.t1223
+    - attack.t1059.001
+    - attack.t1059.003
+    - attack.t1059.005
+    - attack.t1059.007
+    - attack.t1047
   name: HTML Help Shell Spawn
 

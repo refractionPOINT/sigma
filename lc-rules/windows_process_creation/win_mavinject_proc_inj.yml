@@ -23,6 +23,7 @@ respond:
     - https://twitter.com/Hexacorn/status/776122138063409152
     tags:
     - attack.t1055
+    - attack.t1055.001
     - attack.t1218
   name: MavInject Process Injection
 

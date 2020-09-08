@@ -66,9 +66,10 @@ respond:
     references:
     - https://twitter.com/SBousseaden/status/1184067445612535811
     tags:
+    - attack.collection
+    - attack.t1560.001
     - attack.exfiltration
     - attack.t1020
     - attack.t1002
-    - attack.t1560
   name: Suspicious Compression Tool Parameters
 

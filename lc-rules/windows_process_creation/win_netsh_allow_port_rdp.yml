@@ -53,8 +53,8 @@ respond:
     references:
     - https://labs.sentinelone.com/sarwent-malware-updates-command-detonation/
     tags:
-    - attack.command_and_control
-    - attack.t1076
-    - attack.t1021.001
+    - attack.defense_evasion
+    - attack.t1089
+    - attack.t1562.004
   name: Netsh RDP Port Opening
 

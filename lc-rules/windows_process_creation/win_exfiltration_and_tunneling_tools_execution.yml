@@ -33,6 +33,10 @@ respond:
     level: medium
     tags:
     - attack.exfiltration
-    - attack.t1020
+    - attack.command_and_control
+    - attack.t1043
+    - attack.t1041
+    - attack.t1572
+    - attack.t1071.001
   name: Exfiltration and Tunneling Tools Execution
 

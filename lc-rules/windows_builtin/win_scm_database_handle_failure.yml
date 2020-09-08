@@ -33,5 +33,7 @@ respond:
     level: critical
     references:
     - https://github.com/Cyb3rWard0g/ThreatHunter-Playbook/tree/master/playbooks/windows/07_discovery/T1000_local_admin_check/local_admin_remote_check_openscmanager.md
+    tags:
+    - attack.discovery
   name: SCM Database Handle Failure
 

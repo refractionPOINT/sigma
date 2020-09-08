@@ -23,8 +23,6 @@ respond:
     falsepositives:
     - exclude legitimate (vetted) use of WMI event subscription in your network
     level: high
-    references:
-    - https://attack.mitre.org/techniques/T1084/
     tags:
     - attack.t1084
     - attack.persistence

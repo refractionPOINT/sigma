@@ -29,10 +29,10 @@ respond:
     - unknown
     level: critical
     tags:
-    - attack.t1086
+    - attack.defense_evasion
     - attack.t1140
     - attack.execution
-    - attack.defense_evasion
     - attack.t1059.001
+    - attack.t1086
   name: Encoded FromBase64String
 

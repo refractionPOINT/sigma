@@ -28,7 +28,8 @@ respond:
     - https://www.fireeye.com/blog/threat-research/2017/05/fin7-shim-databases-persistence.html
     tags:
     - attack.persistence
-    - attack.t1138
+    - attack.privilege_escalation
     - attack.t1546.011
+    - attack.t1138
   name: Possible Shim Database Persistence via sdbinst.exe
 

@@ -31,7 +31,8 @@ respond:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1128/T1128.md
     tags:
     - attack.persistence
-    - attack.t1128
     - attack.t1546.007
+    - attack.s0108
+    - attack.t1128
   name: Suspicious Netsh DLL Persistence
 

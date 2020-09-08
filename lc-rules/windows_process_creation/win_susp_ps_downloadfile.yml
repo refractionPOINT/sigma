@@ -32,7 +32,10 @@ respond:
     - https://www.fireeye.com/blog/threat-research/2020/03/apt41-initiates-global-intrusion-campaign-using-multiple-exploits.html
     tags:
     - attack.execution
-    - attack.t1086
     - attack.t1059.001
+    - attack.t1086
+    - attack.command_and_control
+    - attack.t1104
+    - attack.t1105
   name: PowerShell DownloadFile
 

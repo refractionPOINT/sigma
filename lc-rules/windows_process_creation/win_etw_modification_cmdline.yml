@@ -30,5 +30,6 @@ respond:
     - https://github.com/dotnet/runtime/blob/4f9ae42d861fcb4be2fcd5d3d55d5f227d30e723/docs/coding-guidelines/clr-jit-coding-conventions.md#1412-disabling-code
     tags:
     - attack.defense_evasion
+    - attack.t1562
   name: COMPlus_ETWEnabled Command Line Arguments
 

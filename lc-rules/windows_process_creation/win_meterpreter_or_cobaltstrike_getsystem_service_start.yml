@@ -86,5 +86,7 @@ respond:
     tags:
     - attack.privilege_escalation
     - attack.t1134
+    - attack.t1134.001
+    - attack.t1134.002
   name: Meterpreter or Cobalt Strike Getsystem Service Start
 

@@ -44,8 +44,10 @@ respond:
     level: critical
     tags:
     - attack.execution
-    - attack.t1196
     - attack.defense_evasion
-    - attack.t1218
+    - attack.t1218.002
+    - attack.t1196
+    - attack.persistence
+    - attack.t1546
   name: Control Panel Items
 

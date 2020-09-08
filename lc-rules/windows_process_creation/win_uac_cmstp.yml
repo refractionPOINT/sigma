@@ -34,11 +34,11 @@ respond:
     - https://eqllib.readthedocs.io/en/latest/analytics/e584f1a1-c303-4885-8a66-21360c90995b.html
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1191/T1191.md
     tags:
+    - attack.privilege_escalation
     - attack.defense_evasion
-    - attack.execution
+    - attack.t1548.002
+    - attack.t1218.003
     - attack.t1191
     - attack.t1088
-    - attack.t1548.002
-    - attack.t1218
   name: Bypass UAC via CMSTP
 

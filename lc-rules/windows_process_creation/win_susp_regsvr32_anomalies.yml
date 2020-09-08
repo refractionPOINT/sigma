@@ -84,11 +84,11 @@ respond:
     references:
     - https://subt0x10.blogspot.de/2017/04/bypass-application-whitelisting-script.html
     tags:
-    - attack.t1117
     - attack.defense_evasion
+    - attack.t1218.010
     - attack.execution
+    - attack.t1117
     - car.2019-04-002
     - car.2019-04-003
-    - attack.t1218
   name: Regsvr32 Anomaly
 

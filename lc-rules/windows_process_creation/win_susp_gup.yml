@@ -43,7 +43,7 @@ respond:
     - https://www.fireeye.com/blog/threat-research/2018/09/apt10-targeting-japanese-corporations-using-updated-ttps.html
     tags:
     - attack.defense_evasion
-    - attack.t1073
     - attack.t1574.002
+    - attack.t1073
   name: Suspicious GUP Usage
 

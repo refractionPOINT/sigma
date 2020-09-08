@@ -72,7 +72,7 @@ respond:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1060/T1060.yaml
     tags:
     - attack.persistence
-    - attack.t1060
     - attack.t1547.001
+    - attack.t1060
   name: Direct Autorun Keys Modification
 

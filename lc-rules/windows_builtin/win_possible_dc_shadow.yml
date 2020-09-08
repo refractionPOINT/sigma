@@ -31,7 +31,7 @@ respond:
 - action: report
   metadata:
     author: Ilyas Ochkov, oscd.community, Chakib Gzenayi (@Chak092), Hosni Mribah
-    description: Detects DC sync via create new SPN
+    description: Detects DCShadow via create new SPN
     falsepositives:
     - Exclude known DCs
     level: high

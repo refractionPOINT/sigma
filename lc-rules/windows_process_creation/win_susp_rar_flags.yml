@@ -29,6 +29,8 @@ respond:
     references:
     - https://labs.sentinelone.com/the-anatomy-of-an-apt-attack-and-cobaltstrike-beacons-encoded-configuration/
     tags:
+    - attack.collection
+    - attack.t1560.001
     - attack.exfiltration
     - attack.t1002
   name: Rar with Password or Compression Level

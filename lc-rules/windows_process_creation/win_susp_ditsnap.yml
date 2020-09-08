@@ -29,6 +29,7 @@ respond:
     - https://github.com/yosqueoy/ditsnap
     tags:
     - attack.credential_access
+    - attack.t1003.003
     - attack.t1003
   name: DIT Snapshot Viewer Use
 

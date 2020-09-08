@@ -32,6 +32,7 @@ respond:
     - https://blogs.msdn.microsoft.com/canberrapfe/2012/03/30/capture-a-network-trace-without-installing-anything-capture-a-network-trace-of-a-reboot/
     tags:
     - attack.discovery
+    - attack.credential_access
     - attack.t1040
   name: Capture a Network Trace with netsh.exe
 

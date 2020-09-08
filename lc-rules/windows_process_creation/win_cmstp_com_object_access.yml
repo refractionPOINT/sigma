@@ -34,14 +34,14 @@ respond:
     - https://web.archive.org/web/20190720093911/http://www.endurant.io/cmstp/detecting-cmstp-enabled-code-execution-and-uac-bypass-with-sysmon/
     - https://twitter.com/hFireF0X/status/897640081053364225
     tags:
+    - attack.execution
     - attack.defense_evasion
     - attack.privilege_escalation
-    - attack.execution
+    - attack.t1548.002
     - attack.t1088
+    - attack.t1218.003
     - attack.t1191
     - attack.g0069
     - car.2019-04-001
-    - attack.t1548.002
-    - attack.t1218
   name: CMSTP UAC Bypass via COM Object Access
 

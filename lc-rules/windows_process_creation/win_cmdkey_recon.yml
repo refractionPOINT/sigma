@@ -28,7 +28,7 @@ respond:
     - https://technet.microsoft.com/en-us/library/cc754243(v=ws.11).aspx
     tags:
     - attack.credential_access
-    - attack.t1003
     - attack.t1003.005
+    - attack.t1003
   name: Cmdkey Cached Credentials Recon
 

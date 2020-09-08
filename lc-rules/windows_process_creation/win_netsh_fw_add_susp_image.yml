@@ -130,8 +130,8 @@ respond:
     - https://www.virusradar.com/en/Win32_Kasidet.AD/description
     - https://www.hybrid-analysis.com/sample/07e789f4f2f3259e7559fdccb36e96814c2dbff872a21e1fa03de9ee377d581f?environmentId=100
     tags:
-    - attack.lateral_movement
-    - attack.command_and_control
-    - attack.t1090
+    - attack.defense_evasion
+    - attack.t1089
+    - attack.t1562.004
   name: Netsh Program Allowed with Suspcious Location
 

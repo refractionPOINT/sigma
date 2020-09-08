@@ -23,7 +23,7 @@ respond:
     references:
     - https://www.harmj0y.net/blog/activedirectory/the-most-dangerous-user-right-you-probably-have-never-heard-of/
     tags:
-    - attack.privilege_escalation
-    - attack.t1078
+    - attack.persistence
+    - attack.t1098
   name: Enabled User Right in AD to Control User Objects
 

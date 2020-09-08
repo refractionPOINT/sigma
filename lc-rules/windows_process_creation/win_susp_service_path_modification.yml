@@ -41,7 +41,8 @@ respond:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1031/T1031.yaml
     tags:
     - attack.persistence
-    - attack.t1031
+    - attack.privilege_escalation
     - attack.t1543.003
+    - attack.t1031
   name: Suspicious Service Path Modification
 

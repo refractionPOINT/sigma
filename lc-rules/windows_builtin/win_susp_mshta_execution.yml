@@ -59,5 +59,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1140
+    - attack.t1218.005
   name: MSHTA Suspicious Execution 01
 

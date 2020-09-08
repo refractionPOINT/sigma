@@ -221,6 +221,7 @@ respond:
     - https://lolbas-project.github.io
     tags:
     - attack.privilege_escalation
+    - attack.defense_evasion
     - attack.t1055
   name: Suspicious Remote Thread Created
 

@@ -40,6 +40,7 @@ respond:
     - https://us-cert.cisa.gov/ncas/analysis-reports/ar20-216a
     tags:
     - attack.execution
+    - attack.t1055
     - attack.t1055.001
   name: TAIDOOR RAT DLL Load
 

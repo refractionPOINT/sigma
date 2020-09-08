@@ -29,8 +29,9 @@ respond:
     - https://any.run/report/68bc255f9b0db6a0d30a8f2dadfbee3256acfe12497bf93943bc1eab0735e45e/a2385d6f-34f7-403c-90d3-b1f9d2a90a5e
     tags:
     - attack.execution
+    - attack.t1047
+    - attack.t1059.001
     - attack.defense_evasion
     - attack.t1064
-    - attack.t1059.001
   name: WMI Spawning Windows PowerShell
 

@@ -21,6 +21,7 @@ respond:
     - https://www.fireeye.com/blog/threat-research/2019/01/bypassing-network-restrictions-through-rdp-tunneling.html
     tags:
     - attack.lateral_movement
+    - attack.defense_evasion
     - attack.command_and_control
     - attack.t1090
   name: Netsh Port Forwarding

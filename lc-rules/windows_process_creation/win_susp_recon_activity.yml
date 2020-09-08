@@ -27,6 +27,8 @@ respond:
     level: medium
     tags:
     - attack.discovery
+    - attack.t1087.001
+    - attack.t1087.002
     - attack.t1087
   name: Suspicious Reconnaissance Activity
 

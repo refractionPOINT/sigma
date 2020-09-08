@@ -29,7 +29,7 @@ respond:
     - https://app.any.run/tasks/f87f1c4e-47e2-4c46-9cf4-31454c06ce03
     tags:
     - attack.execution
-    - attack.t1086
     - attack.t1059.001
+    - attack.t1086
   name: PowerShell Script Run in AppData
 

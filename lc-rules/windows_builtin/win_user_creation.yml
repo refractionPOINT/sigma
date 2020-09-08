@@ -21,5 +21,6 @@ respond:
     tags:
     - attack.persistence
     - attack.t1136
+    - attack.t1136.001
   name: Local User Creation
 

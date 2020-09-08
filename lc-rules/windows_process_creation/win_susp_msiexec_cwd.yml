@@ -38,6 +38,7 @@ respond:
     - https://twitter.com/200_okay_/status/1194765831911215104
     tags:
     - attack.defense_evasion
+    - attack.t1036.005
     - attack.t1036
   name: Suspicious MsiExec Directory
 

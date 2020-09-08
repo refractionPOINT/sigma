@@ -23,7 +23,7 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.execution
-    - attack.t1064
     - attack.t1059
+    - attack.t1064
   name: Suspicious RASdial Activity
 

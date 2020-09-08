@@ -101,7 +101,7 @@ respond:
     - https://app.any.run/tasks/6217d77d-3189-4db2-a957-8ab239f3e01e
     tags:
     - attack.execution
-    - attack.t1086
     - attack.t1059.001
+    - attack.t1086
   name: Suspicious Encoded PowerShell Command Line
 

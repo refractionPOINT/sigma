@@ -32,7 +32,7 @@ respond:
     - https://twitter.com/harr0ey/status/992008180904419328
     tags:
     - attack.defense_evasion
-    - attack.execution
     - attack.t1218
+    - attack.execution
   name: Application Whitelisting Bypass via Dxcap.exe
 

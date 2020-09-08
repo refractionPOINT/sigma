@@ -52,7 +52,7 @@ respond:
 - action: report
   metadata:
     author: Florian Roth
-    description: Detects interactive console logons to
+    description: Detects interactive console logons to Server Systems
     falsepositives:
     - Administrative activity via KVM or ILO board
     level: medium

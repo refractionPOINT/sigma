@@ -26,5 +26,8 @@ respond:
     references:
     - https://twitter.com/kmkz_security/status/1220694202301976576
     - https://github.com/kmkz/Pentesting/blob/master/Post-Exploitation-Cheat-Sheet
+    tags:
+    - attack.lateral_movement
+    - attack.t1563.002
   name: MSTSC Shadowing
 

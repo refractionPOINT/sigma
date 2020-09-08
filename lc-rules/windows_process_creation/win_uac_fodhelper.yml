@@ -23,7 +23,7 @@ respond:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1088/T1088.md
     tags:
     - attack.privilege_escalation
-    - attack.t1088
     - attack.t1548.002
+    - attack.t1088
   name: Bypass UAC via Fodhelper.exe
 

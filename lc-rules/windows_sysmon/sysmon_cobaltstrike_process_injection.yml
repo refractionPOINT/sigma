@@ -36,5 +36,6 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1055
+    - attack.t1055.001
   name: CobaltStrike Process Injection
 

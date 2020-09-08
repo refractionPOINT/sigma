@@ -53,7 +53,7 @@ respond:
 - action: report
   metadata:
     author: Michael Haag
-    description: Detects a Windows command line executable started from MSHTA.
+    description: Detects a Windows command line executable started from MSHTA
     falsepositives:
     - Printer software / driver installations
     - HP software
@@ -62,11 +62,10 @@ respond:
     - https://www.trustedsec.com/july-2015/malicious-htas/
     tags:
     - attack.defense_evasion
-    - attack.execution
     - attack.t1170
+    - attack.t1218.005
     - car.2013-02-003
     - car.2013-03-001
     - car.2014-04-003
-    - attack.t1218
   name: MSHTA Spawning Windows Shell
 

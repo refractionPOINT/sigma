@@ -31,5 +31,6 @@ respond:
     - https://www.hybrid-analysis.com/sample/8da5b75b6380a41eee3a399c43dfe0d99eeefaa1fd21027a07b1ecaa4cd96fdd?environmentId=120
     tags:
     - attack.defense_evasion
+    - attack.t1036.003
   name: Suspicious Copy From or To System32
 

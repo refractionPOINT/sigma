@@ -22,7 +22,8 @@ detect:
 respond:
 - action: report
   metadata:
-    author: '@2xxeformyshirt (Security Risk Advisors)'
+    author: '@2xxeformyshirt (Security Risk Advisors) - rule; Teymur Kheirkhabarov
+      (idea)'
     description: Detects MMC20.Application Lateral Movement; specifically looks for
       the spawning of the parent MMC.exe with a command line of "-Embedding" as a
       child of svchost.exe
@@ -36,6 +37,5 @@ respond:
     - attack.execution
     - attack.t1175
     - attack.t1021.003
-    - attack.t1559.001
   name: MMC20 Lateral Movement
 

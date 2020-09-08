@@ -37,8 +37,9 @@ respond:
     - https://github.com/Neo23x0/sigma/blob/master/rules/windows/process_creation/win_mal_lockergoga.yml
     - https://abuse.io/lockergoga.txt
     tags:
-    - attack.execution
+    - attack.defense_evasion
     - attack.t1070
+    - attack.t1562
     - car.2016-04-002
   name: Disable of ETW Trace
 

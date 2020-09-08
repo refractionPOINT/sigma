@@ -27,9 +27,8 @@ respond:
     - https://github.com/SandboxEscaper/polarbearrepo/tree/master/bearlpe
     tags:
     - attack.privilege_escalation
-    - attack.execution
+    - attack.t1053.005
     - attack.t1053
     - car.2013-08-001
-    - attack.t1053.005
   name: Windows 10 Scheduled Task SandboxEscaper 0-day
 

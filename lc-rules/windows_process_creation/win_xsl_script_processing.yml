@@ -37,7 +37,8 @@ respond:
     references:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1220/T1220.yaml
     tags:
-    - attack.execution
+    - attack.defense_evasion
     - attack.t1220
+    - attack.execution
   name: XSL Script Processing
 

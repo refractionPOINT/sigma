@@ -61,7 +61,7 @@ respond:
 - action: report
   metadata:
     author: Samir Bousseaden
-    description: Detects known sensitive file extensions
+    description: Detects known sensitive file extensions accessed on a network share
     falsepositives:
     - Help Desk operator doing backup or re-imaging end user machine or pentest or
       backup software
@@ -69,5 +69,6 @@ respond:
     level: medium
     tags:
     - attack.collection
+    - attack.t1039
   name: Suspicious Access to Sensitive File Extensions
 

@@ -27,8 +27,8 @@ respond:
     references:
     - https://speakerdeck.com/heirhabarov/hunting-for-privilege-escalation-in-windows-environment
     tags:
-    - attack.discovery
     - attack.privilege_escalation
+    - attack.discovery
     - attack.t1033
   name: Run Whoami as SYSTEM
 

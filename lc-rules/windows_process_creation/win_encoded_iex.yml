@@ -65,9 +65,8 @@ respond:
     - unknown
     level: critical
     tags:
-    - attack.t1086
-    - attack.t1140
     - attack.execution
-    - attack.t1059.003
+    - attack.t1059.001
+    - attack.t1086
   name: Encoded IEX
 

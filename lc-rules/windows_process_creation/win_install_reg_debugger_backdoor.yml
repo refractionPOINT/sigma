@@ -49,7 +49,7 @@ respond:
     tags:
     - attack.persistence
     - attack.privilege_escalation
-    - attack.t1015
     - attack.t1546.008
+    - attack.t1015
   name: Suspicious Debugger Registration Cmdline
 

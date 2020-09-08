@@ -29,5 +29,6 @@ respond:
     tags:
     - attack.lateral_movement
     - attack.t1021
+    - attack.t1021.002
   name: Protected Storage Service Access
 

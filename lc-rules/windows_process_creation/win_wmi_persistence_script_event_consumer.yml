@@ -26,8 +26,9 @@ respond:
     references:
     - https://www.eideon.com/2018-03-02-THL03-WMIBackdoors/
     tags:
-    - attack.execution
     - attack.persistence
+    - attack.privilege_escalation
+    - attack.t1546.003
     - attack.t1047
   name: WMI Persistence - Script Event Consumer
 

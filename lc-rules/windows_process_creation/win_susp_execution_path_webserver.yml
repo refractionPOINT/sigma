@@ -54,7 +54,7 @@ respond:
     level: medium
     tags:
     - attack.persistence
-    - attack.t1100
     - attack.t1505.003
+    - attack.t1100
   name: Execution in Webserver Root Folder
 

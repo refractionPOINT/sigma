@@ -50,7 +50,7 @@ respond:
     - https://unit42.paloaltonetworks.com/operation-ke3chang-resurfaces-with-new-tidepool-malware/
     tags:
     - attack.defense_evasion
-    - attack.t1089
     - attack.t1562.001
+    - attack.t1089
   name: Disabled IE Security Features
 

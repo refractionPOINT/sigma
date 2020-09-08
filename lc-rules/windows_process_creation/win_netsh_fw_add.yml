@@ -27,8 +27,8 @@ respond:
     - https://attack.mitre.org/software/S0246/ (Lazarus HARDRAIN)
     - https://www.operationblockbuster.com/wp-content/uploads/2016/02/Operation-Blockbuster-RAT-and-Staging-Report.pdf
     tags:
-    - attack.lateral_movement
-    - attack.command_and_control
-    - attack.t1090
+    - attack.defense_evasion
+    - attack.t1089
+    - attack.t1562.004
   name: Netsh Port or Application Allowed
 

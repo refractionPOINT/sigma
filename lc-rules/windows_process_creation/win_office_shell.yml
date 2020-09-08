@@ -115,8 +115,8 @@ respond:
 - action: report
   metadata:
     author: Michael Haag, Florian Roth, Markus Neis
-    description: Detects a Windows command line executable started from Microsoft
-      Word, Excel, Powerpoint, Publisher and Visio.
+    description: Detects a Windows command and scripting interpreter executable started
+      from Microsoft Word, Excel, Powerpoint, Publisher and Visio
     falsepositives:
     - unknown
     level: high
@@ -125,11 +125,7 @@ respond:
     - https://mgreen27.github.io/posts/2018/04/02/DownloadCradle.html
     tags:
     - attack.execution
-    - attack.defense_evasion
-    - attack.t1059
-    - attack.t1202
-    - car.2013-02-003
-    - car.2014-04-003
-    - attack.t1059.003
+    - attack.t1204
+    - attack.t1204.002
   name: Microsoft Office Product Spawning Windows Shell
 

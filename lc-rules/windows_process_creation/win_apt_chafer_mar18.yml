@@ -32,9 +32,15 @@ respond:
     - attack.persistence
     - attack.g0049
     - attack.t1053
+    - attack.t1053.005
     - attack.s0111
+    - attack.t1050
+    - attack.t1543.003
     - attack.defense_evasion
     - attack.t1112
+    - attack.command_and_control
+    - attack.t1071
+    - attack.t1071.004
   name: Chafer Activity
 
 detect:
@@ -71,9 +77,15 @@ respond:
     - attack.persistence
     - attack.g0049
     - attack.t1053
+    - attack.t1053.005
     - attack.s0111
+    - attack.t1050
+    - attack.t1543.003
     - attack.defense_evasion
     - attack.t1112
+    - attack.command_and_control
+    - attack.t1071
+    - attack.t1071.004
   name: Chafer Activity
 
 detect:
@@ -126,9 +138,15 @@ respond:
     - attack.persistence
     - attack.g0049
     - attack.t1053
+    - attack.t1053.005
     - attack.s0111
+    - attack.t1050
+    - attack.t1543.003
     - attack.defense_evasion
     - attack.t1112
+    - attack.command_and_control
+    - attack.t1071
+    - attack.t1071.004
   name: Chafer Activity
 
 detect:
@@ -187,8 +205,14 @@ respond:
     - attack.persistence
     - attack.g0049
     - attack.t1053
+    - attack.t1053.005
     - attack.s0111
+    - attack.t1050
+    - attack.t1543.003
     - attack.defense_evasion
     - attack.t1112
+    - attack.command_and_control
+    - attack.t1071
+    - attack.t1071.004
   name: Chafer Activity
 

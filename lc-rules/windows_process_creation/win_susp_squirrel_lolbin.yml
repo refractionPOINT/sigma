@@ -69,5 +69,7 @@ respond:
     - http://www.hexacorn.com/blog/2018/08/16/squirrel-as-a-lolbin/
     tags:
     - attack.execution
+    - attack.defense_evasion
+    - attack.t1218
   name: Squirrel Lolbin
 

@@ -48,8 +48,13 @@ respond:
     - https://twitter.com/SBousseaden/status/1090588499517079552
     - https://github.com/mdsecactivebreach/CACTUSTORCH
     tags:
+    - attack.defense_evasion
+    - attack.t1093
+    - attack.t1055.012
     - attack.execution
-    - attack.t1055
     - attack.t1064
+    - attack.t1059.005
+    - attack.t1059.007
+    - attack.t1218.005
   name: CACTUSTORCH Remote Thread Creation
 

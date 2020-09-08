@@ -85,8 +85,14 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1140
+    - attack.command_and_control
     - attack.t1105
-    - attack.s0189
+    - attack.s0160
     - attack.g0007
+    - attack.g0010
+    - attack.g0045
+    - attack.g0049
+    - attack.g0075
+    - attack.g0096
   name: Suspicious Certutil Command
 

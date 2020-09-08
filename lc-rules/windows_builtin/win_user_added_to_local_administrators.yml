@@ -37,5 +37,7 @@ respond:
     tags:
     - attack.privilege_escalation
     - attack.t1078
+    - attack.persistence
+    - attack.t1098
   name: User Added to Local Administrators
 

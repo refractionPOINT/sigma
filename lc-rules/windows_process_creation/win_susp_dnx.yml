@@ -22,7 +22,8 @@ respond:
     - https://enigma0x3.net/2016/11/17/bypassing-application-whitelisting-by-using-dnx-exe/
     tags:
     - attack.defense_evasion
-    - attack.execution
     - attack.t1218
+    - attack.t1027.004
+    - attack.execution
   name: Application Whitelisting Bypass via Dnx.exe
 

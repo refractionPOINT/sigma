@@ -79,6 +79,7 @@ respond:
     - https://eqllib.readthedocs.io/en/latest/analytics/5b223758-07d6-4100-9e11-238cfdd0fe97.html
     tags:
     - attack.defense_evasion
+    - attack.t1070.001
     - attack.t1070
     - car.2016-04-002
   name: Suspicious Eventlog Clear or Configuration Using Wevtutil

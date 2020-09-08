@@ -25,15 +25,17 @@ respond:
 - action: report
   metadata:
     author: Florian Roth
-    description: Detects post exploitation using NetNTLM downgrade attacks
+    description: Detects NetNTLM downgrade attack
     falsepositives:
     - Unknown
     level: critical
     references:
     - https://www.optiv.com/blog/post-exploitation-using-netntlm-downgrade-attacks
     tags:
-    - attack.credential_access
-    - attack.t1212
+    - attack.defense_evasion
+    - attack.t1089
+    - attack.t1562.001
+    - attack.t1112
   name: NetNTLM Downgrade Attack
 
 detect:
@@ -67,14 +69,16 @@ respond:
 - action: report
   metadata:
     author: Florian Roth
-    description: Detects post exploitation using NetNTLM downgrade attacks
+    description: Detects NetNTLM downgrade attack
     falsepositives:
     - Unknown
     level: critical
     references:
     - https://www.optiv.com/blog/post-exploitation-using-netntlm-downgrade-attacks
     tags:
-    - attack.credential_access
-    - attack.t1212
+    - attack.defense_evasion
+    - attack.t1089
+    - attack.t1562.001
+    - attack.t1112
   name: NetNTLM Downgrade Attack
 

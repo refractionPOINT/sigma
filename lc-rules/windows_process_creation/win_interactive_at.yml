@@ -29,7 +29,7 @@ respond:
     - https://eqllib.readthedocs.io/en/latest/analytics/d8db43cf-ed52-4f5c-9fb3-c9a4b95a0b56.html
     tags:
     - attack.privilege_escalation
-    - attack.t1053
     - attack.t1053.002
+    - attack.t1053
   name: Interactive AT Job
 

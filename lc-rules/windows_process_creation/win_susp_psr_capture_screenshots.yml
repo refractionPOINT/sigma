@@ -28,7 +28,7 @@ respond:
     - https://github.com/LOLBAS-Project/LOLBAS/blob/master/yml/LOLUtilz/OSBinaries/Psr.yml
     - https://www.sans.org/summit-archives/file/summit-archive-1493861893.pdf
     tags:
-    - attack.persistence
-    - attack.t1218
+    - attack.collection
+    - attack.t1113
   name: Psr.exe Capture Screenshots
 

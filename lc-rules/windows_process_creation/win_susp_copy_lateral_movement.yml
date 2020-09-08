@@ -27,8 +27,10 @@ respond:
     - https://twitter.com/SBousseaden/status/1211636381086339073
     tags:
     - attack.lateral_movement
-    - attack.t1077
-    - attack.t1105
     - attack.t1021.002
+    - attack.command_and_control
+    - attack.t1105
+    - attack.s0106
+    - attack.t1077
   name: Copy from Admin Share
 

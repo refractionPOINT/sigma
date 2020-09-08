@@ -39,8 +39,10 @@ respond:
     - https://modexp.wordpress.com/2019/08/30/minidumpwritedump-via-com-services-dll/
     - https://twitter.com/SBousseaden/status/1167417096374050817
     tags:
+    - attack.defense_evasion
+    - attack.t1218.011
     - attack.credential_access
-    - attack.t1003
     - attack.t1003.001
+    - attack.t1003
   name: Process Dump via Comsvcs DLL
 

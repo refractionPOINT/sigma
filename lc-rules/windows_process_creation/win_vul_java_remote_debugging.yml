@@ -31,8 +31,5 @@ respond:
     falsepositives:
     - unknown
     level: medium
-    tags:
-    - attack.discovery
-    - attack.t1046
   name: Java Running with Remote Debugging
 

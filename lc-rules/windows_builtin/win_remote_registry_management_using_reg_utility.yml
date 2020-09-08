@@ -30,9 +30,11 @@ respond:
     - https://www.slideshare.net/heirhabarov/hunting-for-credentials-dumping-in-windows-environment
     tags:
     - attack.defense_evasion
-    - attack.discovery
     - attack.t1112
+    - attack.discovery
     - attack.t1012
+    - attack.credential_access
+    - attack.t1552.002
     - attack.s0075
   name: Remote Registry Management Using Reg Utility
 

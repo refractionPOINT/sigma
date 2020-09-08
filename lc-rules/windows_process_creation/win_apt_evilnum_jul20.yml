@@ -35,5 +35,9 @@ respond:
     references:
     - https://www.welivesecurity.com/2020/07/09/more-evil-deep-look-evilnum-toolset/
     - https://app.any.run/tasks/33d37fdf-158d-4930-aa68-813e1d5eb8ba/
+    tags:
+    - attack.defense_evasion
+    - attack.t1085
+    - attack.t1218.011
   name: EvilNum Golden Chickens Deployment via OCX Files
 

@@ -32,6 +32,9 @@ respond:
     tags:
     - attack.lateral_movement
     - attack.t1078
+    - attack.t1078.001
+    - attack.t1078.002
+    - attack.t1078.003
     - car.2016-04-005
   name: Admin User Remote Logon
 

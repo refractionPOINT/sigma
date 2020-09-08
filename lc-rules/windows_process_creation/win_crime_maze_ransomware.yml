@@ -56,6 +56,10 @@ respond:
     - https://app.any.run/tasks/65a79440-373a-4725-8d74-77db9f2abda4/
     tags:
     - attack.execution
+    - attack.t1204.002
     - attack.t1204
+    - attack.t1047
+    - attack.impact
+    - attack.t1490
   name: Maze Ransomware
 

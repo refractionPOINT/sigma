@@ -61,9 +61,11 @@ respond:
     - https://github.com/SecureAuthCorp/impacket/blob/master/examples/smbexec.py
     - https://github.com/SecureAuthCorp/impacket/blob/master/examples/dcomexec.py
     tags:
-    - attack.lateral_movement
+    - attack.execution
     - attack.t1047
+    - attack.lateral_movement
     - attack.t1175
+    - attack.t1021.003
     - attack.t1021
   name: Impacket Lateralization Detection
 

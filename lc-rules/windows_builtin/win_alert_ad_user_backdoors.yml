@@ -72,7 +72,6 @@ respond:
     - https://www.harmj0y.net/blog/redteaming/another-word-on-delegation/
     tags:
     - attack.t1098
-    - attack.credential_access
     - attack.persistence
   name: Active Directory User Backdoors
 

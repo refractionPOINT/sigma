@@ -33,6 +33,6 @@ respond:
     - https://twitter.com/cyb3rops/status/1063072865992523776
     tags:
     - attack.defense_evasion
-    - attack.t1036
+    - attack.t1027
   name: PowerShell Base64 Encoded Shellcode
 

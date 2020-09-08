@@ -29,7 +29,7 @@ respond:
 - action: report
   metadata:
     author: xknow @xknow_infosec
-    description: detects the usage of particular AttributeLDAPDisplayNames, which
+    description: Detects the usage of particular AttributeLDAPDisplayNames, which
       are known for data exchange via LDAP by the tool LDAPFragger and are additionally
       not commonly used in companies.
     falsepositives:
@@ -40,7 +40,8 @@ respond:
     - https://blog.fox-it.com/2020/03/19/ldapfragger-command-and-control-over-ldap-attributes/
     - https://github.com/fox-it/LDAPFragger
     tags:
-    - attack.t1041
-    - attack.persistence
+    - attack.t1071
+    - attack.t1001.003
+    - attack.command_and_control
   name: Suspicious LDAP-Attributes Used
 

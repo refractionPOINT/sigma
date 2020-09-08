@@ -73,5 +73,6 @@ respond:
     tags:
     - attack.discovery
     - attack.t1087
+    - attack.t1087.002
   name: AD Privileged Users or Groups Reconnaissance
 

@@ -37,5 +37,6 @@ respond:
     - attack.persistence
     - attack.t1197
     - attack.s0190
+    - attack.t1036.003
   name: Bitsadmin Download
 

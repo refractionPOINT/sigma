@@ -66,7 +66,7 @@ respond:
     - https://twitter.com/blackorbird/status/1140519090961825792
     tags:
     - attack.initial_access
-    - attack.t1193
     - attack.t1566.001
+    - attack.t1193
   name: Suspicious Double Extension
 

@@ -28,8 +28,8 @@ respond:
     - https://codewhitesec.blogspot.com/2018/07/lethalhta.html
     tags:
     - attack.defense_evasion
+    - attack.t1218.005
     - attack.execution
     - attack.t1170
-    - attack.t1218.005
   name: MSHTA Spwaned by SVCHOST
 

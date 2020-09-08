@@ -22,7 +22,6 @@ respond:
     - https://securelist.com/apt-slingshot/84312/
     tags:
     - attack.persistence
-    - attack.t1053
     - attack.s0111
   name: Defrag Deactivation
 
@@ -52,7 +51,6 @@ respond:
     - https://securelist.com/apt-slingshot/84312/
     tags:
     - attack.persistence
-    - attack.t1053
     - attack.s0111
   name: Defrag Deactivation
 

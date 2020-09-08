@@ -39,7 +39,7 @@ respond:
     - https://github.com/redcanaryco/atomic-red-team/blob/master/atomics/T1136/T1136.yaml
     tags:
     - attack.persistence
-    - attack.credential_access
     - attack.t1136
+    - attack.t1136.001
   name: Net.exe User Account Creation
 

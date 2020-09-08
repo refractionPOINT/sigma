@@ -47,6 +47,7 @@ respond:
     - https://twitter.com/Hexacorn/status/1187143326673330176
     tags:
     - attack.defense_evasion
+    - attack.t1218.008
     - attack.execution
     - attack.t1218
   name: Application Whitelisting Bypass via DLL Loaded by odbcconf.exe

@@ -188,7 +188,8 @@ respond:
     - https://mgreen27.github.io/posts/2019/05/12/BinaryRename.html
     - https://mgreen27.github.io/posts/2019/05/29/BinaryRename2.html
     tags:
-    - attack.t1036
     - attack.defense_evasion
+    - attack.t1036
+    - attack.t1036.003
   name: Renamed Binary
 

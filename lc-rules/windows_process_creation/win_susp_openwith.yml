@@ -28,7 +28,7 @@ respond:
     - https://twitter.com/harr0ey/status/991670870384021504
     tags:
     - attack.defense_evasion
-    - attack.execution
     - attack.t1218
+    - attack.execution
   name: OpenWith.exe Executes Specified Binary
 

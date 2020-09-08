@@ -21,6 +21,7 @@ respond:
     - https://twitter.com/DrunkBinary/status/1063075530180886529
     tags:
     - attack.execution
+    - attack.t1218.011
     - attack.t1085
   name: Unidentified Attacker November 2018
 
@@ -49,6 +50,7 @@ respond:
     - https://twitter.com/DrunkBinary/status/1063075530180886529
     tags:
     - attack.execution
+    - attack.t1218.011
     - attack.t1085
   name: Unidentified Attacker November 2018
 

@@ -28,8 +28,8 @@ respond:
     - https://eqllib.readthedocs.io/en/latest/analytics/b25aa548-7937-11e9-8f5c-d46d6d62a49e.html
     tags:
     - attack.defense_evasion
+    - attack.t1218.001
     - attack.execution
     - attack.t1223
-    - attack.t1218.001
   name: HH.exe Execution
 

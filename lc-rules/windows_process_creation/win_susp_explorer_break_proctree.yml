@@ -30,5 +30,6 @@ respond:
     - https://twitter.com/bohops/status/1276357235954909188?s=12
     tags:
     - attack.defense_evasion
+    - attack.t1036
   name: Explorer Root Flag Process Tree Break
 

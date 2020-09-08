@@ -23,8 +23,8 @@ respond:
 - action: report
   metadata:
     author: Samir Bousseaden
-    description: Detects remote remote service activity via remote access to the svcctl
-      named pipe
+    description: Detects remote service activity via remote access to the svcctl named
+      pipe
     falsepositives:
     - pentesting
     level: medium
@@ -33,5 +33,7 @@ respond:
     tags:
     - attack.lateral_movement
     - attack.persistence
+    - attack.t1077
+    - attack.t1021.002
   name: Remote Service Activity via SVCCTL Named Pipe
 
