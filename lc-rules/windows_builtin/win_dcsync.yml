@@ -36,11 +36,15 @@ detect:
       op: ends with
       path: Event/EventData/SubjectUserName
       value: $
+    - case sensitive: false
+      op: starts with
+      path: Event/EventData/SubjectUserName
+      value: MSOL_
   target: log
 respond:
 - action: report
   metadata:
-    author: Benjamin Delpy, Florian Roth
+    author: Benjamin Delpy, Florian Roth, Scott Dermott
     description: Detects Mimikatz DC sync security events
     falsepositives:
     - Valid DC Sync that is not covered by the filters; please report

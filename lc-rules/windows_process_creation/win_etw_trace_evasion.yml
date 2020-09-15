@@ -39,7 +39,7 @@ respond:
     tags:
     - attack.defense_evasion
     - attack.t1070
-    - attack.t1562
+    - attack.t1562.006
     - car.2016-04-002
   name: Disable of ETW Trace
 

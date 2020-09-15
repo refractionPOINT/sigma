@@ -41,7 +41,9 @@ respond:
     - https://posts.specterops.io/covenant-v0-5-eee0507b85ba
     tags:
     - attack.execution
+    - attack.defense_evasion
     - attack.t1059.001
+    - attack.t1564.003
     - attack.t1086
   name: Covenant Launcher Indicators
 
