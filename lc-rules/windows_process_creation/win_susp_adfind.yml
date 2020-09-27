@@ -1,0 +1,31 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/ProcessCommandline
+    value: objectcategory
+  - case sensitive: false
+    op: ends with
+    path: Event/EventData/Image
+    value: \adfind.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: FPT.EagleEye Team
+    description: Detects the execution of a AdFind for Active Directory enumeration
+    falsepositives:
+    - Administrative activity
+    level: medium
+    references:
+    - https://social.technet.microsoft.com/wiki/contents/articles/7535.adfind-command-examples.aspx
+    - https://github.com/center-for-threat-informed-defense/adversary_emulation_library/blob/master/fin6/Emulation_Plan/Phase1.md
+    tags:
+    - attack.discovery
+    - attack.t1016
+    - attack.t1018
+    - attack.t1482
+  name: Suspicious AdFind Execution
+
