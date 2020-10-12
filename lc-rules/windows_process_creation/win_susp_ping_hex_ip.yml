@@ -8,13 +8,13 @@ detect:
   - op: or
     rules:
     - case sensitive: false
-      op: contains
+      op: matches
       path: event/COMMAND_LINE
-      value: \ping.exe 0x
+      re: .*ping\.exe.*0x.*
     - case sensitive: false
-      op: contains
+      op: matches
       path: event/COMMAND_LINE
-      value: \ping 0x
+      re: .*ping.*0x.*
 respond:
 - action: report
   metadata:
