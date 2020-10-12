@@ -19,7 +19,7 @@ respond:
 - action: report
   metadata:
     author: Florian Roth
-    description: Detects specific process characteristics of Maze ransomware word
+    description: Detects specific process characteristics of Snatch ransomware word
       document droppers
     falsepositives:
     - Scripts that shutdown the system immediatly and reboot them in safe mode are
