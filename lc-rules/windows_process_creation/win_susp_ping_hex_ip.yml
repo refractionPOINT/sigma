@@ -5,16 +5,22 @@ detect:
   op: and
   rules:
   - op: is windows
-  - op: or
+  - op: and
     rules:
+    - op: or
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: \ping.exe 0x
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: \ping 0x
     - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: .*ping\.exe.*0x.*
-    - case sensitive: false
-      op: matches
-      path: event/COMMAND_LINE
-      re: .*ping.*0x.*
+      op: contains
+      path: event/FILE_PATH
+      value: ping.exe
 respond:
 - action: report
   metadata:
