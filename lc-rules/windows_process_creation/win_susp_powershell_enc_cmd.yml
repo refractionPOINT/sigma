@@ -85,6 +85,22 @@ detect:
         op: contains
         path: event/COMMAND_LINE
         value: ' -enc aQBlAHgA'
+      - case sensitive: false
+        op: matches
+        path: event/COMMAND_LINE
+        re: .*\ \-e.*\ IAA.*
+      - case sensitive: false
+        op: matches
+        path: event/COMMAND_LINE
+        re: .*\ \-e.*\ IAB.*
+      - case sensitive: false
+        op: matches
+        path: event/COMMAND_LINE
+        re: .*\ \-e.*\ UwB.*
+      - case sensitive: false
+        op: matches
+        path: event/COMMAND_LINE
+        re: .*\ \-e.*\ cwB.*
     - case sensitive: false
       not: true
       op: contains
