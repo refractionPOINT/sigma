@@ -101,6 +101,10 @@ detect:
         op: matches
         path: event/COMMAND_LINE
         re: .*\ \-e.*\ cwB.*
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: '.exe -ENCOD '
     - case sensitive: false
       not: true
       op: contains
