@@ -17,19 +17,19 @@ detect:
       - case sensitive: false
         op: matches
         path: event/FILE_PATH
-        re: C\:\\Users\\.*\\AppData\\Local\\Notepad\+\+\\updater\\gup\.exe
+        re: .*\:\\Users\\.*\\AppData\\Local\\Notepad\+\+\\updater\\GUP\.exe
       - case sensitive: false
         op: matches
         path: event/FILE_PATH
-        re: C\:\\Users\\.*\\AppData\\Roaming\\Notepad\+\+\\updater\\gup\.exe
+        re: .*\:\\Users\\.*\\AppData\\Roaming\\Notepad\+\+\\updater\\GUP\.exe
       - case sensitive: false
-        op: is
+        op: ends with
         path: event/FILE_PATH
-        value: C:\Program Files\Notepad++\updater\gup.exe
+        value: :\Program Files\Notepad++\updater\GUP.exe
       - case sensitive: false
-        op: is
+        op: ends with
         path: event/FILE_PATH
-        value: C:\Program Files (x86)\Notepad++\updater\gup.exe
+        value: :\Program Files (x86)\Notepad++\updater\GUP.exe
 respond:
 - action: report
   metadata:

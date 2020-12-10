@@ -12,7 +12,7 @@ detect:
       - case sensitive: false
         op: ends with
         path: event/FILE_PATH
-        value: \mstdc.exe
+        value: \msdtc.exe
       - case sensitive: false
         op: ends with
         path: event/FILE_PATH
@@ -31,7 +31,7 @@ detect:
 respond:
 - action: report
   metadata:
-    author: Trent Liffick (@tliffick)
+    author: Trent Liffick (@tliffick), Bartlomiej Czyz (@bczyz1)
     description: Detects executables launched outside their default directories as
       used by Lazarus Group (Bluenoroff)
     falsepositives:
