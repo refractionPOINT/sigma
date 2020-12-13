@@ -15,16 +15,23 @@ detect:
       op: is
       path: event/COMMAND_LINE
       value: net localgroup administrators
+    - case sensitive: false
+      op: is
+      path: event/COMMAND_LINE
+      value: net group "enterprise admins" /domain
 respond:
 - action: report
   metadata:
-    author: Florian Roth
+    author: Florian Roth, omkar72
     description: Detects suspicious command line activity on Windows systems
     falsepositives:
     - Inventory tool runs
     - Penetration tests
     - Administrative activity
     level: medium
+    references:
+    - https://redcanary.com/blog/how-one-hospital-thwarted-a-ryuk-ransomware-outbreak/
+    - https://thedfirreport.com/2020/10/18/ryuk-in-5-hours/
     tags:
     - attack.discovery
     - attack.t1087.001

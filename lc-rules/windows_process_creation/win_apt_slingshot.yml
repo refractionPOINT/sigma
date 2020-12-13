@@ -5,16 +5,36 @@ detect:
   op: and
   rules:
   - op: is windows
-  - case sensitive: false
-    op: matches
-    path: event/COMMAND_LINE
-    re: .*schtasks.*\ \/delete\ .*Defrag\\ScheduledDefrag.*
+  - op: and
+    rules:
+    - case sensitive: false
+      op: ends with
+      path: event/FILE_PATH
+      value: \schtasks.exe
+    - op: or
+      rules:
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: /delete
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: /change
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: /TN
+    - case sensitive: false
+      op: contains
+      path: event/COMMAND_LINE
+      value: \Microsoft\Windows\Defrag\ScheduledDefrag
 respond:
 - action: report
   metadata:
-    author: Florian Roth
-    description: Detects the deactivation of the Scheduled defragmentation task as
-      seen by Slingshot APT group
+    author: Florian Roth, Bartlomiej Czyz (@bczyz1)
+    description: Detects the deactivation and disabling of the Scheduled defragmentation
+      task as seen by Slingshot APT group
     falsepositives:
     - Unknown
     level: medium
@@ -41,9 +61,9 @@ detect:
 respond:
 - action: report
   metadata:
-    author: Florian Roth
-    description: Detects the deactivation of the Scheduled defragmentation task as
-      seen by Slingshot APT group
+    author: Florian Roth, Bartlomiej Czyz (@bczyz1)
+    description: Detects the deactivation and disabling of the Scheduled defragmentation
+      task as seen by Slingshot APT group
     falsepositives:
     - Unknown
     level: medium
