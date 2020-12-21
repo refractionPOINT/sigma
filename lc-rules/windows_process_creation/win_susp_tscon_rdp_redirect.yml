@@ -24,6 +24,7 @@ respond:
     - attack.lateral_movement
     - attack.t1563.002
     - attack.t1076
+    - attack.t1021.001
     - car.2013-07-002
   name: Suspicious RDP Redirect Using TSCON
 

@@ -65,6 +65,8 @@ respond:
     falsepositives:
     - unknown
     level: high
+    references:
+    - https://ragged-lab.blogspot.com/2020/07/webshells-automating-reconnaissance.html
     tags:
     - attack.persistence
     - attack.t1505.003

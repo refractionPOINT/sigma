@@ -42,6 +42,9 @@ respond:
     falsepositives:
     - Unknown
     level: critical
+    references:
+    - https://attack.mitre.org/techniques/T1196/
+    - https://ired.team/offensive-security/code-execution/code-execution-through-control-panel-add-ins
     tags:
     - attack.execution
     - attack.defense_evasion

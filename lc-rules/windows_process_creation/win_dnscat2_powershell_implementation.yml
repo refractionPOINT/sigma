@@ -29,6 +29,10 @@ respond:
     falsepositives:
     - Other powershell scripts that call nslookup.exe
     level: high
+    references:
+    - https://github.com/lukebaggett/dnscat2-powershell
+    - https://blu3-team.blogspot.com/2019/08/powershell-dns-c2-notes.html
+    - https://ragged-lab.blogspot.com/2020/06/it-is-always-dns-powershell-edition.html
     tags:
     - attack.command_and_control
     - attack.t1071
