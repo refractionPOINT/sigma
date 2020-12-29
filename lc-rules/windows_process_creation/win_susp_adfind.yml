@@ -4,7 +4,7 @@ detect:
   rules:
   - case sensitive: false
     op: contains
-    path: Event/EventData/ProcessCommandline
+    path: Event/EventData/ProcessCommandLine
     value: objectcategory
   - case sensitive: false
     op: ends with
