@@ -59,6 +59,38 @@ detect:
         op: contains
         path: event/COMMAND_LINE
         value: cd /d
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: ipconfig
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: pathping
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: tracert
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: netstat
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: schtasks
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: vssadmin
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: wevtutil
+      - case sensitive: false
+        op: contains
+        path: event/COMMAND_LINE
+        value: tasklist
 respond:
 - action: report
   metadata:

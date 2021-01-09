@@ -84,6 +84,14 @@ detect:
       op: contains
       path: Event/EventData/Message
       value: ASPXSpy
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Message
+      value: Seatbelt
+    - case sensitive: false
+      op: contains
+      path: Event/EventData/Message
+      value: sbelt
   - not: true
     op: or
     rules:
