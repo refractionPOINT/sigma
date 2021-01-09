@@ -64,6 +64,6 @@ respond:
     - attack.persistence
     - attack.t1505.003
     - attack.privilege_escalation
-    - attack.t1100
+    - attack.t1190
   name: Shells Spawned by Web Servers
 

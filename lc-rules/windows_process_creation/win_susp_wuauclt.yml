@@ -1,0 +1,34 @@
+detect:
+  log type: wel
+  op: and
+  rules:
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/ProcessCommandline
+    value: /UpdateDeploymentProvider
+  - case sensitive: false
+    op: contains
+    path: Event/EventData/ProcessCommandline
+    value: /RunHandlerComServer
+  - case sensitive: false
+    op: ends with
+    path: Event/EventData/Image
+    value: \wuauclt.exe
+  target: log
+respond:
+- action: report
+  metadata:
+    author: FPT.EagleEye Team
+    description: Detects code execution via the Windows Update client (wuauclt)
+    falsepositives:
+    - Unknown
+    level: high
+    references:
+    - https://dtm.uk/wuauclt/
+    tags:
+    - attack.command_and_control
+    - attack.execution
+    - attack.t1105
+    - attack.t1218
+  name: Windows Update Client LOLBIN
+

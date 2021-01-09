@@ -33,6 +33,14 @@ detect:
         op: ends with
         path: event/PARENT/FILE_PATH
         value: \OUTLOOK.EXE
+      - case sensitive: false
+        op: ends with
+        path: event/PARENT/FILE_PATH
+        value: \MSACCESS.EXE
+      - case sensitive: false
+        op: ends with
+        path: event/PARENT/FILE_PATH
+        value: \EQNEDT32.EXE
     - op: or
       rules:
       - case sensitive: false
@@ -111,10 +119,14 @@ detect:
         op: ends with
         path: event/FILE_PATH
         value: \svchost.exe
+      - case sensitive: false
+        op: ends with
+        path: event/FILE_PATH
+        value: \msbuild.exe
 respond:
 - action: report
   metadata:
-    author: Michael Haag, Florian Roth, Markus Neis
+    author: Michael Haag, Florian Roth, Markus Neis, Elastic, FPT.EagleEye Team
     description: Detects a Windows command and scripting interpreter executable started
       from Microsoft Word, Excel, Powerpoint, Publisher and Visio
     falsepositives:
