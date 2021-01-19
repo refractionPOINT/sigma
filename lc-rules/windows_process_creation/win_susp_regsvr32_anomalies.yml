@@ -48,11 +48,11 @@ detect:
         - case sensitive: false
           op: matches
           path: event/COMMAND_LINE
-          re: .*\/i\:http.*\ scrobj\.dll
+          re: .*/i:http.*\ scrobj\.dll
         - case sensitive: false
           op: matches
           path: event/COMMAND_LINE
-          re: .*\/i\:ftp.*\ scrobj\.dll
+          re: .*/i:ftp.*\ scrobj\.dll
     - op: and
       rules:
       - case sensitive: false

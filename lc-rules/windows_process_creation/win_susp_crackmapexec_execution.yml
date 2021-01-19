@@ -10,15 +10,15 @@ detect:
     - case sensitive: false
       op: matches
       path: event/COMMAND_LINE
-      re: .*cmd\.exe\ \/Q\ \/c\ .*\ 1\>\ \\\\.*\\.*\\.*\ 2\>\&1
+      re: .*cmd\.exe\ /Q\ /c\ .*\ 1>\ \\\\.*\\.*\\.*\ 2>\&1
     - case sensitive: false
       op: matches
       path: event/COMMAND_LINE
-      re: .*cmd\.exe\ \/C\ .*\ \>\ \\\\.*\\.*\\.*\ 2\>\&1
+      re: .*cmd\.exe\ /C\ .*\ >\ \\\\.*\\.*\\.*\ 2>\&1
     - case sensitive: false
       op: matches
       path: event/COMMAND_LINE
-      re: .*cmd\.exe\ \/C\ .*\ \>\ .*\\\\Temp\\.*\ 2\>\&1
+      re: .*cmd\.exe\ /C\ .*\ >\ .*\\\\Temp\\.*\ 2>\&1
     - case sensitive: false
       op: contains
       path: event/COMMAND_LINE
