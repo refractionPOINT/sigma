@@ -20,7 +20,7 @@ detect:
       - case sensitive: false
         op: matches
         path: event/COMMAND_LINE
-        re: .*/E:vbscript\ .*\ C:\\Users\\.*\.txt"\ /F
+        re: .*\/E\:vbscript\ .*\ C\:\\Users\\.*\.txt\"\ \/F
       - case sensitive: false
         op: contains
         path: event/COMMAND_LINE

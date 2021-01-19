@@ -10,7 +10,7 @@ detect:
     - case sensitive: false
       op: matches
       path: event/COMMAND_LINE
-      re: .*\ /c\ copy\ .*\\System32\\.*
+      re: .*\ \/c\ copy\ .*\\System32\\.*
     - case sensitive: false
       op: matches
       path: event/COMMAND_LINE

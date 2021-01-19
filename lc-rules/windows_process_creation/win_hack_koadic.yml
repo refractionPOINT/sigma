@@ -8,7 +8,7 @@ detect:
   - case sensitive: false
     op: matches
     path: event/COMMAND_LINE
-    re: .*cmd\.exe.*\ /q\ /c\ chcp\ .*
+    re: .*cmd\.exe.*\ \/q\ \/c\ chcp\ .*
 respond:
 - action: report
   metadata:

@@ -37,7 +37,7 @@ detect:
         - case sensitive: false
           op: matches
           path: event/PARENT/COMMAND_LINE
-          re: C:\\WINDOWS\\system32\\.*\.bat
+          re: C\:\\WINDOWS\\system32\\.*\.bat
 respond:
 - action: report
   metadata:

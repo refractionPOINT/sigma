@@ -10,7 +10,7 @@ detect:
     - case sensitive: false
       op: matches
       path: event/PARENT/COMMAND_LINE
-      re: .*cmd.*/c.*
+      re: .*cmd.*\/c.*
     - case sensitive: false
       op: contains
       path: event/COMMAND_LINE
